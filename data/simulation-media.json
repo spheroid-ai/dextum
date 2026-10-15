@@ -1,0 +1,52 @@
+{
+  "film": {
+    "duration_s": 63.166666666666664,
+    "fps": 30,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "trials": [
+      29,
+      38,
+      20,
+      0
+    ],
+    "selection": "Three largest successful requested turns (29,38,20), followed by first reverse timeout (0); selected illustration, not a representative success-rate sample.",
+    "success_criterion": "2 continuous seconds within 0.2 radians and all four motion limits at every 100 Hz physics step",
+    "scope": "Bridge: fixed 50 mm cube with randomized mass, friction, hand mechanics and starting pose; simulated noisy tag oracle.",
+    "hardware": false,
+    "motion_filtering": false,
+    "playback_speed": 1,
+    "corrected_reference": "Native general COM metadata, coherent sampled-COM BVH, solver20/20; differs from archived original evaluator",
+    "visual_changes": "Materials, camera and lights only",
+    "max_cube_pose_replay_errors": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "checkpoint_sha256": "f5ac629820700a479f45f2fd7268b24aabf067d61e6c47a025132839efbd0aa4",
+    "video_sha256": "832603aa3770fb56b8da33472291ec01d3e3403a79f00a1f65936ae93868f95c",
+    "source_manifest": "artifacts/aero_official/policy_film_coherent_20261004/manifest.json",
+    "scope_label": "Historical Aero development film, 4 October 2026; predates DEXTUM model v2"
+  },
+  "kit_b_frame": {
+    "source_result": "dextum_plan/progress/2026-10-13-gpu-cleanup/55183680/project/artifacts/spheroid_touch_b/quality_rotation_01/rotation_joint_01/replay/result.json",
+    "seed": 810401,
+    "degrees": 30,
+    "return_": 4.055837124873319,
+    "grasp_hold_s": 10.589249999997996,
+    "settled_grasp_hold_s": 10.589249999997996,
+    "grasp_hold_pass": true,
+    "settled_grasp_pass": true,
+    "reason": "timeout",
+    "success": false,
+    "angle_error_rad": 0.29858974717447695,
+    "acquired_s": 10.550000000000015,
+    "settled_hold_s": 0.0,
+    "peak_cell_force_N": 26.320597341912077,
+    "sim_time_s": 14.999999999987716
+  },
+  "current_v2_footage": "Not located in the local archive as of this media update; current v2 numbers are presented separately."
+}

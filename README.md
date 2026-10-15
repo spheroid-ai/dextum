@@ -1,6 +1,6 @@
 # DEXTUM — 20 October publication preparation
 
-Private preparation repository, 15 October 2026. Public release target: 20 October.
+Private preparation repository: https://github.com/spheroid-ai/dextum (15 October 2026). Public release target: 20 October.
 Results freeze: **19 October, 18:00 CEST / 16:00 UTC**.
 
 Open [the HTML page](site/dist/index.html). The supplied concept renders, real

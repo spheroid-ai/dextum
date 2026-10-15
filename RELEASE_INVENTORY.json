@@ -51,7 +51,7 @@
     },
     {
       "item": "Public repository/tag/Pages",
-      "status": "private preparation first; public launch20October"
+      "status": "Private repository created and populated; public access, tag and Pages await20October release"
     }
   ],
   "cuts": [
@@ -60,5 +60,10 @@
     "E25",
     "E12 hold",
     "embodiment-anchor rehearsal"
-  ]
+  ],
+  "preparation_repository": {
+    "url": "https://github.com/spheroid-ai/dextum",
+    "visibility": "PRIVATE",
+    "initial_commit": "ffd78b6"
+  }
 }

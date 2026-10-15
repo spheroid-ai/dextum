@@ -1,0 +1,72 @@
+{
+  "state": "RECHECK_COMPLETE",
+  "updated_at": 1791934267.970641,
+  "model_version": "v2",
+  "protocol": "20,316,160-step warm starts from own registered Ideal teachers; shared 200-start bank; three seeds; faithful evaluator",
+  "source": "dextum_plan/progress/2026-10-13-section20/primary_next_evidence/pass1_v2_touch_recheck_01/FINAL_REPORT.json",
+  "paired": {
+    "1": {
+      "gain_points": 9.5,
+      "touch_only": 30,
+      "no_touch_only": 11,
+      "exact_mcnemar_p": 0.00432400493446039
+    },
+    "2": {
+      "gain_points": 0.5,
+      "touch_only": 18,
+      "no_touch_only": 17,
+      "exact_mcnemar_p": 1.0
+    },
+    "3": {
+      "gain_points": 8.5,
+      "touch_only": 32,
+      "no_touch_only": 15,
+      "exact_mcnemar_p": 0.01862383661500644
+    }
+  },
+  "touch_effect_summary": {
+    "mean_points": 6.166666666666667,
+    "seed_values": [
+      9.5,
+      0.5,
+      8.5
+    ],
+    "confidence_interval_95": [
+      -6.087293679720877,
+      18.42062701305421
+    ],
+    "method": "Student t across three training seeds, df=2; unclipped"
+  },
+  "seed_summary": {
+    "c_touch": {
+      "mean_points": 83.33333333333333,
+      "seed_values": [
+        83.5,
+        83.5,
+        83.0
+      ],
+      "confidence_interval_95": [
+        82.61622454501479,
+        84.05044212165187
+      ],
+      "method": "Student t across three training seeds, df=2; unclipped"
+    },
+    "c_notouch": {
+      "mean_points": 77.16666666666667,
+      "seed_values": [
+        74.0,
+        83.0,
+        74.5
+      ],
+      "confidence_interval_95": [
+        64.6019056508298,
+        89.73142768250354
+      ],
+      "method": "Student t across three training seeds, df=2; unclipped"
+    }
+  },
+  "all_guards_pass": true,
+  "all_final_artifacts_locally_verified": true,
+  "interpretation": "Mean benefit +6.17 points; 95% Student-t interval across training seeds includes zero. Historical v1 +11-point claim is not reproduced on v2; seed2 is not significant. No hardware change.",
+  "primary_provider": "55754395 exited/stopped after backups and final report"
+}

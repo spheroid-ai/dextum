@@ -1,0 +1,6 @@
+qa/
+__pycache__/
+.DS_Store
+*.zip
+SHA256SUMS
+PREPARATION_MANIFEST.json

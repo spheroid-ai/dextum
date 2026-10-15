@@ -1,0 +1,106 @@
+{
+  "state": "COMPLETE",
+  "recorded_at": 1791919164.065713,
+  "model_version": "v2",
+  "sensor_level": "Realistic",
+  "protocol": "From scratch, seed1,108134400steps,shared200-startbank,finalcheckpoint",
+  "training_attempts": 1,
+  "training_children": 2,
+  "final": {
+    "steps": 108134400,
+    "n": 200,
+    "internal_success": 180,
+    "faithful_success": 176,
+    "gap": 0.02,
+    "internal_only": 9,
+    "faithful_only": 5,
+    "exact_mcnemar_p": 0.4239501953125,
+    "finite": true,
+    "wall_s": 25.783306234996417,
+    "reset_seed": 2026,
+    "dr_seed": 7,
+    "faithful_drops": 4,
+    "criterion_version": "review_section15_clustered",
+    "signed_gap_points": 2.0,
+    "discordant_count": 14,
+    "running_mean_signed_gap_points": 0.6129032258064516,
+    "checks_so_far": 31,
+    "stop_reasons": [],
+    "state": "PASS",
+    "exact_start_cluster_signflip_p": 0.24363380752106722,
+    "cluster_tail_count": 21223497903418647599404845523555087996520,
+    "cluster_sign_assignments": 87112285931760246646623899502532662132736,
+    "nonzero_start_clusters": 136,
+    "cluster_observed_sum": 38
+  },
+  "comparison": {
+    "state": "COMPLETE",
+    "analyzed_at": 1791919082.2811627,
+    "case": "realistic_v2",
+    "analysis_registration_sha256": "d7433653040eade414f627fc8b42ac37d010be2fc38afa5d373d847f0289b3d3",
+    "n": 200,
+    "seed": 1,
+    "steps_per_arm": 108134400,
+    "selection": "Final checkpoint only",
+    "arms": {
+      "reference": {
+        "label": "v2 Ideal scratch",
+        "successes": 181,
+        "drops": 3,
+        "outcome_sha256": "fcd37a746d32d44872955b0025691161d923b0c6918945e5e2fdc2e16db33615",
+        "all_guards_pass": true,
+        "last_two_checks": [
+          {
+            "steps": 104529920,
+            "faithful_success": 182,
+            "internal_success": 179,
+            "faithful_drops": 3,
+            "exact_mcnemar_p": 0.5810546875,
+            "state": "PASS"
+          },
+          {
+            "steps": 108134400,
+            "faithful_success": 181,
+            "internal_success": 182,
+            "faithful_drops": 3,
+            "exact_mcnemar_p": 1.0,
+            "state": "PASS"
+          }
+        ]
+      },
+      "current": {
+        "label": "v2 Realistic scratch",
+        "successes": 176,
+        "drops": 4,
+        "outcome_sha256": "552da4a84af8ea340ed32df5fac20c36c962c1dc7f38d6578e5f9500407ff17e",
+        "all_guards_pass": true,
+        "last_two_checks": [
+          {
+            "steps": 104529920,
+            "faithful_success": 167,
+            "internal_success": 174,
+            "faithful_drops": 3,
+            "exact_mcnemar_p": 0.24778856337070465,
+            "state": "PASS"
+          },
+          {
+            "steps": 108134400,
+            "faithful_success": 176,
+            "internal_success": 180,
+            "faithful_drops": 4,
+            "exact_mcnemar_p": 0.4239501953125,
+            "state": "PASS"
+          }
+        ]
+      }
+    },
+    "current_minus_reference_points": -2.5,
+    "current_only": 8,
+    "reference_only": 13,
+    "exact_mcnemar_p": 0.38331031799316406,
+    "shared_bank_arrays_match": true,
+    "limitation": "One training seed, identical full-budget protocol and hand. A sensor-level contrast, not the matched touch/no-touch claim or a hardware tolerance."
+  },
+  "backup": "dextum_plan/progress/2026-10-13-section20/primary_evidence/pass1_section20/c_touch_realistic_v2/FINAL_ARTIFACT_BACKUP.json",
+  "hardware_changes": false
+}

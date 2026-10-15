@@ -1,0 +1,44 @@
+[
+  {
+    "asset": "aero-bench.jpg",
+    "source": "photos/1.jpg",
+    "caption_scope": "Physical Aero bench photograph; no kit built claim",
+    "sha256": "4706b4dddd6c3f118dae12dace6fbe71687d77caba5e535e1dfee592cef71b60"
+  },
+  {
+    "asset": "kit-assembly.png",
+    "source": "artifacts/spheroid_touch_b/assembly.png",
+    "caption_scope": "Kit design render; not an evaluation frame",
+    "sha256": "f050cca7c4a7efacd55d1a04314ef15371e376e2c5da1858c295912687dbf6a9"
+  },
+  {
+    "asset": "concept-fingertip.png",
+    "source": "dextum_site_v1/Exploded 7\u00d77 tactile fingertip sensor.png",
+    "caption_scope": "User-supplied Spheroid fingertip concept visualization; not the 40-cell benchmark layout",
+    "sha256": "fa3080cd9eb77854d9b367b623a5735028083920ce42c502d35f18351f454005"
+  },
+  {
+    "asset": "concept-cell.png",
+    "source": "dextum_site_v1/Four-pad electrode field with edge strips.png",
+    "caption_scope": "User-supplied Spheroid D0 cell concept visualization; not a built device",
+    "sha256": "aa7c6d960b26d747aa28473ddafa10d16ce89e59e3b861d84c4dc68d30320527"
+  },
+  {
+    "asset": "aero-simulation-20261004.mp4",
+    "source": "artifacts/aero_official/policy_film_coherent_20261004/aero_settled_policy_coherent.mp4",
+    "caption_scope": "Historical 4 October Aero simulation film; selected successes and a failure; not DEXTUM model-v2 benchmark footage",
+    "sha256": "832603aa3770fb56b8da33472291ec01d3e3403a79f00a1f65936ae93868f95c"
+  },
+  {
+    "asset": "aero-simulation-poster.png",
+    "source": "artifacts/aero_official/policy_film_coherent_20261004/preview_29_replay.png",
+    "caption_scope": "Unmodified saved simulation frame from the historical film",
+    "sha256": "2c2eb2a0b3d3226d1542bdb44e4deca232f91b5b52d3c0c77cf4104df0d755b8"
+  },
+  {
+    "asset": "kit-b-simulation-frame.png",
+    "source": "dextum_plan/progress/2026-10-13-gpu-cleanup/55183680/project/artifacts/spheroid_touch_b/quality_rotation_01/rotation_joint_01/replay/replay_final.png",
+    "caption_scope": "Historical Kit B native replay, seed 810401, +30 degree target, timeout; not accepted v2 success evidence",
+    "sha256": "d53583777ebf89442e32b01cd5617472a8833fcb9f05e899a4b1ff118ac35898"
+  }
+]

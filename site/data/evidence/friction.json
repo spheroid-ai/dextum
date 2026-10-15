@@ -1,0 +1,40 @@
+{
+  "state": "COMPLETE",
+  "completed_at": 1791910231.8309853,
+  "n": 200,
+  "seed": 1,
+  "steps_per_arm": 108134400,
+  "accepted_v1_successes": 146,
+  "friction_candidate_successes": 181,
+  "gain_points": 17.5,
+  "candidate_only": 46,
+  "v1_only": 11,
+  "exact_mcnemar_p": 3.3118847623803127e-06,
+  "candidate_drops": 3,
+  "v1_drops": 13,
+  "all_guards_pass": true,
+  "shared_bank_arrays_match": true,
+  "evidence_sha256": {
+    "/root/dextum/section20_friction_reference/108134400.npz": "47a208f88b5d6901c45491144af546b712aaefcb45ba9be57a54f2435e85b731",
+    "/root/dextum/dextum_cursor_agent/runs/pass1_section20/c_touch_friction_ideal/training/monitor/108134400.npz": "fcd37a746d32d44872955b0025691161d923b0c6918945e5e2fdc2e16db33615"
+  },
+  "last_two_checks": [
+    {
+      "steps": 104529920,
+      "faithful_success": 182,
+      "internal_success": 179,
+      "faithful_drops": 3,
+      "exact_mcnemar_p": 0.5810546875,
+      "state": "PASS"
+    },
+    {
+      "steps": 108134400,
+      "faithful_success": 181,
+      "internal_success": 182,
+      "faithful_drops": 3,
+      "exact_mcnemar_p": 1.0,
+      "state": "PASS"
+    }
+  ],
+  "limitation": "One training seed, same protocol; physical model changes only registered pad friction. No hardware geometry inference."
+}

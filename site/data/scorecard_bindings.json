@@ -1,0 +1,333 @@
+{
+  "acceptance": "Explicitly admitted rows from review sections22\u201325; no latest-file glob or automatic promotion",
+  "sources": {
+    "friction": {
+      "file": "evidence/friction.json",
+      "original_workspace_path": "dextum_plan/progress/2026-10-13-section20/primary_evidence/pass1_section20/c_touch_friction_ideal/FRICTION_COMPARISON.json",
+      "sha256": "db20be933989956311d4c200ec735c5740087f596bcd33437a294623bcda9022"
+    },
+    "sensing": {
+      "file": "evidence/sensing.json",
+      "original_workspace_path": "dextum_plan/progress/2026-10-13-section20/REALISTIC_V2_RESULT.json",
+      "sha256": "b1aa3b232812890ba8e370eb24bdb4208c5eda26b615f0c4dab9f9f4841f7568"
+    },
+    "recheck": {
+      "file": "evidence/recheck.json",
+      "original_workspace_path": "dextum_plan/progress/2026-10-13-section20/V2_TOUCH_RECHECK_RESULT.json",
+      "sha256": "eeb84bfc2ff6213cc7bcdcc0bcaee71dcb5be9e6719954bc00632f9361339001"
+    },
+    "channels": {
+      "file": "evidence/channels.json",
+      "original_workspace_path": "dextum_plan/progress/2026-10-14-work-order/lane_D/d1_evidence/dextum_cursor_agent/runs/workorder14_lane_d1_r04/pipeline/RESULT.json",
+      "sha256": "589c28fbbcbd150495fda146e790382399b7f97db436da7f2bb85e796ee9ece0"
+    },
+    "oracle": {
+      "file": "evidence/oracle.json",
+      "original_workspace_path": "dextum_plan/progress/2026-10-14-work-order/lane_A/LIVE_STATUS.json",
+      "sha256": "b8720b2804ce18dbb9e1c59cd6b534617f0d72d24ef1d34d91cb8ed79176b408"
+    },
+    "oracle_comparison": {
+      "file": "evidence/oracle_comparison.json",
+      "original_workspace_path": "dextum_plan/progress/2026-10-14-work-order/lane_A/comparison03/evidence/RESULT.json",
+      "sha256": "4cea37e498304a2d97ba425ad92e7f0ad8b2ff0cb6c23c7b205b82cacd44d82c"
+    },
+    "student": {
+      "file": "evidence/student.json",
+      "original_workspace_path": "dextum_plan/progress/2026-10-15-continuation/lane_D/D2_PACKAGE/dextum_cursor_agent/runs/workorder14_lane_d2_r03/SENSORLESS_COMPARISON.json",
+      "sha256": "47a3f0c70fc0a5e1338cf94ec3fbe4853b4b849f81586e5206d81a0ab2b86e2f"
+    }
+  },
+  "bindings": [
+    {
+      "row": 1,
+      "field": "success_percent",
+      "source": "friction",
+      "pointer": "/accepted_v1_successes",
+      "multiplier": 0.5
+    },
+    {
+      "row": 1,
+      "field": "drops",
+      "source": "friction",
+      "pointer": "/v1_drops",
+      "multiplier": 1
+    },
+    {
+      "row": 2,
+      "field": "success_percent",
+      "source": "sensing",
+      "pointer": "/comparison/arms/reference/successes",
+      "multiplier": 0.5
+    },
+    {
+      "row": 2,
+      "field": "drops",
+      "source": "sensing",
+      "pointer": "/comparison/arms/reference/drops",
+      "multiplier": 1
+    },
+    {
+      "row": 3,
+      "field": "success_percent",
+      "source": "sensing",
+      "pointer": "/comparison/arms/current/successes",
+      "multiplier": 0.5
+    },
+    {
+      "row": 3,
+      "field": "drops",
+      "source": "sensing",
+      "pointer": "/comparison/arms/current/drops",
+      "multiplier": 1
+    },
+    {
+      "row": 5,
+      "field": "success_percent",
+      "source": "recheck",
+      "pointer": "/seed_summary/c_touch/seed_values/0",
+      "multiplier": 1
+    },
+    {
+      "row": 5,
+      "field": "paired_p",
+      "source": "recheck",
+      "pointer": "/paired/1/exact_mcnemar_p",
+      "multiplier": 1
+    },
+    {
+      "row": 6,
+      "field": "success_percent",
+      "source": "recheck",
+      "pointer": "/seed_summary/c_notouch/seed_values/0",
+      "multiplier": 1
+    },
+    {
+      "row": 6,
+      "field": "paired_p",
+      "source": "recheck",
+      "pointer": "/paired/1/exact_mcnemar_p",
+      "multiplier": 1
+    },
+    {
+      "row": 7,
+      "field": "success_percent",
+      "source": "recheck",
+      "pointer": "/seed_summary/c_touch/seed_values/1",
+      "multiplier": 1
+    },
+    {
+      "row": 7,
+      "field": "paired_p",
+      "source": "recheck",
+      "pointer": "/paired/2/exact_mcnemar_p",
+      "multiplier": 1
+    },
+    {
+      "row": 8,
+      "field": "success_percent",
+      "source": "recheck",
+      "pointer": "/seed_summary/c_notouch/seed_values/1",
+      "multiplier": 1
+    },
+    {
+      "row": 8,
+      "field": "paired_p",
+      "source": "recheck",
+      "pointer": "/paired/2/exact_mcnemar_p",
+      "multiplier": 1
+    },
+    {
+      "row": 9,
+      "field": "success_percent",
+      "source": "recheck",
+      "pointer": "/seed_summary/c_touch/seed_values/2",
+      "multiplier": 1
+    },
+    {
+      "row": 9,
+      "field": "paired_p",
+      "source": "recheck",
+      "pointer": "/paired/3/exact_mcnemar_p",
+      "multiplier": 1
+    },
+    {
+      "row": 10,
+      "field": "success_percent",
+      "source": "recheck",
+      "pointer": "/seed_summary/c_notouch/seed_values/2",
+      "multiplier": 1
+    },
+    {
+      "row": 10,
+      "field": "paired_p",
+      "source": "recheck",
+      "pointer": "/paired/3/exact_mcnemar_p",
+      "multiplier": 1
+    },
+    {
+      "row": 11,
+      "field": "success_percent",
+      "source": "channels",
+      "pointer": "/rows/d1_none_seed1/success",
+      "multiplier": 0.5
+    },
+    {
+      "row": 11,
+      "field": "drops",
+      "source": "channels",
+      "pointer": "/rows/d1_none_seed1/drops",
+      "multiplier": 1
+    },
+    {
+      "row": 12,
+      "field": "success_percent",
+      "source": "channels",
+      "pointer": "/rows/d1_normal_only_seed1/success",
+      "multiplier": 0.5
+    },
+    {
+      "row": 12,
+      "field": "drops",
+      "source": "channels",
+      "pointer": "/rows/d1_normal_only_seed1/drops",
+      "multiplier": 1
+    },
+    {
+      "row": 12,
+      "field": "paired_p",
+      "source": "channels",
+      "pointer": "/rows/d1_normal_only_seed1/comparison/exact_mcnemar_p",
+      "multiplier": 1
+    },
+    {
+      "row": 13,
+      "field": "success_percent",
+      "source": "channels",
+      "pointer": "/rows/d1_palm_seed1/success",
+      "multiplier": 0.5
+    },
+    {
+      "row": 13,
+      "field": "drops",
+      "source": "channels",
+      "pointer": "/rows/d1_palm_seed1/drops",
+      "multiplier": 1
+    },
+    {
+      "row": 13,
+      "field": "paired_p",
+      "source": "channels",
+      "pointer": "/rows/d1_palm_seed1/comparison/exact_mcnemar_p",
+      "multiplier": 1
+    },
+    {
+      "row": 14,
+      "field": "success_percent",
+      "source": "oracle",
+      "pointer": "/completed/privileged_ceiling_seed1/successes",
+      "multiplier": 0.5
+    },
+    {
+      "row": 14,
+      "field": "drops",
+      "source": "oracle",
+      "pointer": "/completed/privileged_ceiling_seed1/drops",
+      "multiplier": 1
+    },
+    {
+      "row": 15,
+      "field": "success_percent",
+      "source": "oracle",
+      "pointer": "/completed/oracle_structured_full_seed1/successes",
+      "multiplier": 0.5
+    },
+    {
+      "row": 15,
+      "field": "drops",
+      "source": "oracle",
+      "pointer": "/completed/oracle_structured_full_seed1/drops",
+      "multiplier": 1
+    },
+    {
+      "row": 16,
+      "field": "success_percent",
+      "source": "oracle",
+      "pointer": "/completed/flat_same_information_full_seed1/successes",
+      "multiplier": 0.5
+    },
+    {
+      "row": 16,
+      "field": "drops",
+      "source": "oracle",
+      "pointer": "/completed/flat_same_information_full_seed1/drops",
+      "multiplier": 1
+    },
+    {
+      "row": 17,
+      "field": "success_percent",
+      "source": "oracle",
+      "pointer": "/completed/oracle_contact_only_seed1/successes",
+      "multiplier": 0.5
+    },
+    {
+      "row": 17,
+      "field": "drops",
+      "source": "oracle",
+      "pointer": "/completed/oracle_contact_only_seed1/drops",
+      "multiplier": 1
+    },
+    {
+      "row": 18,
+      "field": "success_percent",
+      "source": "oracle",
+      "pointer": "/completed/patch_identity_removed_full_seed1/successes",
+      "multiplier": 0.5
+    },
+    {
+      "row": 18,
+      "field": "drops",
+      "source": "oracle",
+      "pointer": "/completed/patch_identity_removed_full_seed1/drops",
+      "multiplier": 1
+    },
+    {
+      "row": 19,
+      "field": "success_percent",
+      "source": "oracle",
+      "pointer": "/completed/oracle_structured_full_seed2/successes",
+      "multiplier": 0.5
+    },
+    {
+      "row": 19,
+      "field": "drops",
+      "source": "oracle",
+      "pointer": "/completed/oracle_structured_full_seed2/drops",
+      "multiplier": 1
+    },
+    {
+      "row": 20,
+      "field": "success_percent",
+      "source": "student",
+      "pointer": "/success",
+      "multiplier": 0.5
+    },
+    {
+      "row": 20,
+      "field": "drops",
+      "source": "student",
+      "pointer": "/drops",
+      "multiplier": 1
+    },
+    {
+      "row": 20,
+      "field": "paired_p",
+      "source": "student",
+      "pointer": "/comparisons/teacher/exact_mcnemar_p",
+      "multiplier": 1
+    }
+  ],
+  "unresolved": [
+    "Bare-hand and rigid diagnostic exact run/checkpoint bindings require final freeze audit."
+  ],
+  "operations": "Read reported values and convert counts to percent only; no statistical re-analysis."
+}

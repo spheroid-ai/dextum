@@ -1,0 +1,64 @@
+{
+  "status": "PREPARATION; final training payload and paper not yet assembled",
+  "freeze_utc": "2026-10-19T16:00:00Z",
+  "items": [
+    {
+      "item": "Page, plots and reported values",
+      "status": "prepared",
+      "location": "site/dist",
+      "checks": "frozen report hash bindings; browser/static QA"
+    },
+    {
+      "item": "Accepted scorecard/report copies",
+      "status": "prepared",
+      "location": "site/data/evidence",
+      "limitation": "Not a complete checkpoint archive or every raw evaluation record"
+    },
+    {
+      "item": "Sensorised v2 XML and required mesh closure",
+      "status": "workspace evidence exists; sanitized release closure pending",
+      "model_sha256": "a2e0c670506cb69267bac11e80fa24c467a782cca3bedb901290adc64444c924"
+    },
+    {
+      "item": "Sensor simulation, evaluator, detector, monitor guard",
+      "status": "workspace implementations exist; public import/dependency closure pending"
+    },
+    {
+      "item": "Rotation and held-out banks, configs and paper checkpoints",
+      "status": "individual archived evidence exists; unified release manifest pending"
+    },
+    {
+      "item": "Hold bank",
+      "status": "not releasable as accepted benchmark",
+      "reason": "40/256training entries; held-out collection did not begin"
+    },
+    {
+      "item": "50superquadrics/exporter",
+      "status": "workspace assets exist; redistribution inventory pending"
+    },
+    {
+      "item": "Paper source/PDF",
+      "status": "review-owned prose/build pending",
+      "source": "docs/dextum-results-package-20oct.md section5"
+    },
+    {
+      "item": "Exact run binding for bare-hand/rigid figure rows",
+      "status": "freeze audit open; historical source labels retained"
+    },
+    {
+      "item": "Third-party licence inventory",
+      "status": "pending; no upstream relicensing"
+    },
+    {
+      "item": "Public repository/tag/Pages",
+      "status": "private preparation first; public launch20October"
+    }
+  ],
+  "cuts": [
+    "E21",
+    "dense-skin recheck",
+    "E25",
+    "E12 hold",
+    "embodiment-anchor rehearsal"
+  ]
+}

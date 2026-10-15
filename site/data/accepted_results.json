@@ -1,0 +1,515 @@
+{
+  "title": "DEXTUM research preview v1",
+  "as_of": "2026-10-15 section25 publication edition",
+  "scope": "Reported simulation results; presentation only, no new experiments or statistical recomputation",
+  "accepted_model_v2_sha256": "a2e0c670506cb69267bac11e80fa24c467a782cca3bedb901290adc64444c924",
+  "results": [
+    {
+      "group": "scratch_rotation",
+      "arm": "Bare Aero Ideal",
+      "model": "bare Aero",
+      "protocol": "108.1M from scratch; 8192 worlds",
+      "seed": 1,
+      "success_percent": 91.5,
+      "n": 200,
+      "drops": null,
+      "paired_p": null,
+      "run_id": "pass1_audit_01 (source scorecard)",
+      "binding_status": "historical_review_value_run_binding_pending"
+    },
+    {
+      "group": "scratch_rotation",
+      "arm": "Sensorised Ideal",
+      "model": "v1",
+      "protocol": "108.1M from scratch; 8192 worlds",
+      "seed": 1,
+      "success_percent": 73,
+      "n": 200,
+      "drops": 13,
+      "paired_p": null,
+      "run_id": "section19 Ideal scratch (review \u00a719)",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "scratch_rotation",
+      "arm": "Sensorised Ideal",
+      "model": "v2",
+      "protocol": "108.1M from scratch; 8192 worlds",
+      "seed": 1,
+      "success_percent": 90.5,
+      "n": 200,
+      "drops": 3,
+      "paired_p": null,
+      "run_id": "pass1_section20/c_touch_friction_ideal",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "scratch_rotation",
+      "arm": "Sensorised Realistic",
+      "model": "v2",
+      "protocol": "108.1M from scratch; 8192 worlds",
+      "seed": 1,
+      "success_percent": 88,
+      "n": 200,
+      "drops": 4,
+      "paired_p": null,
+      "run_id": "pass1_section20/c_touch_realistic_v2",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "scratch_rotation",
+      "arm": "Sensorised rigid Ideal",
+      "model": "v2 rigid diagnostic",
+      "protocol": "108.1M from scratch; 8192 worlds",
+      "seed": 1,
+      "success_percent": 87.5,
+      "n": 200,
+      "drops": null,
+      "paired_p": null,
+      "run_id": null,
+      "binding_status": "historical_review_value_run_binding_pending"
+    },
+    {
+      "group": "touch_recheck",
+      "arm": "c_touch",
+      "model": "v2",
+      "protocol": "20.316M warm start; own registered teacher",
+      "seed": 1,
+      "success_percent": 83.5,
+      "n": 200,
+      "drops": null,
+      "paired_p": 0.00432400493446039,
+      "run_id": "pass1_v2_touch_recheck_01/seed1_c_touch",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "touch_recheck",
+      "arm": "c_notouch",
+      "model": "v2",
+      "protocol": "20.316M warm start; own registered teacher",
+      "seed": 1,
+      "success_percent": 74,
+      "n": 200,
+      "drops": null,
+      "paired_p": 0.00432400493446039,
+      "run_id": "pass1_v2_touch_recheck_01/seed1_c_notouch",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "touch_recheck",
+      "arm": "c_touch",
+      "model": "v2",
+      "protocol": "20.316M warm start; own registered teacher",
+      "seed": 2,
+      "success_percent": 83.5,
+      "n": 200,
+      "drops": null,
+      "paired_p": 1,
+      "run_id": "pass1_v2_touch_recheck_01/seed2_c_touch",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "touch_recheck",
+      "arm": "c_notouch",
+      "model": "v2",
+      "protocol": "20.316M warm start; own registered teacher",
+      "seed": 2,
+      "success_percent": 83,
+      "n": 200,
+      "drops": null,
+      "paired_p": 1,
+      "run_id": "pass1_v2_touch_recheck_01/seed2_c_notouch",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "touch_recheck",
+      "arm": "c_touch",
+      "model": "v2",
+      "protocol": "20.316M warm start; own registered teacher",
+      "seed": 3,
+      "success_percent": 83,
+      "n": 200,
+      "drops": null,
+      "paired_p": 0.01862383661500644,
+      "run_id": "pass1_v2_touch_recheck_01/seed3_c_touch",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "touch_recheck",
+      "arm": "c_notouch",
+      "model": "v2",
+      "protocol": "20.316M warm start; own registered teacher",
+      "seed": 3,
+      "success_percent": 74.5,
+      "n": 200,
+      "drops": null,
+      "paired_p": 0.01862383661500644,
+      "run_id": "pass1_v2_touch_recheck_01/seed3_c_notouch",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "channel_ablation",
+      "arm": "none",
+      "model": "v2",
+      "protocol": "20.316M continuation; common Realistic teacher",
+      "seed": 1,
+      "success_percent": 87.5,
+      "n": 200,
+      "drops": 6,
+      "paired_p": null,
+      "run_id": "workorder14_lane_d1_r04/d1_none_seed1",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "channel_ablation",
+      "arm": "normal_only",
+      "model": "v2",
+      "protocol": "20.316M continuation; common Realistic teacher",
+      "seed": 1,
+      "success_percent": 85,
+      "n": 200,
+      "drops": 8,
+      "paired_p": 0.424,
+      "run_id": "workorder14_lane_d1_r04/d1_normal_only_seed1",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "channel_ablation",
+      "arm": "palm",
+      "model": "v2",
+      "protocol": "20.316M continuation; common Realistic teacher",
+      "seed": 1,
+      "success_percent": 87.5,
+      "n": 200,
+      "drops": 7,
+      "paired_p": 1,
+      "run_id": "workorder14_lane_d1_r04/d1_palm_seed1",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "oracle_o1",
+      "arm": "privileged_ceiling",
+      "model": "v2",
+      "protocol": "108.1344M; 2048 worlds",
+      "seed": 1,
+      "success_percent": 84,
+      "n": 200,
+      "drops": 14,
+      "paired_p": null,
+      "run_id": "privileged_ceiling_seed1",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "oracle_o1",
+      "arm": "oracle_structured_full",
+      "model": "v2",
+      "protocol": "108.1344M; 2048 worlds",
+      "seed": 1,
+      "success_percent": 89,
+      "n": 200,
+      "drops": 5,
+      "paired_p": null,
+      "run_id": "oracle_structured_full_seed1",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "oracle_o1",
+      "arm": "flat_same_information_full",
+      "model": "v2",
+      "protocol": "108.1344M; 2048 worlds",
+      "seed": 1,
+      "success_percent": 83,
+      "n": 200,
+      "drops": 3,
+      "paired_p": null,
+      "run_id": "flat_same_information_full_seed1",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "oracle_o1",
+      "arm": "oracle_contact_only",
+      "model": "v2",
+      "protocol": "108.1344M; 2048 worlds",
+      "seed": 1,
+      "success_percent": 85,
+      "n": 200,
+      "drops": 2,
+      "paired_p": null,
+      "run_id": "oracle_contact_only_seed1",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "oracle_o1",
+      "arm": "patch_identity_removed_full",
+      "model": "v2",
+      "protocol": "108.1344M; 2048 worlds",
+      "seed": 1,
+      "success_percent": 87.5,
+      "n": 200,
+      "drops": 2,
+      "paired_p": null,
+      "run_id": "patch_identity_removed_full_seed1",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "oracle_o1",
+      "arm": "oracle_structured_full",
+      "model": "v2",
+      "protocol": "108.1344M; 2048 worlds",
+      "seed": 2,
+      "success_percent": 90,
+      "n": 200,
+      "drops": 7,
+      "paired_p": null,
+      "run_id": "oracle_structured_full_seed2",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "sensorless",
+      "arm": "DAgger student",
+      "model": "v2",
+      "protocol": "20.316M collected transitions; tag-camera/proprioception/task",
+      "seed": 1,
+      "success_percent": 70.5,
+      "n": 200,
+      "drops": 5,
+      "paired_p": 3.1081526685738936e-08,
+      "run_id": "workorder14_lane_d2_r03",
+      "binding_status": "frozen_report"
+    }
+  ],
+  "claims": [
+    {
+      "id": "model_v2_friction",
+      "run_ids": [
+        "pass1_section20/c_touch_friction_ideal",
+        "v1 comparison reference (exact source bound in FRICTION_COMPARISON.json)"
+      ],
+      "model": "v2 versus corrected sensorised v1",
+      "protocol": "One training seed,108134400 steps from scratch,shared200-start bank,faithful evaluator",
+      "safe_wording": "Matching pad friction to the underlying hand recovered17.5percentage points in this simulator:73.0% to90.5%,paired p=3.3119e-6.",
+      "risks": [
+        "Do not repeat the old18.5/27.5-point deficit as a geometry or softness cost on v2.",
+        "Only pad friction changed; this does not validate real pad mechanics or justify a hardware geometry change."
+      ],
+      "sources": [
+        "dextum_plan/progress/2026-10-13-section20/primary_evidence/pass1_section20/c_touch_friction_ideal/FRICTION_COMPARISON.json",
+        "dextum_plan/progress/2026-10-13-section20/primary_evidence/pass1_section20_model/V2_PROMOTION.json",
+        "dextum_plan/progress/2026-10-13-section20/SCORECARD.md"
+      ]
+    },
+    {
+      "id": "model_v2_sensor_contrast",
+      "run_ids": [
+        "pass1_section20/c_touch_friction_ideal",
+        "pass1_section20/c_touch_realistic_v2"
+      ],
+      "model": "v2",
+      "protocol": "One seed each,108134400steps from scratch,shared200bank",
+      "safe_wording": "Ideal sensing90.5% versus realistic sensing88.0%; observed2.5-point gap,paired p=.3833.",
+      "values": {
+        "ideal_successes": 181,
+        "realistic_successes": 176,
+        "n": 200,
+        "ideal_drops": 3,
+        "realistic_drops": 4
+      },
+      "risks": [
+        "This is not a demonstrated sensor penalty, a touch/no-touch comparison or a hardware acceptance threshold.",
+        "The historical9-point sensor cost was on v1 with20.3M warm starts."
+      ],
+      "sources": [
+        "dextum_plan/progress/2026-10-13-section20/REALISTIC_V2_RESULT.json"
+      ]
+    },
+    {
+      "id": "v2_touch_recheck",
+      "run_ids": [
+        "pass1_v2_touch_recheck_01/seed1_c_touch",
+        "pass1_v2_touch_recheck_01/seed1_c_notouch",
+        "pass1_v2_touch_recheck_01/seed2_c_touch",
+        "pass1_v2_touch_recheck_01/seed2_c_notouch",
+        "pass1_v2_touch_recheck_01/seed3_c_touch",
+        "pass1_v2_touch_recheck_01/seed3_c_notouch"
+      ],
+      "model": "v2",
+      "protocol": "Own registered Ideal teachers;20316160-step warm starts,shared200bank,three seeds,faithful evaluator",
+      "safe_wording": "Mean touch advantage+6.17points;95% Student-t interval across three training seeds\u22126.09 to+18.42. Two seeds significant; seed2 p=1.0.",
+      "values": {
+        "touch_percent": [
+          83.5,
+          83.5,
+          83.0
+        ],
+        "no_touch_percent": [
+          74.0,
+          83.0,
+          74.5
+        ],
+        "gain_points": [
+          9.5,
+          0.5,
+          8.5
+        ],
+        "paired_p": [
+          0.00432400493446039,
+          1.0,
+          0.01862383661500644
+        ]
+      },
+      "risks": [
+        "Do not headline+11points/all three significant as the current-model result: that accepted finding belongs to historical v1.",
+        "Do not pool600 repeated starts or call this a demonstrated three-seed benefit on v2.",
+        "Do not compare warm-start arm means to scratch88% as a matched touch gain."
+      ],
+      "sources": [
+        "dextum_plan/progress/2026-10-13-section20/V2_TOUCH_RECHECK_RESULT.json",
+        "dextum_plan/progress/2026-10-13-section20/primary_next_evidence/pass1_v2_touch_recheck_01/FINAL_REPORT.json"
+      ]
+    },
+    {
+      "id": "d1_channels",
+      "run_ids": [
+        "workorder14_lane_d1_r04/d1_none_seed1",
+        "workorder14_lane_d1_r04/d1_normal_only_seed1",
+        "workorder14_lane_d1_r04/d1_palm_seed1"
+      ],
+      "model": "v2",
+      "protocol": "One seed,E3cube rotation,20316160-step continuations from same88%Realistic scratch teacher,shared200bank",
+      "safe_wording": "Unmasked87.5%,normal-only85.0%,palm-map removed87.5%. Normal-only differs by\u22122.5points(p=.424); palm removal has0-point difference(p=1).",
+      "values": {
+        "successes": [
+          175,
+          170,
+          175
+        ],
+        "drops": [
+          6,
+          8,
+          7
+        ],
+        "n": 200
+      },
+      "risks": [
+        "These channel groups are classified unneeded only on this rotation task under the registered rule.",
+        "Do not claim tactile channels are unnecessary for hold,regrasp,insertion or all manipulation.",
+        "Normal-only retains tactile normal-force/contact information; it is not sensorless.",
+        "Kit acceptance lines remain unchanged."
+      ],
+      "sources": [
+        "dextum_plan/progress/2026-10-14-work-order/lane_D/d1_evidence/dextum_cursor_agent/runs/workorder14_lane_d1_r04/pipeline/RESULT.json",
+        "dextum_plan/progress/2026-10-14-work-order/lane_D/SCORECARD.md"
+      ]
+    },
+    {
+      "id": "oracle_o1",
+      "run_ids": [
+        "privileged_ceiling_seed1",
+        "oracle_structured_full_seed1",
+        "flat_same_information_full_seed1",
+        "oracle_contact_only_seed1",
+        "patch_identity_removed_full_seed1",
+        "oracle_structured_full_seed2"
+      ],
+      "model": "v2",
+      "protocol": "O1_ROTATION_REGISTRATION_03 plus approved work-order bindings;2048worlds;108134400steps from scratch;shared200bank",
+      "safe_wording": "Seed1: privileged ceiling84%,structured89%,flat83%,contact-only85%,patch-identity ablation87.5%. Structured\u2212flat is+6points(p=.02266),below the registered+10-point structural-benefit rule.",
+      "values": {
+        "ceiling_drops": 14,
+        "structured1_drops": 5,
+        "flat1_drops": 3,
+        "contact_only_drops": 2,
+        "patch_identity_drops": 2,
+        "structured2_success_percent": 90.0,
+        "structured2_drops": 7
+      },
+      "risks": [
+        "No completed three-seed O1 verdict: flatseed2 parked by guard; both seed3 runs stopped on throughput before training.",
+        "Structuredseed1 meets ceiling proximity; do not call O1 fully passed or representation claims proven.",
+        "Structured89% versus ceiling84% is not established superiority (paired p=.07552).",
+        "Never compare these levels to8192-world runs.",
+        "Contact-only85% on this task does not resolve the registered contact-history alias counterexample or imply universal sufficiency.",
+        "Patch-identity result includes evaluation-only recovery of one missing monitor check; no fake uninterrupted-run claim.",
+        "No accepted E22 dexterity D exists yet."
+      ],
+      "sources": [
+        "dextum_plan/progress/2026-10-14-work-order/lane_A/comparison03/evidence/RESULT.json",
+        "dextum_plan/progress/2026-10-14-work-order/lane_A/SCORECARD.md",
+        "dextum_plan/progress/2026-10-14-work-order/lane_A/LIVE_STATUS.json"
+      ]
+    },
+    {
+      "id": "d2_sensorless",
+      "run_ids": [
+        "workorder14_lane_d2_r03"
+      ],
+      "model": "v2 sensorised hand",
+      "protocol": "One vision-assisted DAgger student;20316160 collectedsteps;finalcheckpoint;shared200bank",
+      "safe_wording": "Sensorless student70.5%,five drops; teacher88.0%. This budget did not recover the touch gap. Export parity passed; real-hand transfer is unmeasured.",
+      "values": {
+        "successes": 141,
+        "drops": 5,
+        "n": 200,
+        "teacher_gap_points": -17.5,
+        "paired_teacher_p": 3.1081526685738936e-08,
+        "recovered_fraction_against_no_touch_seed_mean": -0.6153846153846161,
+        "export_actor_error": 2.8014183044433594e-06,
+        "input_width": 93,
+        "motor_outputs": 7
+      },
+      "risks": [
+        "Vision features are tag-camera features,not an RGB perception model.",
+        "No tactile inputs or G controller at deployment;this does not make it vision-free.",
+        "Bare-Aero export package is a candidate;bare-hand/real-hand success has not been measured.",
+        "No-touch comparisons have different budgets/inputs;the report labels that scope.",
+        "Keep negative recovered fraction;do not clamp it to zero or say the student preserves teacher performance."
+      ],
+      "sources": [
+        "dextum_plan/progress/2026-10-15-continuation/lane_D/D2_PACKAGE/dextum_cursor_agent/runs/workorder14_lane_d2_r03/SENSORLESS_COMPARISON.json",
+        "dextum_plan/progress/2026-10-15-continuation/lane_D/D2_PACKAGE/dextum_cursor_agent/runs/workorder14_lane_d2_r03/export/EXPORT_AUDIT.json",
+        "dextum_plan/progress/2026-10-15-continuation/lane_D/SCORECARD.md"
+      ]
+    }
+  ],
+  "source_hashes": {
+    "dextum_plan/progress/2026-10-13-section20/REALISTIC_V2_RESULT.json": "b1aa3b232812890ba8e370eb24bdb4208c5eda26b615f0c4dab9f9f4841f7568",
+    "dextum_plan/progress/2026-10-13-section20/SCORECARD.md": "b8e6cba29e38b0bf54804bec87c7f0c481507219716104b6764a25317f14a112",
+    "dextum_plan/progress/2026-10-13-section20/V2_TOUCH_RECHECK_RESULT.json": "eeb84bfc2ff6213cc7bcdcc0bcaee71dcb5be9e6719954bc00632f9361339001",
+    "dextum_plan/progress/2026-10-13-section20/primary_evidence/pass1_section20/c_touch_friction_ideal/FRICTION_COMPARISON.json": "db20be933989956311d4c200ec735c5740087f596bcd33437a294623bcda9022",
+    "dextum_plan/progress/2026-10-13-section20/primary_evidence/pass1_section20_model/V2_PROMOTION.json": "2567c800aa383ad659be3cf9261faab099b849ae3480920527c06479fa1c669a",
+    "dextum_plan/progress/2026-10-13-section20/primary_next_evidence/pass1_v2_touch_recheck_01/FINAL_REPORT.json": "8dc2535ce35093badfe1fc25945b8ec597ea9683a8dd6f1ad16920d3bab58005",
+    "dextum_plan/progress/2026-10-14-work-order/README.md": "923561b8e7c1d0f74f9a6407a54e4c1255c16771ced73acc51f00f71945f4f6f",
+    "dextum_plan/progress/2026-10-14-work-order/lane_A/LIVE_STATUS.json": "b8720b2804ce18dbb9e1c59cd6b534617f0d72d24ef1d34d91cb8ed79176b408",
+    "dextum_plan/progress/2026-10-14-work-order/lane_A/SCORECARD.md": "5922bac5d1d3723372b7c012c5ac0590a1cd648b53f1c4b687764bc3540d56f5",
+    "dextum_plan/progress/2026-10-14-work-order/lane_A/comparison03/evidence/RESULT.json": "4cea37e498304a2d97ba425ad92e7f0ad8b2ff0cb6c23c7b205b82cacd44d82c",
+    "dextum_plan/progress/2026-10-14-work-order/lane_B/SCORECARD.md": "ba2411760a2fb31b66dfe6fed9ba69e27bb3d26e7df9bb7b975e466d930aabba",
+    "dextum_plan/progress/2026-10-14-work-order/lane_B/section23/analysis02/DIAGNOSIS.md": "52a59c0ab16add349246b401d76384aa147114702d9e4777f4e59a36ca2c191a",
+    "dextum_plan/progress/2026-10-14-work-order/lane_B/section23/settling_proposal01/PROPOSAL.json": "6f064eb46d18ff631b0af19f4f798f1043ed248ee64974e954a3c48060097d51",
+    "dextum_plan/progress/2026-10-14-work-order/lane_C/bank_v02/SCORECARD.md": "af78292488d5c036bdffa17b13752a9e7f903ee408e79459526fec850c41413f",
+    "dextum_plan/progress/2026-10-14-work-order/lane_D/SCORECARD.md": "0ba35f8e69938dd7abd9e1d3fd60fc8aa674579db0470d66a465097b968dce0f",
+    "dextum_plan/progress/2026-10-14-work-order/lane_D/d1_evidence/dextum_cursor_agent/runs/workorder14_lane_d1_r04/pipeline/RESULT.json": "589c28fbbcbd150495fda146e790382399b7f97db436da7f2bb85e796ee9ece0",
+    "dextum_plan/progress/2026-10-14-work-order/lane_E/SCORECARD.md": "a2f9802d5e48f6cb7b5b13de6e36c90e615136c20fe8e2e493c3ac4eea84dec7",
+    "dextum_plan/progress/2026-10-14-work-order/lane_E/lattices/lifecycle/SCORECARD.md": "d19e01f65b430ad84de72347f3aa5f63de303ac2fe2418dd7a9d05f7d6043837",
+    "dextum_plan/progress/2026-10-14-work-order/section23/USER_RULING_EXCERPT.md": "bcd3df17422f75d00d8f1b215f187c07f7c4aa1b1ade11d224961a1da75d643d",
+    "dextum_plan/progress/2026-10-15-continuation/lane_D/D2_PACKAGE/dextum_cursor_agent/runs/workorder14_lane_d2_r03/SENSORLESS_COMPARISON.json": "47a3f0c70fc0a5e1338cf94ec3fbe4853b4b849f81586e5206d81a0ab2b86e2f",
+    "dextum_plan/progress/2026-10-15-continuation/lane_D/D2_PACKAGE/dextum_cursor_agent/runs/workorder14_lane_d2_r03/export/EXPORT_AUDIT.json": "10b88aa967655e5d9e68a7da8a0e70c15c63d6bff4903ee7aec6ad1ef399f895",
+    "dextum_plan/progress/2026-10-15-continuation/lane_D/SCORECARD.md": "92336f4f049889ebf7ed7c498ea3dfef4469ac9d1ea68d277463740cac1056a0",
+    "dextum_plan/progress/2026-10-15-continue/lane_C/STATUS.json": "31d09bdbf85bfef741c9ec076b2b5b9cbdae1a8646a7c04f5c42ff81623ad30e"
+  },
+  "additional_provenance": {
+    "rigid_diagnostic": "User-provided accepted review \u00a722: 87.5%, p=.29 against Ideal v2; exact run ID not resolved in this page snapshot",
+    "bare_hand": "dextum_plan/progress/2026-10-10-pass1/SCORECARD.md; historical bare-hand protocol",
+    "design_reference": "https://uni-vta.github.io/; layout reference only"
+  },
+  "limitations": [
+    "All reported task performance here is simulation;do not imply assembled/calibrated kit or real-hand tactile deployment.",
+    "Display hand model,sensor level,training protocol,seed count and task beside every metric.",
+    "Percentage-point differences are not relative-percent improvements.",
+    "Aspirational architecture and proposed experiments must be visibly separated from measured results.",
+    "Plots show reported point estimates. Missing drop counts are not represented as zero. No new uncertainty intervals were computed.",
+    "Oracle and 8192-world rotation protocols must not be pooled. Warm-start and scratch comparisons are separate.",
+    "The full training release, third-party licensing and checkpoint distribution are not included in this preview."
+  ],
+  "publication_freeze_utc": "2026-10-19T16:00:00Z",
+  "status_snapshot": "See package-status.json; accepted point estimates do not include active or stopped endpoints."
+}

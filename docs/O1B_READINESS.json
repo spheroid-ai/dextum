@@ -1,0 +1,41 @@
+{
+  "state": "CONTRACT_RESOLVED_BUILD_IN_PROGRESS_GPU_VALIDATION_PENDING",
+  "authority": "User18October O1b first after freeze",
+  "available": [
+    "Oracle full/flat encoder",
+    "v2 model and action interface",
+    "GPU qualifications",
+    "repaired resumable trainer",
+    "paired monitor and report pipeline",
+    "palm-frame quaternion goal and six-value encoding kernel",
+    "causal per-goal hold/timeout/chain state",
+    "fixed evaluation goal-list builder using the exact inherited O1 reset-key expression",
+    "SGS sampling kernel with independent uniform goals",
+    "five post-freeze GPU logic fixtures (not executed)"
+  ],
+  "missing": [
+    "goal-conditioned simulator environment and reward integration",
+    "paired chain evaluator and fixed bank materialization",
+    "resumable training SGS wrapper integration",
+    "palm-frame binding checked against the model geometry",
+    "registered post-freeze GPU qualifications"
+  ],
+  "action": "Build using all three explicit user clarifications; no launch before 19 October 16:00 UTC",
+  "gpu_execution": false,
+  "known_task": "Goal-conditioned reorientation: train single goals, test held-out goals and chains never trained as wholes",
+  "source": "dextum-page-20oct-text.md",
+  "source_sha256": {
+    "dextum_cursor_agent/oracle_dextum/sequences/goals.py": "202d2c5665d0f67d59974561936c6ef0272fbac939333b844e159af20a034af8",
+    "dextum_cursor_agent/oracle_dextum/sequences/qualify_logic.py": "d536fcbbb2b85e9dff244d1f37df88e0b82211594d18f148d15c6b0054e687d2",
+    "dextum_cursor_agent/oracle_dextum/sequences/__init__.py": "5f2fb485584ec76b161732bf91fd408293e562b4abc85f94b4a4f6a3ba4ec6ca",
+    "dextum_cursor_agent/oracle_dextum/sequences/banks.py": "78f640d97d2a373a6079a8d641e5586478f271ff97d17062634032438e21845e",
+    "dextum_cursor_agent/oracle_dextum/sequences/sampling.py": "387256f87dbaeee4867a98a65c47ffa96949c144504d27ef9eb38c71c2b31171",
+    "dextum_cursor_agent/oracle_dextum/sequences/contract.py": "0ec831951c555d813a48125637b3e87edfdf6e4adce29531f94a7c5412ff65b6"
+  },
+  "registration": "dextum_plan/progress/2026-10-18-freeze-queue/after_freeze/O1B_BUILD_REGISTRATION.json",
+  "implementation_checks": {
+    "local_ast": "PASS",
+    "gpu_logic_tests": "NOT_RUN_BEFORE_FREEZE",
+    "gpu_training": "NOT_STARTED"
+  }
+}

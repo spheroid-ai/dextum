@@ -1,22 +1,30 @@
-group,arm,model,protocol,seed,success_percent,n,drops,paired_p,run_id,binding_status
-scratch_rotation,Bare Aero Ideal,bare Aero,108.1M from scratch; 8192 worlds,1,91.5,200,,,pass1_audit_01 (source scorecard),historical_review_value_run_binding_pending
-scratch_rotation,Sensorised Ideal,v1,108.1M from scratch; 8192 worlds,1,73.0,200,13,,section19 Ideal scratch (review §19),frozen_report
-scratch_rotation,Sensorised Ideal,v2,108.1M from scratch; 8192 worlds,1,90.5,200,3,,pass1_section20/c_touch_friction_ideal,frozen_report
-scratch_rotation,Sensorised Realistic,v2,108.1M from scratch; 8192 worlds,1,88.0,200,4,,pass1_section20/c_touch_realistic_v2,frozen_report
-scratch_rotation,Sensorised rigid Ideal,v2 rigid diagnostic,108.1M from scratch; 8192 worlds,1,87.5,200,,,,historical_review_value_run_binding_pending
-touch_recheck,c_touch,v2,20.316M warm start; own registered teacher,1,83.5,200,,0.00432400493446039,pass1_v2_touch_recheck_01/seed1_c_touch,frozen_report
-touch_recheck,c_notouch,v2,20.316M warm start; own registered teacher,1,74.0,200,,0.00432400493446039,pass1_v2_touch_recheck_01/seed1_c_notouch,frozen_report
-touch_recheck,c_touch,v2,20.316M warm start; own registered teacher,2,83.5,200,,1.0,pass1_v2_touch_recheck_01/seed2_c_touch,frozen_report
-touch_recheck,c_notouch,v2,20.316M warm start; own registered teacher,2,83.0,200,,1.0,pass1_v2_touch_recheck_01/seed2_c_notouch,frozen_report
-touch_recheck,c_touch,v2,20.316M warm start; own registered teacher,3,83.0,200,,0.01862383661500644,pass1_v2_touch_recheck_01/seed3_c_touch,frozen_report
-touch_recheck,c_notouch,v2,20.316M warm start; own registered teacher,3,74.5,200,,0.01862383661500644,pass1_v2_touch_recheck_01/seed3_c_notouch,frozen_report
-channel_ablation,none,v2,20.316M continuation; common Realistic teacher,1,87.5,200,6,,workorder14_lane_d1_r04/d1_none_seed1,frozen_report
-channel_ablation,normal_only,v2,20.316M continuation; common Realistic teacher,1,85.0,200,8,0.42435622215270996,workorder14_lane_d1_r04/d1_normal_only_seed1,frozen_report
-channel_ablation,palm,v2,20.316M continuation; common Realistic teacher,1,87.5,200,7,1.0,workorder14_lane_d1_r04/d1_palm_seed1,frozen_report
-oracle_o1,privileged_ceiling,v2,108.1344M; 2048 worlds,1,84.0,200,14,,privileged_ceiling_seed1,frozen_report
-oracle_o1,oracle_structured_full,v2,108.1344M; 2048 worlds,1,89.0,200,5,,oracle_structured_full_seed1,frozen_report
-oracle_o1,flat_same_information_full,v2,108.1344M; 2048 worlds,1,83.0,200,3,,flat_same_information_full_seed1,frozen_report
-oracle_o1,oracle_contact_only,v2,108.1344M; 2048 worlds,1,85.0,200,2,,oracle_contact_only_seed1,frozen_report
-oracle_o1,patch_identity_removed_full,v2,108.1344M; 2048 worlds,1,87.5,200,2,,patch_identity_removed_full_seed1,frozen_report
-oracle_o1,oracle_structured_full,v2,108.1344M; 2048 worlds,2,90.0,200,7,,oracle_structured_full_seed2,frozen_report
-sensorless,DAgger student,v2,20.316M collected transitions; tag-camera/proprioception/task,1,70.5,200,5,3.1081526685738936e-08,workorder14_lane_d2_r03,frozen_report
+group,arm,model,protocol,seed,success_percent,n,drops,paired_p,run_id,binding_status,checkpoint_sha256,model_sha256,monitor_recovery
+scratch_rotation,Bare Aero Ideal,bare Aero,108.1M from scratch; 8192 worlds,1,91.5,200,5.0,,pass0_section7_01/section7_execute_01/e3/c_touch; evaluated in pass1_audit_01,frozen_report,13f96c2a6fb44adddd5a1bcca8534ecf454cf68abf40f3c24a812dbc16ddb619,,
+scratch_rotation,Sensorised Ideal,v1,108.1M from scratch; 8192 worlds,1,73.0,200,13,,section19 Ideal scratch (review §19),frozen_report,,,
+scratch_rotation,Sensorised Ideal,v2,108.1M from scratch; 8192 worlds,1,90.5,200,3,,pass1_section20/c_touch_friction_ideal,frozen_report,,,
+scratch_rotation,Sensorised Realistic,v2,108.1M from scratch; 8192 worlds,1,88.0,200,4,,pass1_section20/c_touch_realistic_v2,frozen_report,,,
+scratch_rotation,Sensorised rigid Ideal,v2 rigid diagnostic,108.1M from scratch; 8192 worlds,1,87.5,200,4,,pass1_section20/c_touch_bare_contact_ideal,frozen_report,a332628a62b6426c67ca97122b8d8044c293f4c57d711a9def6ffa8d3210b907,e6d1187896fc0c9aa2872a80659d09ef016ce16966c8ba1d96e2dd90e7e471f6,
+touch_recheck,c_touch,v2,20.316M warm start; own registered teacher,1,83.5,200,,0.00432400493446039,pass1_v2_touch_recheck_01/seed1_c_touch,frozen_report,,,
+touch_recheck,c_notouch,v2,20.316M warm start; own registered teacher,1,74.0,200,,0.00432400493446039,pass1_v2_touch_recheck_01/seed1_c_notouch,frozen_report,,,
+touch_recheck,c_touch,v2,20.316M warm start; own registered teacher,2,83.5,200,,1.0,pass1_v2_touch_recheck_01/seed2_c_touch,frozen_report,,,
+touch_recheck,c_notouch,v2,20.316M warm start; own registered teacher,2,83.0,200,,1.0,pass1_v2_touch_recheck_01/seed2_c_notouch,frozen_report,,,
+touch_recheck,c_touch,v2,20.316M warm start; own registered teacher,3,83.0,200,,0.01862383661500644,pass1_v2_touch_recheck_01/seed3_c_touch,frozen_report,,,
+touch_recheck,c_notouch,v2,20.316M warm start; own registered teacher,3,74.5,200,,0.01862383661500644,pass1_v2_touch_recheck_01/seed3_c_notouch,frozen_report,,,
+channel_ablation,none,v2,20.316M continuation; common Realistic teacher,1,87.5,200,6,,workorder14_lane_d1_r04/d1_none_seed1,frozen_report,,,
+channel_ablation,normal_only,v2,20.316M continuation; common Realistic teacher,1,85.0,200,8,0.42435622215270996,workorder14_lane_d1_r04/d1_normal_only_seed1,frozen_report,,,
+channel_ablation,palm,v2,20.316M continuation; common Realistic teacher,1,87.5,200,7,1.0,workorder14_lane_d1_r04/d1_palm_seed1,frozen_report,,,
+oracle_o1,privileged_ceiling,v2,108.1344M; 2048 worlds,1,84.0,200,14,,privileged_ceiling_seed1,frozen_report,,,
+oracle_o1,oracle_structured_full,v2,108.1344M; 2048 worlds,1,89.0,200,5,,oracle_structured_full_seed1,frozen_report,,,
+oracle_o1,flat_same_information_full,v2,108.1344M; 2048 worlds,1,83.0,200,3,,flat_same_information_full_seed1,frozen_report,,,
+oracle_o1,oracle_contact_only,v2,108.1344M; 2048 worlds,1,85.0,200,2,,oracle_contact_only_seed1,frozen_report,,,
+oracle_o1,patch_identity_removed_full,v2,108.1344M; 2048 worlds,1,87.5,200,2,,patch_identity_removed_full_seed1,frozen_report,,,
+oracle_o1,oracle_structured_full,v2,108.1344M; 2048 worlds,2,90.0,200,7,,oracle_structured_full_seed2,frozen_report,,,
+sensorless,DAgger student,v2,20.316M collected transitions; tag-camera/proprioception/task,1,70.5,200,5,3.1081526685738936e-08,workorder14_lane_d2_r03,frozen_report,,,
+oracle_o1,oracle_structured_full,v2,108.1344M; 2048 worlds,3,88.5,200,5,,oracle_o1_section25_01/oracle_structured_full_seed3,frozen_report,,,
+bare_controls,C-no-touch,bare Aero,108.1M from scratch; 8192 worlds; historical comparison,1,74.5,200,7.000000000000001,,pass1_audit_01/controls_01/e3/c_notouch,frozen_report,63c858add49c11fff4c422b56c6ea219453e8b3ec846f0ef3e55ddcf8de2da86,,
+bare_controls,Plain PPO,bare Aero,108.1M from scratch; 8192 worlds; historical comparison,1,80.5,200,1.0,,pass1_audit_01/controls_01/e3/a_task,frozen_report,6120ce66cd2c10de10ae4734ec65156049b66418bcd2773f2005ec8545496902,,
+bare_heldout,c_touch,bare Aero,T1 physical-variation subset; macro across ten conditions; one training seed,1,77.85,200 per condition; shared starts,,,pass1_audit_01/t1_cube_physical_subset/c_touch,frozen_report,13f96c2a6fb44adddd5a1bcca8534ecf454cf68abf40f3c24a812dbc16ddb619,,
+bare_heldout,a_task,bare Aero,T1 physical-variation subset; macro across ten conditions; one training seed,1,64.39999999999999,200 per condition; shared starts,,,pass1_audit_01/t1_cube_physical_subset/a_task,frozen_report,6120ce66cd2c10de10ae4734ec65156049b66418bcd2773f2005ec8545496902,,
+bare_heldout,c_notouch,bare Aero,T1 physical-variation subset; macro across ten conditions; one training seed,1,61.150000000000006,200 per condition; shared starts,,,pass1_audit_01/t1_cube_physical_subset/c_notouch,frozen_report,63c858add49c11fff4c422b56c6ea219453e8b3ec846f0ef3e55ddcf8de2da86,,
+oracle_o1,flat_same_information_full,v2,108.1344M; 2048 worlds,2,85.5,200,8,,oracle_o1_section25_01/flat_same_information_full_seed2_rerun01,recovered_original_guard_pass,,,Evaluation only; first recovered repetition; no optimizer updates
+sensorless,Inferred touch,v2,20.316M encoder collection; frozen tactile teacher with inferred touch,1,41.5,200,20,1.8172343385355978e-23,workorder14_lane_d3_r03,recovered_original_guard_pass,,,Evaluation only; first recovered repetition; no optimizer updates

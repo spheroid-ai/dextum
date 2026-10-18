@@ -38,12 +38,14 @@
     },
     {
       "item": "Paper source/PDF",
-      "status": "review-owned prose/build pending",
+      "status": "Reviewer reports draft written; named file not found in workspace, Documents or Downloads; path requested",
       "source": "docs/dextum-results-package-20oct.md section5"
     },
     {
       "item": "Exact run binding for bare-hand/rigid figure rows",
-      "status": "freeze audit open; historical source labels retained"
+      "status": "resolved",
+      "evidence": "site/data/evidence/bare_final.json; rigid_final.json; rigid_report.json; rigid_archive.json",
+      "checkpoint_hashes": "Recorded in accepted_results.json; original archives preserved"
     },
     {
       "item": "Third-party licence inventory",
@@ -65,5 +67,8 @@
     "url": "https://github.com/spheroid-ai/dextum",
     "visibility": "PRIVATE",
     "initial_commit": "ffd78b6"
-  }
+  },
+  "as_of": "2026-10-18",
+  "number_audit": "All29 plotted/table rows bound to immutable reports; recovered flat2/D3 included; pre-freeze index",
+  "page_copy": "18 October reviewer copy preserved in docs; PAGE_COPY_AUDIT_20261018.json records evidence corrections"
 }

@@ -1,0 +1,417 @@
+{
+  "state": "MEASURED",
+  "scope": "T1 original E3 cube physical-variation subset",
+  "n_per_condition": 200,
+  "reset_seed": 2026,
+  "reset_split": "second wrapper split",
+  "dr_seed": 7,
+  "training_seeds": 1,
+  "results": {
+    "c_touch": {
+      "steps": 108134400,
+      "checkpoint_sha256": "13f96c2a6fb44adddd5a1bcca8534ecf454cf68abf40f3c24a812dbc16ddb619",
+      "conditions": {
+        "train": {
+          "n": 200,
+          "success": 179,
+          "drops": 7,
+          "elapsed_s": 51.39319849386811
+        },
+        "friction 0.35": {
+          "n": 200,
+          "success": 169,
+          "drops": 5,
+          "elapsed_s": 3.5575363263487816
+        },
+        "friction 1.2": {
+          "n": 200,
+          "success": 50,
+          "drops": 6,
+          "elapsed_s": 3.033356875181198
+        },
+        "gain x0.6": {
+          "n": 200,
+          "success": 173,
+          "drops": 11,
+          "elapsed_s": 3.118942990899086
+        },
+        "gain x1.4": {
+          "n": 200,
+          "success": 179,
+          "drops": 13,
+          "elapsed_s": 2.9335357323288918
+        },
+        "mass 50 g": {
+          "n": 200,
+          "success": 171,
+          "drops": 11,
+          "elapsed_s": 3.3426524959504604
+        },
+        "mass 100 g": {
+          "n": 200,
+          "success": 174,
+          "drops": 7,
+          "elapsed_s": 3.0561476945877075
+        },
+        "offset x+20 mm": {
+          "n": 200,
+          "success": 160,
+          "drops": 9,
+          "elapsed_s": 3.0020010843873024
+        },
+        "offset x-20 mm": {
+          "n": 200,
+          "success": 172,
+          "drops": 7,
+          "elapsed_s": 3.023796696215868
+        },
+        "offset y+20 mm": {
+          "n": 200,
+          "success": 150,
+          "drops": 24,
+          "elapsed_s": 2.916886232793331
+        },
+        "offset y-20 mm": {
+          "n": 200,
+          "success": 159,
+          "drops": 10,
+          "elapsed_s": 3.01664125174284
+        }
+      }
+    },
+    "c_notouch": {
+      "steps": 108134400,
+      "checkpoint_sha256": "63c858add49c11fff4c422b56c6ea219453e8b3ec846f0ef3e55ddcf8de2da86",
+      "conditions": {
+        "train": {
+          "n": 200,
+          "success": 141,
+          "drops": 7,
+          "elapsed_s": 51.6828891299665
+        },
+        "friction 0.35": {
+          "n": 200,
+          "success": 130,
+          "drops": 11,
+          "elapsed_s": 3.50528309866786
+        },
+        "friction 1.2": {
+          "n": 200,
+          "success": 48,
+          "drops": 7,
+          "elapsed_s": 2.978527296334505
+        },
+        "gain x0.6": {
+          "n": 200,
+          "success": 107,
+          "drops": 51,
+          "elapsed_s": 3.117905128747225
+        },
+        "gain x1.4": {
+          "n": 200,
+          "success": 130,
+          "drops": 12,
+          "elapsed_s": 2.9878244809806347
+        },
+        "mass 50 g": {
+          "n": 200,
+          "success": 148,
+          "drops": 11,
+          "elapsed_s": 3.418357703834772
+        },
+        "mass 100 g": {
+          "n": 200,
+          "success": 156,
+          "drops": 7,
+          "elapsed_s": 2.9590833969414234
+        },
+        "offset x+20 mm": {
+          "n": 200,
+          "success": 130,
+          "drops": 4,
+          "elapsed_s": 2.990457199513912
+        },
+        "offset x-20 mm": {
+          "n": 200,
+          "success": 144,
+          "drops": 14,
+          "elapsed_s": 2.9879584796726704
+        },
+        "offset y+20 mm": {
+          "n": 200,
+          "success": 112,
+          "drops": 31,
+          "elapsed_s": 2.9731089025735855
+        },
+        "offset y-20 mm": {
+          "n": 200,
+          "success": 118,
+          "drops": 15,
+          "elapsed_s": 3.01689488068223
+        }
+      }
+    },
+    "a_task": {
+      "steps": 108134400,
+      "checkpoint_sha256": "6120ce66cd2c10de10ae4734ec65156049b66418bcd2773f2005ec8545496902",
+      "conditions": {
+        "train": {
+          "n": 200,
+          "success": 158,
+          "drops": 2,
+          "elapsed_s": 50.61095108091831
+        },
+        "friction 0.35": {
+          "n": 200,
+          "success": 131,
+          "drops": 2,
+          "elapsed_s": 3.3755390979349613
+        },
+        "friction 1.2": {
+          "n": 200,
+          "success": 41,
+          "drops": 7,
+          "elapsed_s": 2.871746465563774
+        },
+        "gain x0.6": {
+          "n": 200,
+          "success": 116,
+          "drops": 6,
+          "elapsed_s": 2.985223665833473
+        },
+        "gain x1.4": {
+          "n": 200,
+          "success": 145,
+          "drops": 6,
+          "elapsed_s": 2.895293116569519
+        },
+        "mass 50 g": {
+          "n": 200,
+          "success": 154,
+          "drops": 3,
+          "elapsed_s": 3.173711996525526
+        },
+        "mass 100 g": {
+          "n": 200,
+          "success": 159,
+          "drops": 0,
+          "elapsed_s": 2.859192457050085
+        },
+        "offset x+20 mm": {
+          "n": 200,
+          "success": 132,
+          "drops": 0,
+          "elapsed_s": 2.857545629143715
+        },
+        "offset x-20 mm": {
+          "n": 200,
+          "success": 146,
+          "drops": 5,
+          "elapsed_s": 2.9494178369641304
+        },
+        "offset y+20 mm": {
+          "n": 200,
+          "success": 137,
+          "drops": 17,
+          "elapsed_s": 2.858569663017988
+        },
+        "offset y-20 mm": {
+          "n": 200,
+          "success": 127,
+          "drops": 2,
+          "elapsed_s": 2.9451650381088257
+        }
+      }
+    }
+  },
+  "paired_comparisons": [
+    {
+      "control": "c_notouch",
+      "condition": "train",
+      "difference_points": 19.000000000000007,
+      "touch_only": 44,
+      "control_only": 6,
+      "exact_mcnemar_p": 3.243740565039843e-08
+    },
+    {
+      "control": "c_notouch",
+      "condition": "friction 0.35",
+      "difference_points": 19.499999999999996,
+      "touch_only": 51,
+      "control_only": 12,
+      "exact_mcnemar_p": 7.459722282164658e-07
+    },
+    {
+      "control": "c_notouch",
+      "condition": "friction 1.2",
+      "difference_points": 1.0000000000000009,
+      "touch_only": 26,
+      "control_only": 24,
+      "exact_mcnemar_p": 0.887724827340783
+    },
+    {
+      "control": "c_notouch",
+      "condition": "gain x0.6",
+      "difference_points": 32.99999999999999,
+      "touch_only": 71,
+      "control_only": 5,
+      "exact_mcnemar_p": 5.249233110119942e-16
+    },
+    {
+      "control": "c_notouch",
+      "condition": "gain x1.4",
+      "difference_points": 24.5,
+      "touch_only": 54,
+      "control_only": 5,
+      "exact_mcnemar_p": 1.9067358802971057e-11
+    },
+    {
+      "control": "c_notouch",
+      "condition": "mass 50 g",
+      "difference_points": 11.5,
+      "touch_only": 41,
+      "control_only": 18,
+      "exact_mcnemar_p": 0.0037937056353716074
+    },
+    {
+      "control": "c_notouch",
+      "condition": "mass 100 g",
+      "difference_points": 8.999999999999996,
+      "touch_only": 30,
+      "control_only": 12,
+      "exact_mcnemar_p": 0.007915897334896727
+    },
+    {
+      "control": "c_notouch",
+      "condition": "offset x+20 mm",
+      "difference_points": 15.000000000000002,
+      "touch_only": 37,
+      "control_only": 7,
+      "exact_mcnemar_p": 5.299581744111492e-06
+    },
+    {
+      "control": "c_notouch",
+      "condition": "offset x-20 mm",
+      "difference_points": 14.000000000000002,
+      "touch_only": 37,
+      "control_only": 9,
+      "exact_mcnemar_p": 4.0560361327379724e-05
+    },
+    {
+      "control": "c_notouch",
+      "condition": "offset y+20 mm",
+      "difference_points": 18.999999999999993,
+      "touch_only": 47,
+      "control_only": 9,
+      "exact_mcnemar_p": 2.571572048082338e-07
+    },
+    {
+      "control": "c_notouch",
+      "condition": "offset y-20 mm",
+      "difference_points": 20.500000000000007,
+      "touch_only": 53,
+      "control_only": 12,
+      "exact_mcnemar_p": 2.786234342464335e-07
+    },
+    {
+      "control": "a_task",
+      "condition": "train",
+      "difference_points": 10.499999999999998,
+      "touch_only": 30,
+      "control_only": 9,
+      "exact_mcnemar_p": 0.0010650196345523
+    },
+    {
+      "control": "a_task",
+      "condition": "friction 0.35",
+      "difference_points": 18.999999999999993,
+      "touch_only": 47,
+      "control_only": 9,
+      "exact_mcnemar_p": 2.571572048082338e-07
+    },
+    {
+      "control": "a_task",
+      "condition": "friction 1.2",
+      "difference_points": 4.500000000000001,
+      "touch_only": 30,
+      "control_only": 21,
+      "exact_mcnemar_p": 0.2624375357110438
+    },
+    {
+      "control": "a_task",
+      "condition": "gain x0.6",
+      "difference_points": 28.500000000000004,
+      "touch_only": 66,
+      "control_only": 9,
+      "exact_mcnemar_p": 7.658840702050266e-12
+    },
+    {
+      "control": "a_task",
+      "condition": "gain x1.4",
+      "difference_points": 17.000000000000004,
+      "touch_only": 43,
+      "control_only": 9,
+      "exact_mcnemar_p": 2.0377698612961126e-06
+    },
+    {
+      "control": "a_task",
+      "condition": "mass 50 g",
+      "difference_points": 8.499999999999996,
+      "touch_only": 36,
+      "control_only": 19,
+      "exact_mcnemar_p": 0.030028945411892494
+    },
+    {
+      "control": "a_task",
+      "condition": "mass 100 g",
+      "difference_points": 7.499999999999996,
+      "touch_only": 29,
+      "control_only": 14,
+      "exact_mcnemar_p": 0.03153949735315109
+    },
+    {
+      "control": "a_task",
+      "condition": "offset x+20 mm",
+      "difference_points": 14.000000000000002,
+      "touch_only": 40,
+      "control_only": 12,
+      "exact_mcnemar_p": 0.0001275387838557407
+    },
+    {
+      "control": "a_task",
+      "condition": "offset x-20 mm",
+      "difference_points": 13.0,
+      "touch_only": 39,
+      "control_only": 13,
+      "exact_mcnemar_p": 0.00040954145378258033
+    },
+    {
+      "control": "a_task",
+      "condition": "offset y+20 mm",
+      "difference_points": 6.499999999999995,
+      "touch_only": 31,
+      "control_only": 18,
+      "exact_mcnemar_p": 0.08543313315739454
+    },
+    {
+      "control": "a_task",
+      "condition": "offset y-20 mm",
+      "difference_points": 16.000000000000004,
+      "touch_only": 49,
+      "control_only": 17,
+      "exact_mcnemar_p": 0.0001014771231679886
+    }
+  ],
+  "held_out_macro_success": {
+    "c_touch": 0.7785,
+    "c_notouch": 0.6115,
+    "a_task": 0.6439999999999999
+  },
+  "touch_minus_notouch_points": 16.699999999999992,
+  "observed_ten_point_target": true,
+  "limits": [
+    "Same starts reused across conditions: pooled trials are not independent observations",
+    "Raw per-condition paired-start p values are descriptive, not seed-level replication",
+    "No new F1/F2 geometry, camera-dropout, Realistic Kit B or hardware claim"
+  ]
+}

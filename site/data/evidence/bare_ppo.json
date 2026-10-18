@@ -1,0 +1,54 @@
+{
+  "steps": 108134400,
+  "n": 200,
+  "reset_seed": 2026,
+  "dr_seed": 7,
+  "state": "MEASURED",
+  "criterion_version": "pass1_section8",
+  "arm": "a_task",
+  "warmup_within_5mm": 14,
+  "warmup_source": "/root/dextum/dextum_cursor_agent/runs/pass1_audit_01/TRAINING_QUALIFICATION_BARRIER.json",
+  "warmup_sha256": "3c8b59bbb13354aeccb605136969974c23786a6b278664f6d3596e850b22bed4",
+  "wrapper_sha256": "7486d310fb86af2b0c7d9a74ac7cebb341e7845fc0618d26456686bbdbf8add0",
+  "xla_flags": "",
+  "checkpoint": "/root/dextum/dextum_cursor_agent/runs/pass1_audit_01/controls_01/e3/a_task/policy_108134400.pkl",
+  "checkpoint_sha256": "6120ce66cd2c10de10ae4734ec65156049b66418bcd2773f2005ec8545496902",
+  "matmul_precision": "highest",
+  "finite": true,
+  "engines": {
+    "training": "JAX/MJX through Pass 1 carried-model barrier wrapper",
+    "post_training": "JAX/MJX explicit randomized model direct rollout"
+  },
+  "success_counts": {
+    "training": 161,
+    "post_training": 161
+  },
+  "outcome_agreement": 0.8,
+  "paired_counts": {
+    "both_success": 141,
+    "training_only": 20,
+    "direct_only": 20,
+    "both_fail": 19
+  },
+  "exact_mcnemar_p": 1.0,
+  "evaluator_agreement": true,
+  "criteria": {
+    "maximum_success_gap": 0.05,
+    "minimum_mcnemar_p_exclusive": 0.05,
+    "outcome_agreement": "diagnostic only; withdrawn by section 7"
+  },
+  "rollout_qpos_limit_is_diagnostic_only": true,
+  "initial_reset_split": "Shared wrapper second split for both paths",
+  "results": {
+    "training": {
+      "success": 0.805,
+      "drops": 0.0
+    },
+    "post_training": {
+      "success": 0.805,
+      "drops": 0.005
+    }
+  },
+  "success_disagreements": 40,
+  "absolute_success_gap": 0.0
+}

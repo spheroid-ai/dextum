@@ -1,0 +1,5 @@
+qa/
+__pycache__/
+.DS_Store
+.openai/
+*.tar.gz

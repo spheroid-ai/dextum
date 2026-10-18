@@ -28,7 +28,10 @@ plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 11, 'text.color'
                      'axes.spines.left': False, 'axes.spines.bottom': False})
 
 def save(fig, name):
-    fig.savefig(ASSETS / (name + '.svg'), metadata={'Date': '2026-10-15'})
+    fig.savefig(ASSETS / (name + '.svg'), metadata={'Date': '2026-10-18'})
+    svg = ASSETS / (name + '.svg')
+    content = svg.read_text().replace("font-family: 'DejaVu Sans'", "font-family: 'DejaVu Sans', Arial, sans-serif")
+    svg.write_text('\n'.join(line.rstrip() for line in content.splitlines()) + '\n')
     fig.savefig(ASSETS / (name + '.pdf'), metadata={'CreationDate': None, 'ModDate': None})
     fig.savefig(ASSETS / (name + '.png'), dpi=160)
     plt.close(fig)
@@ -71,17 +74,19 @@ save(fig,'touch-seeds')
 horizontal('channel-ablation',['Unmasked continuation','Normal-only','Palm map removed'],values('channel_ablation'),
            [TEAL,'#69969c',GREY],['Equal-budget baseline','−2.5 points · paired p = .424','0 points · paired p = 1.0'],
            title='Channel ablations · v2 · one seed')
-horizontal('oracle-o1',['Privileged ceiling','Structured full','Information-equivalent flat','Contact-only ablation','Patch-identity ablation'],
-           [r['success_percent'] for r in rows if r['group']=='oracle_o1' and r['seed']==1],[GREY,TEAL,'#8aa6ae','#bb997f','#b7aca0'],
-           ['14 drops / 200','5 drops / 200','3 drops / 200','2 drops / 200','2 drops / 200'],
-           size=(11.8,5.5),title='Oracle O1 · seed 1 · separate 2,048-world protocol')
-horizontal('student',['Tactile teacher','Sensorless student','No-touch reference · seed 1','No-touch reference · seed 2','No-touch reference · seed 3'],
-           [result('scratch_rotation','Sensorised Realistic')['success_percent'],result('sensorless','DAgger student')['success_percent'],*none],[TEAL,RUST,GREY,GREY,GREY],
+oracle_rows=[result('oracle_o1','privileged_ceiling'),*[result('oracle_o1','oracle_structured_full',seed) for seed in (1,2,3)],*[result('oracle_o1','flat_same_information_full',seed) for seed in (1,2)],result('oracle_o1','oracle_contact_only'),result('oracle_o1','patch_identity_removed_full')]
+horizontal('oracle-o1',['Ceiling · seed 1','Structured · seed 1','Structured · seed 2','Structured · seed 3','Flat · seed 1','Flat · seed 2','Contact-only · seed 1','Patch-identity removed · seed 1'],
+           [r['success_percent'] for r in oracle_rows],[GREY,TEAL,TEAL,TEAL,'#8aa6ae','#8aa6ae','#bb997f','#b7aca0'],
+           [f"{r['drops']} drops / 200" for r in oracle_rows],
+           size=(11.8,7.0),title='Oracle O1 · accepted runs · flat seed 3 pending')
+horizontal('student',['Tactile teacher','Sensorless student','Inferred touch','No-touch reference · seed 1','No-touch reference · seed 2','No-touch reference · seed 3'],
+           [result('scratch_rotation','Sensorised Realistic')['success_percent'],result('sensorless','DAgger student')['success_percent'],result('sensorless','Inferred touch')['success_percent'],*none],[TEAL,RUST,'#c58a68',GREY,GREY,GREY],
            title='Sensorless transfer diagnostic · distinct training protocols')
 
 (DIST/'data/results.json').write_text(json.dumps(snapshot,indent=2)+'\n')
 with (DIST/'data/results.csv').open('w',newline='') as f:
-    writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
+    fields=list(dict.fromkeys(key for row in rows for key in row))
+    writer=csv.DictWriter(f,fieldnames=fields,lineterminator='\n');writer.writeheader();writer.writerows(rows)
 with zipfile.ZipFile(ASSETS/'dextum-figures.zip','w',zipfile.ZIP_DEFLATED) as z:
     for stem in ['model-comparison','touch-seeds','channel-ablation','oracle-o1','student']:
         for suffix in ['.svg','.pdf']:z.write(ASSETS/(stem+suffix),stem+suffix)

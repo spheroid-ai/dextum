@@ -1,6 +1,6 @@
 {
   "title": "DEXTUM research preview v1",
-  "as_of": "2026-10-15 section25 publication edition",
+  "as_of": "2026-10-18 accepted results; freeze pending",
   "scope": "Reported simulation results; presentation only, no new experiments or statistical recomputation",
   "accepted_model_v2_sha256": "a2e0c670506cb69267bac11e80fa24c467a782cca3bedb901290adc64444c924",
   "results": [
@@ -12,10 +12,11 @@
       "seed": 1,
       "success_percent": 91.5,
       "n": 200,
-      "drops": null,
+      "drops": 5,
       "paired_p": null,
-      "run_id": "pass1_audit_01 (source scorecard)",
-      "binding_status": "historical_review_value_run_binding_pending"
+      "run_id": "pass0_section7_01/section7_execute_01/e3/c_touch; evaluated in pass1_audit_01",
+      "binding_status": "frozen_report",
+      "checkpoint_sha256": "13f96c2a6fb44adddd5a1bcca8534ecf454cf68abf40f3c24a812dbc16ddb619"
     },
     {
       "group": "scratch_rotation",
@@ -64,10 +65,12 @@
       "seed": 1,
       "success_percent": 87.5,
       "n": 200,
-      "drops": null,
+      "drops": 4,
       "paired_p": null,
-      "run_id": null,
-      "binding_status": "historical_review_value_run_binding_pending"
+      "run_id": "pass1_section20/c_touch_bare_contact_ideal",
+      "binding_status": "frozen_report",
+      "model_sha256": "e6d1187896fc0c9aa2872a80659d09ef016ce16966c8ba1d96e2dd90e7e471f6",
+      "checkpoint_sha256": "a332628a62b6426c67ca97122b8d8044c293f4c57d711a9def6ffa8d3210b907"
     },
     {
       "group": "touch_recheck",
@@ -276,6 +279,117 @@
       "paired_p": 3.1081526685738936e-08,
       "run_id": "workorder14_lane_d2_r03",
       "binding_status": "frozen_report"
+    },
+    {
+      "group": "oracle_o1",
+      "arm": "oracle_structured_full",
+      "model": "v2",
+      "protocol": "108.1344M; 2048 worlds",
+      "seed": 3,
+      "success_percent": 88.5,
+      "n": 200,
+      "drops": 5,
+      "paired_p": null,
+      "run_id": "oracle_o1_section25_01/oracle_structured_full_seed3",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "bare_controls",
+      "arm": "C-no-touch",
+      "model": "bare Aero",
+      "protocol": "108.1M from scratch; 8192 worlds; historical comparison",
+      "seed": 1,
+      "success_percent": 74.5,
+      "n": 200,
+      "drops": 7,
+      "paired_p": null,
+      "run_id": "pass1_audit_01/controls_01/e3/c_notouch",
+      "checkpoint_sha256": "63c858add49c11fff4c422b56c6ea219453e8b3ec846f0ef3e55ddcf8de2da86",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "bare_controls",
+      "arm": "Plain PPO",
+      "model": "bare Aero",
+      "protocol": "108.1M from scratch; 8192 worlds; historical comparison",
+      "seed": 1,
+      "success_percent": 80.5,
+      "n": 200,
+      "drops": 1,
+      "paired_p": null,
+      "run_id": "pass1_audit_01/controls_01/e3/a_task",
+      "checkpoint_sha256": "6120ce66cd2c10de10ae4734ec65156049b66418bcd2773f2005ec8545496902",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "bare_heldout",
+      "arm": "c_touch",
+      "model": "bare Aero",
+      "protocol": "T1 physical-variation subset; macro across ten conditions; one training seed",
+      "seed": 1,
+      "success_percent": 77.85,
+      "n": "200 per condition; shared starts",
+      "drops": null,
+      "paired_p": null,
+      "run_id": "pass1_audit_01/t1_cube_physical_subset/c_touch",
+      "checkpoint_sha256": "13f96c2a6fb44adddd5a1bcca8534ecf454cf68abf40f3c24a812dbc16ddb619",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "bare_heldout",
+      "arm": "a_task",
+      "model": "bare Aero",
+      "protocol": "T1 physical-variation subset; macro across ten conditions; one training seed",
+      "seed": 1,
+      "success_percent": 64.39999999999999,
+      "n": "200 per condition; shared starts",
+      "drops": null,
+      "paired_p": null,
+      "run_id": "pass1_audit_01/t1_cube_physical_subset/a_task",
+      "checkpoint_sha256": "6120ce66cd2c10de10ae4734ec65156049b66418bcd2773f2005ec8545496902",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "bare_heldout",
+      "arm": "c_notouch",
+      "model": "bare Aero",
+      "protocol": "T1 physical-variation subset; macro across ten conditions; one training seed",
+      "seed": 1,
+      "success_percent": 61.150000000000006,
+      "n": "200 per condition; shared starts",
+      "drops": null,
+      "paired_p": null,
+      "run_id": "pass1_audit_01/t1_cube_physical_subset/c_notouch",
+      "checkpoint_sha256": "63c858add49c11fff4c422b56c6ea219453e8b3ec846f0ef3e55ddcf8de2da86",
+      "binding_status": "frozen_report"
+    },
+    {
+      "group": "oracle_o1",
+      "arm": "flat_same_information_full",
+      "model": "v2",
+      "protocol": "108.1344M; 2048 worlds",
+      "seed": 2,
+      "success_percent": 85.5,
+      "n": 200,
+      "drops": 8,
+      "paired_p": null,
+      "run_id": "oracle_o1_section25_01/flat_same_information_full_seed2_rerun01",
+      "binding_status": "recovered_original_guard_pass",
+      "monitor_recovery": "Evaluation only; first recovered repetition; no optimizer updates"
+    },
+    {
+      "group": "sensorless",
+      "arm": "Inferred touch",
+      "model": "v2",
+      "protocol": "20.316M encoder collection; frozen tactile teacher with inferred touch",
+      "seed": 1,
+      "success_percent": 41.5,
+      "n": 200,
+      "drops": 20,
+      "paired_p": 1.8172343385355978e-23,
+      "run_id": "workorder14_lane_d3_r03",
+      "binding_status": "recovered_original_guard_pass",
+      "monitor_recovery": "Evaluation only; first recovered repetition; no optimizer updates"
     }
   ],
   "claims": [
@@ -409,11 +523,12 @@
         "flat_same_information_full_seed1",
         "oracle_contact_only_seed1",
         "patch_identity_removed_full_seed1",
-        "oracle_structured_full_seed2"
+        "oracle_structured_full_seed2",
+        "oracle_o1_section25_01/flat_same_information_full_seed2_rerun01"
       ],
       "model": "v2",
       "protocol": "O1_ROTATION_REGISTRATION_03 plus approved work-order bindings;2048worlds;108134400steps from scratch;shared200bank",
-      "safe_wording": "Seed1: privileged ceiling84%,structured89%,flat83%,contact-only85%,patch-identity ablation87.5%. Structured\u2212flat is+6points(p=.02266),below the registered+10-point structural-benefit rule.",
+      "safe_wording": "Structured O1 scores89.0%,90.0%,88.5% on three seeds under its2048-world protocol. Sufficiency threshold met; final comparison against flat pending. Superiority over the84% ceiling is not established.",
       "values": {
         "ceiling_drops": 14,
         "structured1_drops": 5,
@@ -421,21 +536,25 @@
         "contact_only_drops": 2,
         "patch_identity_drops": 2,
         "structured2_success_percent": 90.0,
-        "structured2_drops": 7
+        "structured2_drops": 7,
+        "flat2_success_percent": 85.5,
+        "flat2_drops": 8
       },
       "risks": [
-        "No completed three-seed O1 verdict: flatseed2 parked by guard; both seed3 runs stopped on throughput before training.",
         "Structuredseed1 meets ceiling proximity; do not call O1 fully passed or representation claims proven.",
         "Structured89% versus ceiling84% is not established superiority (paired p=.07552).",
         "Never compare these levels to8192-world runs.",
         "Contact-only85% on this task does not resolve the registered contact-history alias counterexample or imply universal sufficiency.",
         "Patch-identity result includes evaluation-only recovery of one missing monitor check; no fake uninterrupted-run claim.",
-        "No accepted E22 dexterity D exists yet."
+        "No accepted E22 dexterity D exists yet.",
+        "Fresh flat seed2 accepted after evaluation-only recovery of its missing monitor. Earlier guard-stopped seed2 is separate. Flat seed3 remains unmeasured."
       ],
       "sources": [
         "dextum_plan/progress/2026-10-14-work-order/lane_A/comparison03/evidence/RESULT.json",
         "dextum_plan/progress/2026-10-14-work-order/lane_A/SCORECARD.md",
-        "dextum_plan/progress/2026-10-14-work-order/lane_A/LIVE_STATUS.json"
+        "dextum_plan/progress/2026-10-14-work-order/lane_A/LIVE_STATUS.json",
+        "dextum_plan/progress/2026-10-17-oracle-repair/host06/terminal_readback_20261018/dextum_cursor_agent/runs/oracle_o1_section25_01/oracle_structured_full_seed3/training/monitor/108134400.json",
+        "dextum_plan/progress/2026-10-18-freeze-queue/host1_replacement01/guard_audit04/results/dextum/freeze18_guard_audit04/oracle/RESULT.json"
       ]
     },
     {
@@ -469,6 +588,32 @@
         "dextum_plan/progress/2026-10-15-continuation/lane_D/D2_PACKAGE/dextum_cursor_agent/runs/workorder14_lane_d2_r03/export/EXPORT_AUDIT.json",
         "dextum_plan/progress/2026-10-15-continuation/lane_D/SCORECARD.md"
       ]
+    },
+    {
+      "id": "d3_inferred_touch",
+      "run_ids": [
+        "workorder14_lane_d3_r03"
+      ],
+      "model": "v2",
+      "protocol": "One seed;20316160 encoder-collection transitions; frozen teacher;shared200bank",
+      "safe_wording": "Inferred touch scores41.5%,20drops; no touch advantage recovered at this budget. Teacher88%,paired p=1.817e-23.",
+      "values": {
+        "successes": 83,
+        "drops": 20,
+        "n": 200,
+        "teacher_gap_points": -46.5,
+        "paired_teacher_p": 1.8172343385355978e-23,
+        "recovered_fraction_against_no_touch_seed_mean": -3.2923076923076944
+      },
+      "risks": [
+        "Historical no-touch references have different training protocols; no matched-budget training claim.",
+        "Final monitor recovered evaluation-only; first repetition selected, all seven original monitor guards passed.",
+        "Negative result on this task and encoder budget; no general impossibility claim."
+      ],
+      "sources": [
+        "dextum_plan/progress/2026-10-18-freeze-queue/host1_replacement01/d3_report05/results/dextum/freeze18_d3_report05/REPORT.json",
+        "dextum_plan/progress/2026-10-18-freeze-queue/host1_replacement01/guard_audit04/results/dextum/freeze18_guard_audit04/d3/RESULT.json"
+      ]
     }
   ],
   "source_hashes": {
@@ -494,7 +639,8 @@
     "dextum_plan/progress/2026-10-15-continuation/lane_D/D2_PACKAGE/dextum_cursor_agent/runs/workorder14_lane_d2_r03/SENSORLESS_COMPARISON.json": "47a3f0c70fc0a5e1338cf94ec3fbe4853b4b849f81586e5206d81a0ab2b86e2f",
     "dextum_plan/progress/2026-10-15-continuation/lane_D/D2_PACKAGE/dextum_cursor_agent/runs/workorder14_lane_d2_r03/export/EXPORT_AUDIT.json": "10b88aa967655e5d9e68a7da8a0e70c15c63d6bff4903ee7aec6ad1ef399f895",
     "dextum_plan/progress/2026-10-15-continuation/lane_D/SCORECARD.md": "92336f4f049889ebf7ed7c498ea3dfef4469ac9d1ea68d277463740cac1056a0",
-    "dextum_plan/progress/2026-10-15-continue/lane_C/STATUS.json": "31d09bdbf85bfef741c9ec076b2b5b9cbdae1a8646a7c04f5c42ff81623ad30e"
+    "dextum_plan/progress/2026-10-15-continue/lane_C/STATUS.json": "31d09bdbf85bfef741c9ec076b2b5b9cbdae1a8646a7c04f5c42ff81623ad30e",
+    "dextum_plan/progress/2026-10-17-oracle-repair/host06/terminal_readback_20261018/dextum_cursor_agent/runs/oracle_o1_section25_01/oracle_structured_full_seed3/training/monitor/108134400.json": "8ff4f81add10d0c5ad59a7691fe26367b1f3582530ce35f9587a9a56c62bf44c"
   },
   "additional_provenance": {
     "rigid_diagnostic": "User-provided accepted review \u00a722: 87.5%, p=.29 against Ideal v2; exact run ID not resolved in this page snapshot",

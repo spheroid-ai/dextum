@@ -1,0 +1,22 @@
+{
+  "state": "VERIFIED",
+  "instance_id": 55754395,
+  "verified_at": 1791928356.782621,
+  "final_steps": 108134400,
+  "all_guards_pass": true,
+  "files": [
+    {
+      "local": "dextum_plan/progress/2026-10-13-section20/primary_next_evidence/pass1_section20/c_touch_bare_contact_ideal/training/policy_108134400.pkl",
+      "relative": "training/policy_108134400.pkl",
+      "bytes": 4023801,
+      "sha256": "a332628a62b6426c67ca97122b8d8044c293f4c57d711a9def6ffa8d3210b907"
+    },
+    {
+      "local": "dextum_plan/progress/2026-10-13-section20/primary_next_evidence/pass1_section20/c_touch_bare_contact_ideal/training/full_state/latest.pkl.gz",
+      "relative": "training/full_state/latest.pkl.gz",
+      "bytes": 34753958,
+      "sha256": "4c93f51d46aad45feca54ccd90aefc105b7ef1b2e0db40fd771c23f0d98cc195",
+      "decompressed_sha256": "985fa3fec4356d784eec94834c893a7d8a03e26a10c0b8f9cacb49d66c52093c"
+    }
+  ]
+}

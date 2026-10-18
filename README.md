@@ -28,8 +28,8 @@ listed in the inventory and cannot silently pass the final freeze.
 ## Status and next publication steps
 
 The accepted minimum is v2 reorientation, friction attribution, sensing/channel
-contrasts, preliminary O1 and the negative D2 result. The full three-seed O1
-verdict, C7, C9, E22–E24 and hold are pending. See
+contrasts, O1 sufficiency across three structured seeds and the negative D2 and D3 results. Flat seed2 now passes all31 original guards after evaluation-only recovery. The full three-seed structured-versus-flat O1
+verdict, C7, C9, E22–E24 and hold are pending. C9 stopped at the trace-repeatability gate. The supplied page copy and its evidence audit are included; the paper draft remains unavailable. See
 [the package](docs/dextum-results-package-20oct.md) and
 [release inventory](RELEASE_INVENTORY.json).
 

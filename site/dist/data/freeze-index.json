@@ -1,0 +1,434 @@
+{
+  "state": "PRE_FREEZE_ACCEPTED_ROWS_ONLY",
+  "freeze_utc": "2026-10-19T16:00:00Z",
+  "rows": [
+    {
+      "row": 0,
+      "run_id": "pass0_section7_01/section7_execute_01/e3/c_touch; evaluated in pass1_audit_01",
+      "model_version": "bare Aero",
+      "seed": 1,
+      "protocol": "108.1M from scratch; 8192 worlds",
+      "evidence": [
+        {
+          "source": "bare_final",
+          "file": "evidence/bare_final.json",
+          "sha256": "6f338f64b09468b5f1d448fe177d452e912144fb50d8f4a7960e18e8c3df7b2d"
+        }
+      ]
+    },
+    {
+      "row": 1,
+      "run_id": "section19 Ideal scratch (review \u00a719)",
+      "model_version": "v1",
+      "seed": 1,
+      "protocol": "108.1M from scratch; 8192 worlds",
+      "evidence": [
+        {
+          "source": "friction",
+          "file": "evidence/friction.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-13-section20/primary_evidence/pass1_section20/c_touch_friction_ideal/FRICTION_COMPARISON.json",
+          "sha256": "db20be933989956311d4c200ec735c5740087f596bcd33437a294623bcda9022"
+        }
+      ]
+    },
+    {
+      "row": 2,
+      "run_id": "pass1_section20/c_touch_friction_ideal",
+      "model_version": "v2",
+      "seed": 1,
+      "protocol": "108.1M from scratch; 8192 worlds",
+      "evidence": [
+        {
+          "source": "sensing",
+          "file": "evidence/sensing.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-13-section20/REALISTIC_V2_RESULT.json",
+          "sha256": "b1aa3b232812890ba8e370eb24bdb4208c5eda26b615f0c4dab9f9f4841f7568"
+        }
+      ]
+    },
+    {
+      "row": 3,
+      "run_id": "pass1_section20/c_touch_realistic_v2",
+      "model_version": "v2",
+      "seed": 1,
+      "protocol": "108.1M from scratch; 8192 worlds",
+      "evidence": [
+        {
+          "source": "sensing",
+          "file": "evidence/sensing.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-13-section20/REALISTIC_V2_RESULT.json",
+          "sha256": "b1aa3b232812890ba8e370eb24bdb4208c5eda26b615f0c4dab9f9f4841f7568"
+        }
+      ]
+    },
+    {
+      "row": 4,
+      "run_id": "pass1_section20/c_touch_bare_contact_ideal",
+      "model_version": "v2 rigid diagnostic",
+      "seed": 1,
+      "protocol": "108.1M from scratch; 8192 worlds",
+      "evidence": [
+        {
+          "source": "rigid_final",
+          "file": "evidence/rigid_final.json",
+          "sha256": "028a1d33e524ee0fc56fc98c5e542e4317ce9c0214e346a7740ad47cab1a39cd"
+        }
+      ]
+    },
+    {
+      "row": 5,
+      "run_id": "pass1_v2_touch_recheck_01/seed1_c_touch",
+      "model_version": "v2",
+      "seed": 1,
+      "protocol": "20.316M warm start; own registered teacher",
+      "evidence": [
+        {
+          "source": "recheck",
+          "file": "evidence/recheck.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-13-section20/V2_TOUCH_RECHECK_RESULT.json",
+          "sha256": "eeb84bfc2ff6213cc7bcdcc0bcaee71dcb5be9e6719954bc00632f9361339001"
+        }
+      ]
+    },
+    {
+      "row": 6,
+      "run_id": "pass1_v2_touch_recheck_01/seed1_c_notouch",
+      "model_version": "v2",
+      "seed": 1,
+      "protocol": "20.316M warm start; own registered teacher",
+      "evidence": [
+        {
+          "source": "recheck",
+          "file": "evidence/recheck.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-13-section20/V2_TOUCH_RECHECK_RESULT.json",
+          "sha256": "eeb84bfc2ff6213cc7bcdcc0bcaee71dcb5be9e6719954bc00632f9361339001"
+        }
+      ]
+    },
+    {
+      "row": 7,
+      "run_id": "pass1_v2_touch_recheck_01/seed2_c_touch",
+      "model_version": "v2",
+      "seed": 2,
+      "protocol": "20.316M warm start; own registered teacher",
+      "evidence": [
+        {
+          "source": "recheck",
+          "file": "evidence/recheck.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-13-section20/V2_TOUCH_RECHECK_RESULT.json",
+          "sha256": "eeb84bfc2ff6213cc7bcdcc0bcaee71dcb5be9e6719954bc00632f9361339001"
+        }
+      ]
+    },
+    {
+      "row": 8,
+      "run_id": "pass1_v2_touch_recheck_01/seed2_c_notouch",
+      "model_version": "v2",
+      "seed": 2,
+      "protocol": "20.316M warm start; own registered teacher",
+      "evidence": [
+        {
+          "source": "recheck",
+          "file": "evidence/recheck.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-13-section20/V2_TOUCH_RECHECK_RESULT.json",
+          "sha256": "eeb84bfc2ff6213cc7bcdcc0bcaee71dcb5be9e6719954bc00632f9361339001"
+        }
+      ]
+    },
+    {
+      "row": 9,
+      "run_id": "pass1_v2_touch_recheck_01/seed3_c_touch",
+      "model_version": "v2",
+      "seed": 3,
+      "protocol": "20.316M warm start; own registered teacher",
+      "evidence": [
+        {
+          "source": "recheck",
+          "file": "evidence/recheck.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-13-section20/V2_TOUCH_RECHECK_RESULT.json",
+          "sha256": "eeb84bfc2ff6213cc7bcdcc0bcaee71dcb5be9e6719954bc00632f9361339001"
+        }
+      ]
+    },
+    {
+      "row": 10,
+      "run_id": "pass1_v2_touch_recheck_01/seed3_c_notouch",
+      "model_version": "v2",
+      "seed": 3,
+      "protocol": "20.316M warm start; own registered teacher",
+      "evidence": [
+        {
+          "source": "recheck",
+          "file": "evidence/recheck.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-13-section20/V2_TOUCH_RECHECK_RESULT.json",
+          "sha256": "eeb84bfc2ff6213cc7bcdcc0bcaee71dcb5be9e6719954bc00632f9361339001"
+        }
+      ]
+    },
+    {
+      "row": 11,
+      "run_id": "workorder14_lane_d1_r04/d1_none_seed1",
+      "model_version": "v2",
+      "seed": 1,
+      "protocol": "20.316M continuation; common Realistic teacher",
+      "evidence": [
+        {
+          "source": "channels",
+          "file": "evidence/channels.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-14-work-order/lane_D/d1_evidence/dextum_cursor_agent/runs/workorder14_lane_d1_r04/pipeline/RESULT.json",
+          "sha256": "589c28fbbcbd150495fda146e790382399b7f97db436da7f2bb85e796ee9ece0"
+        }
+      ]
+    },
+    {
+      "row": 12,
+      "run_id": "workorder14_lane_d1_r04/d1_normal_only_seed1",
+      "model_version": "v2",
+      "seed": 1,
+      "protocol": "20.316M continuation; common Realistic teacher",
+      "evidence": [
+        {
+          "source": "channels",
+          "file": "evidence/channels.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-14-work-order/lane_D/d1_evidence/dextum_cursor_agent/runs/workorder14_lane_d1_r04/pipeline/RESULT.json",
+          "sha256": "589c28fbbcbd150495fda146e790382399b7f97db436da7f2bb85e796ee9ece0"
+        }
+      ]
+    },
+    {
+      "row": 13,
+      "run_id": "workorder14_lane_d1_r04/d1_palm_seed1",
+      "model_version": "v2",
+      "seed": 1,
+      "protocol": "20.316M continuation; common Realistic teacher",
+      "evidence": [
+        {
+          "source": "channels",
+          "file": "evidence/channels.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-14-work-order/lane_D/d1_evidence/dextum_cursor_agent/runs/workorder14_lane_d1_r04/pipeline/RESULT.json",
+          "sha256": "589c28fbbcbd150495fda146e790382399b7f97db436da7f2bb85e796ee9ece0"
+        }
+      ]
+    },
+    {
+      "row": 14,
+      "run_id": "privileged_ceiling_seed1",
+      "model_version": "v2",
+      "seed": 1,
+      "protocol": "108.1344M; 2048 worlds",
+      "evidence": [
+        {
+          "source": "oracle",
+          "file": "evidence/oracle.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-14-work-order/lane_A/LIVE_STATUS.json",
+          "sha256": "b8720b2804ce18dbb9e1c59cd6b534617f0d72d24ef1d34d91cb8ed79176b408"
+        }
+      ]
+    },
+    {
+      "row": 15,
+      "run_id": "oracle_structured_full_seed1",
+      "model_version": "v2",
+      "seed": 1,
+      "protocol": "108.1344M; 2048 worlds",
+      "evidence": [
+        {
+          "source": "oracle",
+          "file": "evidence/oracle.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-14-work-order/lane_A/LIVE_STATUS.json",
+          "sha256": "b8720b2804ce18dbb9e1c59cd6b534617f0d72d24ef1d34d91cb8ed79176b408"
+        }
+      ]
+    },
+    {
+      "row": 16,
+      "run_id": "flat_same_information_full_seed1",
+      "model_version": "v2",
+      "seed": 1,
+      "protocol": "108.1344M; 2048 worlds",
+      "evidence": [
+        {
+          "source": "oracle",
+          "file": "evidence/oracle.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-14-work-order/lane_A/LIVE_STATUS.json",
+          "sha256": "b8720b2804ce18dbb9e1c59cd6b534617f0d72d24ef1d34d91cb8ed79176b408"
+        }
+      ]
+    },
+    {
+      "row": 17,
+      "run_id": "oracle_contact_only_seed1",
+      "model_version": "v2",
+      "seed": 1,
+      "protocol": "108.1344M; 2048 worlds",
+      "evidence": [
+        {
+          "source": "oracle",
+          "file": "evidence/oracle.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-14-work-order/lane_A/LIVE_STATUS.json",
+          "sha256": "b8720b2804ce18dbb9e1c59cd6b534617f0d72d24ef1d34d91cb8ed79176b408"
+        }
+      ]
+    },
+    {
+      "row": 18,
+      "run_id": "patch_identity_removed_full_seed1",
+      "model_version": "v2",
+      "seed": 1,
+      "protocol": "108.1344M; 2048 worlds",
+      "evidence": [
+        {
+          "source": "oracle",
+          "file": "evidence/oracle.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-14-work-order/lane_A/LIVE_STATUS.json",
+          "sha256": "b8720b2804ce18dbb9e1c59cd6b534617f0d72d24ef1d34d91cb8ed79176b408"
+        }
+      ]
+    },
+    {
+      "row": 19,
+      "run_id": "oracle_structured_full_seed2",
+      "model_version": "v2",
+      "seed": 2,
+      "protocol": "108.1344M; 2048 worlds",
+      "evidence": [
+        {
+          "source": "oracle",
+          "file": "evidence/oracle.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-14-work-order/lane_A/LIVE_STATUS.json",
+          "sha256": "b8720b2804ce18dbb9e1c59cd6b534617f0d72d24ef1d34d91cb8ed79176b408"
+        }
+      ]
+    },
+    {
+      "row": 20,
+      "run_id": "workorder14_lane_d2_r03",
+      "model_version": "v2",
+      "seed": 1,
+      "protocol": "20.316M collected transitions; tag-camera/proprioception/task",
+      "evidence": [
+        {
+          "source": "student",
+          "file": "evidence/student.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-15-continuation/lane_D/D2_PACKAGE/dextum_cursor_agent/runs/workorder14_lane_d2_r03/SENSORLESS_COMPARISON.json",
+          "sha256": "47a3f0c70fc0a5e1338cf94ec3fbe4853b4b849f81586e5206d81a0ab2b86e2f"
+        }
+      ]
+    },
+    {
+      "row": 21,
+      "run_id": "oracle_o1_section25_01/oracle_structured_full_seed3",
+      "model_version": "v2",
+      "seed": 3,
+      "protocol": "108.1344M; 2048 worlds",
+      "evidence": [
+        {
+          "source": "oracle_seed3",
+          "file": "evidence/oracle_structured_seed3.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-17-oracle-repair/host06/terminal_readback_20261018/dextum_cursor_agent/runs/oracle_o1_section25_01/oracle_structured_full_seed3/training/monitor/108134400.json",
+          "sha256": "8ff4f81add10d0c5ad59a7691fe26367b1f3582530ce35f9587a9a56c62bf44c"
+        }
+      ]
+    },
+    {
+      "row": 22,
+      "run_id": "pass1_audit_01/controls_01/e3/c_notouch",
+      "model_version": "bare Aero",
+      "seed": 1,
+      "protocol": "108.1M from scratch; 8192 worlds; historical comparison",
+      "evidence": [
+        {
+          "source": "bare_notouch",
+          "file": "evidence/bare_notouch.json",
+          "sha256": "b2ce4d14eb8bf894216fff1373eee131fe421aa6a46a20b89e21e1c83ce11701"
+        }
+      ]
+    },
+    {
+      "row": 23,
+      "run_id": "pass1_audit_01/controls_01/e3/a_task",
+      "model_version": "bare Aero",
+      "seed": 1,
+      "protocol": "108.1M from scratch; 8192 worlds; historical comparison",
+      "evidence": [
+        {
+          "source": "bare_ppo",
+          "file": "evidence/bare_ppo.json",
+          "sha256": "90b65a13ad0cb516d4ffafc4f92740f17f07043d11252d474ce03f222adc95d9"
+        }
+      ]
+    },
+    {
+      "row": 24,
+      "run_id": "pass1_audit_01/t1_cube_physical_subset/c_touch",
+      "model_version": "bare Aero",
+      "seed": 1,
+      "protocol": "T1 physical-variation subset; macro across ten conditions; one training seed",
+      "evidence": [
+        {
+          "source": "bare_heldout",
+          "file": "evidence/bare_heldout.json",
+          "sha256": "600597104177bc02b504836134e7fb8133e3b81e1cf39acdf5b9817c0185b377"
+        }
+      ]
+    },
+    {
+      "row": 25,
+      "run_id": "pass1_audit_01/t1_cube_physical_subset/a_task",
+      "model_version": "bare Aero",
+      "seed": 1,
+      "protocol": "T1 physical-variation subset; macro across ten conditions; one training seed",
+      "evidence": [
+        {
+          "source": "bare_heldout",
+          "file": "evidence/bare_heldout.json",
+          "sha256": "600597104177bc02b504836134e7fb8133e3b81e1cf39acdf5b9817c0185b377"
+        }
+      ]
+    },
+    {
+      "row": 26,
+      "run_id": "pass1_audit_01/t1_cube_physical_subset/c_notouch",
+      "model_version": "bare Aero",
+      "seed": 1,
+      "protocol": "T1 physical-variation subset; macro across ten conditions; one training seed",
+      "evidence": [
+        {
+          "source": "bare_heldout",
+          "file": "evidence/bare_heldout.json",
+          "sha256": "600597104177bc02b504836134e7fb8133e3b81e1cf39acdf5b9817c0185b377"
+        }
+      ]
+    },
+    {
+      "row": 27,
+      "run_id": "oracle_o1_section25_01/flat_same_information_full_seed2_rerun01",
+      "model_version": "v2",
+      "seed": 2,
+      "protocol": "108.1344M; 2048 worlds",
+      "evidence": [
+        {
+          "source": "oracle_flat2_recovered",
+          "file": "evidence/oracle_flat2_recovered.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-18-freeze-queue/host1_replacement01/guard_audit04/results/dextum/freeze18_guard_audit04/oracle/RESULT.json",
+          "sha256": "94b435b52b580111b40ee9d272b8652a7efaf0e6dbbb63ab9279110c66620fef"
+        }
+      ]
+    },
+    {
+      "row": 28,
+      "run_id": "workorder14_lane_d3_r03",
+      "model_version": "v2",
+      "seed": 1,
+      "protocol": "20.316M encoder collection; frozen tactile teacher with inferred touch",
+      "evidence": [
+        {
+          "source": "d3_comparison",
+          "file": "evidence/d3_comparison.json",
+          "original_workspace_path": "dextum_plan/progress/2026-10-18-freeze-queue/host1_replacement01/d3_report05/results/dextum/freeze18_d3_report05/REPORT.json",
+          "sha256": "1025acbd412ecba22464202f87babd7017bc8fb335fb8b5ec3bc0f9ba4e69192"
+        }
+      ]
+    }
+  ]
+}

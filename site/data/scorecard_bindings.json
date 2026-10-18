@@ -1,5 +1,5 @@
 {
-  "acceptance": "Explicitly admitted rows from review sections22\u201325; no latest-file glob or automatic promotion",
+  "acceptance": "Explicitly admitted rows from review sections22\u201325; no latest-file glob or automatic promotion; structured seed3 completed31/31 guards and verified archive18October; 18October recovered flat seed2 all31 original guards PASS; D3 all7 guards PASS and repeated paired report; first recovered repetitions fixed, hash verified",
   "sources": {
     "friction": {
       "file": "evidence/friction.json",
@@ -35,6 +35,54 @@
       "file": "evidence/student.json",
       "original_workspace_path": "dextum_plan/progress/2026-10-15-continuation/lane_D/D2_PACKAGE/dextum_cursor_agent/runs/workorder14_lane_d2_r03/SENSORLESS_COMPARISON.json",
       "sha256": "47a3f0c70fc0a5e1338cf94ec3fbe4853b4b849f81586e5206d81a0ab2b86e2f"
+    },
+    "oracle_seed3": {
+      "file": "evidence/oracle_structured_seed3.json",
+      "original_workspace_path": "dextum_plan/progress/2026-10-17-oracle-repair/host06/terminal_readback_20261018/dextum_cursor_agent/runs/oracle_o1_section25_01/oracle_structured_full_seed3/training/monitor/108134400.json",
+      "sha256": "8ff4f81add10d0c5ad59a7691fe26367b1f3582530ce35f9587a9a56c62bf44c"
+    },
+    "bare_final": {
+      "file": "evidence/bare_final.json",
+      "sha256": "6f338f64b09468b5f1d448fe177d452e912144fb50d8f4a7960e18e8c3df7b2d"
+    },
+    "rigid_final": {
+      "file": "evidence/rigid_final.json",
+      "sha256": "028a1d33e524ee0fc56fc98c5e542e4317ce9c0214e346a7740ad47cab1a39cd"
+    },
+    "rigid_archive": {
+      "file": "evidence/rigid_archive.json",
+      "sha256": "64507380cc83b12892d7becf7adf00b6adc2fd438018ab747cec12918600f101"
+    },
+    "rigid_report": {
+      "file": "evidence/rigid_report.json",
+      "sha256": "72003f9e469346045100a0aeb81b83f68d4d0e3423351fe179b1ca936798c0fd"
+    },
+    "bare_notouch": {
+      "file": "evidence/bare_notouch.json",
+      "sha256": "b2ce4d14eb8bf894216fff1373eee131fe421aa6a46a20b89e21e1c83ce11701"
+    },
+    "bare_ppo": {
+      "file": "evidence/bare_ppo.json",
+      "sha256": "90b65a13ad0cb516d4ffafc4f92740f17f07043d11252d474ce03f222adc95d9"
+    },
+    "bare_heldout": {
+      "file": "evidence/bare_heldout.json",
+      "sha256": "600597104177bc02b504836134e7fb8133e3b81e1cf39acdf5b9817c0185b377"
+    },
+    "oracle_flat2_recovered": {
+      "file": "evidence/oracle_flat2_recovered.json",
+      "original_workspace_path": "dextum_plan/progress/2026-10-18-freeze-queue/host1_replacement01/guard_audit04/results/dextum/freeze18_guard_audit04/oracle/RESULT.json",
+      "sha256": "94b435b52b580111b40ee9d272b8652a7efaf0e6dbbb63ab9279110c66620fef"
+    },
+    "d3_recovered": {
+      "file": "evidence/d3_recovered.json",
+      "original_workspace_path": "dextum_plan/progress/2026-10-18-freeze-queue/host1_replacement01/guard_audit04/results/dextum/freeze18_guard_audit04/d3/RESULT.json",
+      "sha256": "427dfcf6fc9a33134df577abcca731ce572035d680e924a263dc3de2ab006ed4"
+    },
+    "d3_comparison": {
+      "file": "evidence/d3_comparison.json",
+      "original_workspace_path": "dextum_plan/progress/2026-10-18-freeze-queue/host1_replacement01/d3_report05/results/dextum/freeze18_d3_report05/REPORT.json",
+      "sha256": "1025acbd412ecba22464202f87babd7017bc8fb335fb8b5ec3bc0f9ba4e69192"
     }
   },
   "bindings": [
@@ -324,10 +372,134 @@
       "source": "student",
       "pointer": "/comparisons/teacher/exact_mcnemar_p",
       "multiplier": 1
+    },
+    {
+      "row": 21,
+      "field": "success_percent",
+      "source": "oracle_seed3",
+      "pointer": "/faithful_success",
+      "multiplier": 0.5
+    },
+    {
+      "row": 21,
+      "field": "drops",
+      "source": "oracle_seed3",
+      "pointer": "/faithful_drops",
+      "multiplier": 1
+    },
+    {
+      "row": 0,
+      "field": "success_percent",
+      "source": "bare_final",
+      "pointer": "/success_counts/post_training",
+      "multiplier": 0.5
+    },
+    {
+      "row": 0,
+      "field": "drops",
+      "source": "bare_final",
+      "pointer": "/results/post_training/drops",
+      "multiplier": 200
+    },
+    {
+      "row": 4,
+      "field": "success_percent",
+      "source": "rigid_final",
+      "pointer": "/faithful_success",
+      "multiplier": 0.5
+    },
+    {
+      "row": 4,
+      "field": "drops",
+      "source": "rigid_final",
+      "pointer": "/faithful_drops",
+      "multiplier": 1
+    },
+    {
+      "row": 22,
+      "field": "success_percent",
+      "source": "bare_notouch",
+      "pointer": "/success_counts/post_training",
+      "multiplier": 0.5
+    },
+    {
+      "row": 22,
+      "field": "drops",
+      "source": "bare_notouch",
+      "pointer": "/results/post_training/drops",
+      "multiplier": 200
+    },
+    {
+      "row": 23,
+      "field": "success_percent",
+      "source": "bare_ppo",
+      "pointer": "/success_counts/post_training",
+      "multiplier": 0.5
+    },
+    {
+      "row": 23,
+      "field": "drops",
+      "source": "bare_ppo",
+      "pointer": "/results/post_training/drops",
+      "multiplier": 200
+    },
+    {
+      "row": 24,
+      "field": "success_percent",
+      "source": "bare_heldout",
+      "pointer": "/held_out_macro_success/c_touch",
+      "multiplier": 100
+    },
+    {
+      "row": 25,
+      "field": "success_percent",
+      "source": "bare_heldout",
+      "pointer": "/held_out_macro_success/a_task",
+      "multiplier": 100
+    },
+    {
+      "row": 26,
+      "field": "success_percent",
+      "source": "bare_heldout",
+      "pointer": "/held_out_macro_success/c_notouch",
+      "multiplier": 100
+    },
+    {
+      "row": 27,
+      "field": "success_percent",
+      "source": "oracle_flat2_recovered",
+      "pointer": "/final/faithful_success",
+      "multiplier": 0.5
+    },
+    {
+      "row": 27,
+      "field": "drops",
+      "source": "oracle_flat2_recovered",
+      "pointer": "/final/faithful_drops",
+      "multiplier": 1
+    },
+    {
+      "row": 28,
+      "field": "success_percent",
+      "source": "d3_comparison",
+      "pointer": "/success",
+      "multiplier": 0.5
+    },
+    {
+      "row": 28,
+      "field": "drops",
+      "source": "d3_comparison",
+      "pointer": "/drops",
+      "multiplier": 1
+    },
+    {
+      "row": 28,
+      "field": "paired_p",
+      "source": "d3_comparison",
+      "pointer": "/comparisons/teacher/exact_mcnemar_p",
+      "multiplier": 1
     }
   ],
-  "unresolved": [
-    "Bare-hand and rigid diagnostic exact run/checkpoint bindings require final freeze audit."
-  ],
+  "unresolved": [],
   "operations": "Read reported values and convert counts to percent only; no statistical re-analysis."
 }

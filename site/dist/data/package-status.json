@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-15 section25 build snapshot",
+  "as_of": "2026-10-18; live runs are not accepted results",
   "freeze_utc": "2026-10-19T16:00:00Z",
   "public_launch_target": "2026-10-20",
   "max_gpu_hosts": 3,
@@ -7,10 +7,9 @@
   "registration": "../docs/REGISTRATION_SECTION25.json",
   "ruling": "../docs/USER_RULING_SECTION25.md",
   "pending": {
-    "C11": "structured3 and fresh flat2/3 pending",
-    "C7": "sort accepted mechanics; no task result; hold40/256bank stop; switch one regate",
-    "D3": "qualified and training; no final result",
-    "C9": "six actors verified; evaluation queued",
+    "C11": "structured1\u20133 accepted89/90/88.5; flat1\u20132 accepted83/85.5 after missing-check recovery; flat3 unmeasured",
+    "C7": "sort host stopped during uniform bank collection; provider prevents terminal metadata access; no task result",
+    "C9": "REPEAT_HASH_STOP on first train condition for touch and no-touch; no accepted C9 number",
     "E24": "validated corpora missing",
     "E22": "REPEAT_HASH_STOP at tick0, no capture output accepted",
     "E23": "admitted replay inputs missing"
@@ -21,5 +20,12 @@
     "E25",
     "E12 hold",
     "embodiment-anchor rehearsal"
-  ]
+  ],
+  "reviewer_drafts": "Page copy supplied18October and integrated with an evidence audit; paper draft still not supplied",
+  "accepted_recovery18": {
+    "D3": "41.5%success,20drops,7 original monitor guardsPASS; teacher paired p1.817e-23",
+    "flat2": "85.5%success,8drops,31 original monitor guardsPASS"
+  },
+  "hosts": "All three GPU hosts confirmed stopped; no local scientific run",
+  "O1b": "Three clarification decisions recorded; goal/chain/SGS kernels built, environment integration and GPU validation pending after freeze"
 }

@@ -14,3 +14,26 @@
 .headline-stats strong { font-size: clamp(2rem, 3.2vw, 3.1rem); }
 
 .technical pre{overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;line-height:1.6;padding:20px;background:var(--wash)}
+.representation-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.representation-flow article{border-top:2px solid #b7ced0;padding-top:22px}
+.representation-flow h3{margin:14px 0;font-size:25px}
+.representation-flow p{font-size:15px;color:var(--muted)}
+.contact-sketch,.quantum-sketch,.flow-sketch{height:180px;background:var(--wash);margin-top:20px;border-radius:8px}
+.contact-sketch svg{display:block;width:100%;height:100%;padding:12px}
+.contact-sketch .contact-edge{stroke:var(--teal);stroke-width:2;fill:none}
+.contact-sketch .element-node{fill:var(--ink)}
+.contact-sketch .patch-node{fill:#e7b59a;stroke:var(--accent)}
+.contact-sketch text{font:12px Research,Arial,sans-serif;fill:var(--muted)}
+.quantum-sketch,.flow-sketch{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px}
+.quantum-sketch span,.flow-sketch span{border:1px solid #a5bdc0;border-radius:24px;padding:9px 12px;font-size:12px;font-weight:600;line-height:1.4;text-align:center}
+.quantum-sketch span:nth-of-type(2),.flow-sketch span:nth-of-type(2){background:var(--ink);border-color:var(--ink);color:#fff}
+.quantum-sketch i,.flow-sketch i{font-style:normal;color:var(--accent)}
+.representation-question{display:grid;grid-template-columns:1fr 1.2fr;gap:18px 45px;align-items:start;margin-top:36px;padding:32px;border:1px solid var(--line);border-radius:8px}
+.representation-question h3{margin-top:12px;font-size:27px}
+.representation-question p{font-size:15px;color:var(--muted)}
+.representation-question .button{grid-column:2;justify-self:start}
+@media(max-width:1000px){.representation-flow{gap:20px}.quantum-sketch span,.flow-sketch span{padding:8px;font-size:11px}}
+@media(max-width:780px){.representation-flow{grid-template-columns:1fr}.representation-flow article{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}.representation-flow article>.small-label{grid-column:1/-1}.contact-sketch,.quantum-sketch,.flow-sketch{grid-column:1;grid-row:2/4}.representation-flow h3{grid-column:2;margin-top:26px}.representation-flow p{grid-column:2}.representation-question{padding:24px;gap:22px;grid-template-columns:1fr}.representation-question .button{grid-column:1}}
+@media(max-width:520px){.representation-flow article{display:block}.representation-flow h3{margin-top:18px}.representation-question h3{font-size:24px}}
+
+.repository-links{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:25px}

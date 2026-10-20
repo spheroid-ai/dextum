@@ -1,5 +1,5 @@
 {
-  "status": "PREPARATION; final training payload and paper not yet assembled",
+  "status": "PUBLIC_RESEARCH_SNAPSHOT_V0_1",
   "freeze_utc": "2026-10-19T16:00:00Z",
   "items": [
     {
@@ -16,16 +16,20 @@
     },
     {
       "item": "Sensorised v2 XML and required mesh closure",
-      "status": "workspace evidence exists; sanitized release closure pending",
-      "model_sha256": "a2e0c670506cb69267bac11e80fa24c467a782cca3bedb901290adc64444c924"
+      "status": "released",
+      "model_sha256": "a2e0c670506cb69267bac11e80fa24c467a782cca3bedb901290adc64444c924",
+      "location": "research/models/v2",
+      "checks": "accepted original hash; portable XML differs only in asset paths; every reference resolves"
     },
     {
       "item": "Sensor simulation, evaluator, detector, monitor guard",
-      "status": "workspace implementations exist; public import/dependency closure pending"
+      "status": "frozen source released; portable runtime reproduction pending",
+      "location": "research/core; research/oracle"
     },
     {
       "item": "Rotation and held-out banks, configs and paper checkpoints",
-      "status": "individual archived evidence exists; unified release manifest pending"
+      "status": "historical O1 configurations and reset/evaluation construction code released; full banks and checkpoints pending",
+      "location": "research/configs"
     },
     {
       "item": "Hold bank",
@@ -38,7 +42,7 @@
     },
     {
       "item": "Paper source/PDF",
-      "status": "Reviewer reports draft written; named file not found in workspace, Documents or Downloads; path requested",
+      "status": "not published; no PDF supplied",
       "source": "docs/dextum-results-package-20oct.md section5"
     },
     {
@@ -49,11 +53,14 @@
     },
     {
       "item": "Third-party licence inventory",
-      "status": "pending; no upstream relicensing"
+      "status": "released scope documented; upstream notices retained",
+      "location": "THIRD_PARTY_NOTICES.md; LICENSE; LICENSE-DATA.md"
     },
     {
       "item": "Public repository/tag/Pages",
-      "status": "Private repository created and populated; public access, tag and Pages await20October release"
+      "status": "publication prepared; verify against GitHub deployment",
+      "repository": "https://github.com/spheroid-ai/dextum",
+      "page": "https://spheroid-ai.github.io/dextum/"
     }
   ],
   "cuts": [
@@ -65,10 +72,11 @@
   ],
   "preparation_repository": {
     "url": "https://github.com/spheroid-ai/dextum",
-    "visibility": "PRIVATE",
+    "visibility": "PUBLICATION_PREPARED",
     "initial_commit": "ffd78b6"
   },
-  "as_of": "2026-10-18",
-  "number_audit": "All29 plotted/table rows bound to immutable reports; recovered flat2/D3 included; pre-freeze index",
-  "page_copy": "18 October reviewer copy preserved in docs; PAGE_COPY_AUDIT_20261018.json records evidence corrections"
+  "as_of": "2026-10-20",
+  "number_audit": "29 accepted result rows bound to immutable reports; all recovered flat2/D3 records included",
+  "page_copy": "18 October reviewer copy preserved in docs; PAGE_COPY_AUDIT_20261018.json records evidence corrections",
+  "evidence_through": "2026-10-18"
 }

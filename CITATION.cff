@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Please cite this research snapshot and distinguish it from a published paper."
+title: "DEXTUM: Manipulation, Described Through Contact"
+type: software
+version: 0.1.0
+date-released: 2026-10-20
+url: "https://spheroid-ai.github.io/dextum/"
+repository-code: "https://github.com/spheroid-ai/dextum"
+authors:
+  - family-names: Toth
+    given-names: Peter
+  - family-names: Oprisa
+    given-names: Dan
+  - family-names: Padilla
+    given-names: Sam

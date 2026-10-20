@@ -1,0 +1,938 @@
+<mujoco model="tetheria_scene">
+  <compiler angle="radian" />
+  <option timestep="0.00025" iterations="5" ls_iterations="8" integrator="implicitfast" cone="elliptic" solver="Newton">
+    <flag />
+  </option>
+  <size nkey="1" />
+  <statistic meansize="0.01" extent="0.4" center="0.15 0 0" />
+  <visual>
+    <global azimuth="120" elevation="-20" />
+    <quality shadowsize="8192" />
+    <headlight ambient="0.2 0.2 0.2" diffuse="0.8 0.8 0.8" specular="1 1 1" />
+    <map stiffness="500" force="0.01" />
+    <scale contactwidth="0.5" contactheight="0.2" />
+    <rgba force="1 0 0 1" />
+  </visual>
+  <default>
+    <default class="tetheria_rh">
+      <joint armature="0.00155913" damping="0.02" frictionloss="0.02" axis="0 0 -1" />
+      <geom group="3" friction="0.2" solref="0.02 1.5" solimp="0.9 0.99" />
+      <general biastype="affine" gainprm="3" biasprm="0 -3" />
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0" material="white" />
+      </default>
+      <default class="tip">
+        <geom size="0.01 0.012 0.016" type="box" friction="0.7 0.05 0.0002" rgba="0.5 0.5 0.5 0.3" />
+      </default>
+      <default class="thumb_tip">
+        <geom size="0.01 0.012 0.016" type="box" friction="0.7 0.05 0.0002" rgba="0.5 0.5 0.5 0.3" />
+      </default>
+      <default class="rot">
+        <joint range="0 1.5708" damping="0.1" />
+        <general ctrlrange="-0.1 1.58" />
+      </default>
+      <default class="pip">
+        <joint range="0 1.5708" damping="0.05" />
+        <general ctrlrange="-0.1 1.58" />
+      </default>
+      <default class="dip">
+        <joint range="0 1.5708" damping="0.05" />
+        <general ctrlrange="-0.1 1.58" />
+      </default>
+      <default class="thumb_cmc">
+        <joint range="0 1.7453" />
+        <general ctrlrange="-0.1 1.75" />
+      </default>
+      <default class="thumb_axl">
+        <joint range="0 1.4" />
+        <general ctrlrange="-0.1 1.5" />
+      </default>
+      <default class="thumb_mcp">
+        <joint range="0 1.2217" />
+        <general ctrlrange="-0.1 1.3" />
+      </default>
+      <default class="thumb_ipl">
+        <joint range="0 1.2217" />
+        <general ctrlrange="-0.1 1.3" />
+      </default>
+      <default class="cmc_spring">
+        <tendon group="4" width="0.001" stiffness="1897" rgba="0 0.5 0.5 1" springlength="0.013" />
+      </default>
+      <default class="distal_spring">
+        <tendon group="4" width="0.001" stiffness="4000" rgba="0.5 0.5 0 1" springlength="0.021336" />
+      </default>
+      <default class="mcp_spring">
+        <tendon group="4" width="0.001" stiffness="352" rgba="0 0.5 0.5 1" springlength="0.011376" />
+      </default>
+      <default class="mcp_tendon">
+        <tendon group="4" width="0.001" rgba="1 0 0 1" />
+      </default>
+      <default class="flex_tendon">
+        <tendon group="4" width="0.001" rgba="0 0 1 1" />
+      </default>
+    </default>
+    <default class="cube">
+      <geom conaffinity="2" friction="0.3 0.05" />
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" colorspace="linear" name="dexcube" file="assets/dex_cube.png" />
+    <texture type="skybox" colorspace="auto" builtin="gradient" rgb1="1 1 1" rgb2="1 1 1" width="800" height="4800" />
+    <texture type="2d" colorspace="auto" name="groundplane" builtin="checker" mark="edge" rgb1="1 1 1" rgb2="1 1 1" width="300" height="300" />
+    <material name="black" rgba="0.2 0.2 0.2 1" />
+    <material name="gray" rgba="0.5 0.5 0.5 1" />
+    <material name="white" rgba="0.7 0.7 0.7 1" />
+    <material name="dexcube" texture="dexcube" />
+    <material name="groundplane" texture="groundplane" texrepeat="5 5" texuniform="true" />
+    <mesh name="tetheria_mount" content_type="model/stl" file="assets/right_palm_mount_link.STL" />
+    <mesh name="right_frame_link" content_type="model/stl" file="assets/base_link.STL" />
+    <mesh name="right_index_f_link" content_type="model/stl" file="assets/right_index_f_link.STL" />
+    <mesh name="right_index_proximal_link" content_type="model/stl" file="assets/right_index_proximal_link.STL" />
+    <mesh name="right_index_middle_link" content_type="model/stl" file="assets/right_index_middle_link.STL" />
+    <mesh name="right_index_distal_link" content_type="model/stl" file="assets/right_index_distal_link.STL" />
+    <mesh name="right_index_tip_link" content_type="model/stl" file="assets/right_index_tip_link.STL" />
+    <mesh name="right_middle_f_link" content_type="model/stl" file="assets/right_middle_f_link.STL" />
+    <mesh name="right_middle_proximal_link" content_type="model/stl" file="assets/right_middle_proximal_link.STL" />
+    <mesh name="right_middle_middle_link" content_type="model/stl" file="assets/right_middle_middle_link.STL" />
+    <mesh name="right_middle_distal_link" content_type="model/stl" file="assets/right_middle_distal_link.STL" />
+    <mesh name="right_middle_tip_link" content_type="model/stl" file="assets/right_middle_tip_link.STL" />
+    <mesh name="right_ring_f_link" content_type="model/stl" file="assets/right_ring_f_link.STL" />
+    <mesh name="right_ring_proximal_link" content_type="model/stl" file="assets/right_ring_proximal_link.STL" />
+    <mesh name="right_ring_middle_link" content_type="model/stl" file="assets/right_ring_middle_link.STL" />
+    <mesh name="right_ring_distal_link" content_type="model/stl" file="assets/right_ring_distal_link.STL" />
+    <mesh name="right_ring_tip_link" content_type="model/stl" file="assets/right_ring_tip_link.STL" />
+    <mesh name="right_pinky_f_link" content_type="model/stl" file="assets/right_pinky_f_link.STL" />
+    <mesh name="right_pinky_proximal_link" content_type="model/stl" file="assets/right_pinky_proximal_link.STL" />
+    <mesh name="right_pinky_middle_link" content_type="model/stl" file="assets/right_pinky_middle_link.STL" />
+    <mesh name="right_pinky_distal_link" content_type="model/stl" file="assets/right_pinky_distal_link.STL" />
+    <mesh name="right_pinky_tip_link" content_type="model/stl" file="assets/right_pinky_tip_link.STL" />
+    <mesh name="right_t_link" content_type="model/stl" file="assets/right_t_link.STL" />
+    <mesh name="right_thumb_mcp_link" content_type="model/stl" file="assets/right_thumb_mcp_link.STL" />
+    <mesh name="right_thumb_proximal_link" content_type="model/stl" file="assets/right_thumb_proximal_link.STL" />
+    <mesh name="right_thumb_distal_link" content_type="model/stl" file="assets/right_thumb_distal_link.STL" />
+    <mesh name="right_thumb_tip_link" content_type="model/stl" file="assets/right_thumb_tip_link.STL" />
+    <mesh name="cube_mesh" content_type="model/obj" file="assets/dex_cube.obj" scale="0.025 0.025 0.025" />
+    <mesh name="kit_thumb_cap" file="assets/kit_thumb_cap.stl" scale=".001 .001 .001" />
+    <mesh name="kit_thumb_board" file="assets/kit_thumb_board.stl" scale=".001 .001 .001" />
+    <mesh name="kit_thumb_pvdf" file="assets/kit_thumb_pvdf.stl" scale=".001 .001 .001" />
+    <mesh name="kit_thumb_barrier" file="assets/kit_thumb_barrier.stl" scale=".001 .001 .001" />
+    <mesh name="kit_thumb_dome" file="assets/kit_thumb_dome.stl" scale=".001 .001 .001" />
+    <mesh name="kit_thumb_reflector" file="assets/kit_thumb_reflector.stl" scale=".001 .001 .001" />
+    <mesh name="kit_thumb_skin" file="assets/kit_thumb_skin.stl" scale=".001 .001 .001" />
+    <mesh name="kit_thumb_side_-1" file="assets/kit_thumb_side_-1.stl" scale=".001 .001 .001" />
+    <mesh name="kit_thumb_side_+1" file="assets/kit_thumb_side_+1.stl" scale=".001 .001 .001" />
+    <mesh name="kit_thumb_snap_0" file="assets/kit_thumb_snap_0.stl" scale=".001 .001 .001" />
+    <mesh name="kit_thumb_snap_1" file="assets/kit_thumb_snap_1.stl" scale=".001 .001 .001" />
+    <mesh name="kit_index_cap" file="assets/kit_index_cap.stl" scale=".001 .001 .001" />
+    <mesh name="kit_index_board" file="assets/kit_index_board.stl" scale=".001 .001 .001" />
+    <mesh name="kit_index_pvdf" file="assets/kit_index_pvdf.stl" scale=".001 .001 .001" />
+    <mesh name="kit_index_barrier" file="assets/kit_index_barrier.stl" scale=".001 .001 .001" />
+    <mesh name="kit_index_dome" file="assets/kit_index_dome.stl" scale=".001 .001 .001" />
+    <mesh name="kit_index_reflector" file="assets/kit_index_reflector.stl" scale=".001 .001 .001" />
+    <mesh name="kit_index_skin" file="assets/kit_index_skin.stl" scale=".001 .001 .001" />
+    <mesh name="kit_index_side_-1" file="assets/kit_index_side_-1.stl" scale=".001 .001 .001" />
+    <mesh name="kit_index_side_+1" file="assets/kit_index_side_+1.stl" scale=".001 .001 .001" />
+    <mesh name="kit_index_snap_0" file="assets/kit_index_snap_0.stl" scale=".001 .001 .001" />
+    <mesh name="kit_index_snap_1" file="assets/kit_index_snap_1.stl" scale=".001 .001 .001" />
+    <mesh name="kit_middle_cap" file="assets/kit_middle_cap.stl" scale=".001 .001 .001" />
+    <mesh name="kit_middle_board" file="assets/kit_middle_board.stl" scale=".001 .001 .001" />
+    <mesh name="kit_middle_pvdf" file="assets/kit_middle_pvdf.stl" scale=".001 .001 .001" />
+    <mesh name="kit_middle_barrier" file="assets/kit_middle_barrier.stl" scale=".001 .001 .001" />
+    <mesh name="kit_middle_dome" file="assets/kit_middle_dome.stl" scale=".001 .001 .001" />
+    <mesh name="kit_middle_reflector" file="assets/kit_middle_reflector.stl" scale=".001 .001 .001" />
+    <mesh name="kit_middle_skin" file="assets/kit_middle_skin.stl" scale=".001 .001 .001" />
+    <mesh name="kit_middle_side_-1" file="assets/kit_middle_side_-1.stl" scale=".001 .001 .001" />
+    <mesh name="kit_middle_side_+1" file="assets/kit_middle_side_+1.stl" scale=".001 .001 .001" />
+    <mesh name="kit_middle_snap_0" file="assets/kit_middle_snap_0.stl" scale=".001 .001 .001" />
+    <mesh name="kit_middle_snap_1" file="assets/kit_middle_snap_1.stl" scale=".001 .001 .001" />
+    <mesh name="kit_ring_cap" file="assets/kit_ring_cap.stl" scale=".001 .001 .001" />
+    <mesh name="kit_ring_board" file="assets/kit_ring_board.stl" scale=".001 .001 .001" />
+    <mesh name="kit_ring_pvdf" file="assets/kit_ring_pvdf.stl" scale=".001 .001 .001" />
+    <mesh name="kit_ring_barrier" file="assets/kit_ring_barrier.stl" scale=".001 .001 .001" />
+    <mesh name="kit_ring_dome" file="assets/kit_ring_dome.stl" scale=".001 .001 .001" />
+    <mesh name="kit_ring_reflector" file="assets/kit_ring_reflector.stl" scale=".001 .001 .001" />
+    <mesh name="kit_ring_skin" file="assets/kit_ring_skin.stl" scale=".001 .001 .001" />
+    <mesh name="kit_ring_side_-1" file="assets/kit_ring_side_-1.stl" scale=".001 .001 .001" />
+    <mesh name="kit_ring_side_+1" file="assets/kit_ring_side_+1.stl" scale=".001 .001 .001" />
+    <mesh name="kit_ring_snap_0" file="assets/kit_ring_snap_0.stl" scale=".001 .001 .001" />
+    <mesh name="kit_ring_snap_1" file="assets/kit_ring_snap_1.stl" scale=".001 .001 .001" />
+    <mesh name="kit_pinky_cap" file="assets/kit_pinky_cap.stl" scale=".001 .001 .001" />
+    <mesh name="kit_pinky_board" file="assets/kit_pinky_board.stl" scale=".001 .001 .001" />
+    <mesh name="kit_pinky_pvdf" file="assets/kit_pinky_pvdf.stl" scale=".001 .001 .001" />
+    <mesh name="kit_pinky_barrier" file="assets/kit_pinky_barrier.stl" scale=".001 .001 .001" />
+    <mesh name="kit_pinky_dome" file="assets/kit_pinky_dome.stl" scale=".001 .001 .001" />
+    <mesh name="kit_pinky_reflector" file="assets/kit_pinky_reflector.stl" scale=".001 .001 .001" />
+    <mesh name="kit_pinky_skin" file="assets/kit_pinky_skin.stl" scale=".001 .001 .001" />
+    <mesh name="kit_pinky_side_-1" file="assets/kit_pinky_side_-1.stl" scale=".001 .001 .001" />
+    <mesh name="kit_pinky_side_+1" file="assets/kit_pinky_side_+1.stl" scale=".001 .001 .001" />
+    <mesh name="kit_pinky_snap_0" file="assets/kit_pinky_snap_0.stl" scale=".001 .001 .001" />
+    <mesh name="kit_pinky_snap_1" file="assets/kit_pinky_snap_1.stl" scale=".001 .001 .001" />
+    <mesh name="kit_palm_plate" file="assets/kit_palm_plate.stl" scale=".001 .001 .001" />
+    <mesh name="kit_palm_flex_row_0" file="assets/kit_palm_flex_row_0.stl" scale=".001 .001 .001" />
+    <mesh name="kit_palm_flex_row_1" file="assets/kit_palm_flex_row_1.stl" scale=".001 .001 .001" />
+    <mesh name="kit_palm_flex_row_2" file="assets/kit_palm_flex_row_2.stl" scale=".001 .001 .001" />
+    <mesh name="kit_palm_silicone" file="assets/kit_palm_silicone.stl" scale=".001 .001 .001" />
+    <mesh name="kit_palm_skin" file="assets/kit_palm_skin.stl" scale=".001 .001 .001" />
+    <mesh name="kit_index_pad_shell" file="assets/kit_index_pad_shell.stl" scale=".001 .001 .001" />
+    <mesh name="kit_index_pad_flex" file="assets/kit_index_pad_flex.stl" scale=".001 .001 .001" />
+    <mesh name="kit_index_pad_silicone" file="assets/kit_index_pad_silicone.stl" scale=".001 .001 .001" />
+    <mesh name="kit_index_pad_skin" file="assets/kit_index_pad_skin.stl" scale=".001 .001 .001" />
+    <mesh name="kit_middle_pad_shell" file="assets/kit_middle_pad_shell.stl" scale=".001 .001 .001" />
+    <mesh name="kit_middle_pad_flex" file="assets/kit_middle_pad_flex.stl" scale=".001 .001 .001" />
+    <mesh name="kit_middle_pad_silicone" file="assets/kit_middle_pad_silicone.stl" scale=".001 .001 .001" />
+    <mesh name="kit_middle_pad_skin" file="assets/kit_middle_pad_skin.stl" scale=".001 .001 .001" />
+    <mesh name="kit_ring_pad_shell" file="assets/kit_ring_pad_shell.stl" scale=".001 .001 .001" />
+    <mesh name="kit_ring_pad_flex" file="assets/kit_ring_pad_flex.stl" scale=".001 .001 .001" />
+    <mesh name="kit_ring_pad_silicone" file="assets/kit_ring_pad_silicone.stl" scale=".001 .001 .001" />
+    <mesh name="kit_ring_pad_skin" file="assets/kit_ring_pad_skin.stl" scale=".001 .001 .001" />
+    <mesh name="kit_pinky_pad_shell" file="assets/kit_pinky_pad_shell.stl" scale=".001 .001 .001" />
+    <mesh name="kit_pinky_pad_flex" file="assets/kit_pinky_pad_flex.stl" scale=".001 .001 .001" />
+    <mesh name="kit_pinky_pad_silicone" file="assets/kit_pinky_pad_silicone.stl" scale=".001 .001 .001" />
+    <mesh name="kit_pinky_pad_skin" file="assets/kit_pinky_pad_skin.stl" scale=".001 .001 .001" />
+    <mesh name="kit_hub_board" file="assets/kit_hub_board.stl" scale=".001 .001 .001" />
+    <mesh name="kit_hub_cover_top" file="assets/kit_hub_cover_top.stl" scale=".001 .001 .001" />
+    <mesh name="kit_hub_cover_left" file="assets/kit_hub_cover_left.stl" scale=".001 .001 .001" />
+    <mesh name="kit_hub_cover_right" file="assets/kit_hub_cover_right.stl" scale=".001 .001 .001" />
+    <mesh name="kit_hub_cover_base" file="assets/kit_hub_cover_base.stl" scale=".001 .001 .001" />
+    <mesh name="kit_hub_cover_tip" file="assets/kit_hub_cover_tip.stl" scale=".001 .001 .001" />
+    <mesh name="collision_thumb_optical_0" file="assets/collision_thumb_optical_0.stl" scale=".001 .001 .001" />
+    <mesh name="collision_thumb_optical_1" file="assets/collision_thumb_optical_1.stl" scale=".001 .001 .001" />
+    <mesh name="collision_thumb_optical_2" file="assets/collision_thumb_optical_2.stl" scale=".001 .001 .001" />
+    <mesh name="collision_thumb_optical_3" file="assets/collision_thumb_optical_3.stl" scale=".001 .001 .001" />
+    <mesh name="collision_index_optical_0" file="assets/collision_index_optical_0.stl" scale=".001 .001 .001" />
+    <mesh name="collision_index_optical_1" file="assets/collision_index_optical_1.stl" scale=".001 .001 .001" />
+    <mesh name="collision_index_optical_2" file="assets/collision_index_optical_2.stl" scale=".001 .001 .001" />
+    <mesh name="collision_index_optical_3" file="assets/collision_index_optical_3.stl" scale=".001 .001 .001" />
+    <mesh name="collision_middle_optical_0" file="assets/collision_middle_optical_0.stl" scale=".001 .001 .001" />
+    <mesh name="collision_middle_optical_1" file="assets/collision_middle_optical_1.stl" scale=".001 .001 .001" />
+    <mesh name="collision_middle_optical_2" file="assets/collision_middle_optical_2.stl" scale=".001 .001 .001" />
+    <mesh name="collision_middle_optical_3" file="assets/collision_middle_optical_3.stl" scale=".001 .001 .001" />
+    <mesh name="collision_ring_optical_0" file="assets/collision_ring_optical_0.stl" scale=".001 .001 .001" />
+    <mesh name="collision_ring_optical_1" file="assets/collision_ring_optical_1.stl" scale=".001 .001 .001" />
+    <mesh name="collision_ring_optical_2" file="assets/collision_ring_optical_2.stl" scale=".001 .001 .001" />
+    <mesh name="collision_ring_optical_3" file="assets/collision_ring_optical_3.stl" scale=".001 .001 .001" />
+    <mesh name="collision_pinky_optical_0" file="assets/collision_pinky_optical_0.stl" scale=".001 .001 .001" />
+    <mesh name="collision_pinky_optical_1" file="assets/collision_pinky_optical_1.stl" scale=".001 .001 .001" />
+    <mesh name="collision_pinky_optical_2" file="assets/collision_pinky_optical_2.stl" scale=".001 .001 .001" />
+    <mesh name="collision_pinky_optical_3" file="assets/collision_pinky_optical_3.stl" scale=".001 .001 .001" />
+    <mesh name="collision_palm_baro_0" file="assets/collision_palm_baro_0.stl" scale=".001 .001 .001" />
+    <mesh name="collision_palm_baro_1" file="assets/collision_palm_baro_1.stl" scale=".001 .001 .001" />
+    <mesh name="collision_palm_baro_2" file="assets/collision_palm_baro_2.stl" scale=".001 .001 .001" />
+    <mesh name="collision_palm_baro_3" file="assets/collision_palm_baro_3.stl" scale=".001 .001 .001" />
+    <mesh name="collision_palm_baro_4" file="assets/collision_palm_baro_4.stl" scale=".001 .001 .001" />
+    <mesh name="collision_palm_baro_5" file="assets/collision_palm_baro_5.stl" scale=".001 .001 .001" />
+    <mesh name="collision_palm_baro_6" file="assets/collision_palm_baro_6.stl" scale=".001 .001 .001" />
+    <mesh name="collision_palm_baro_7" file="assets/collision_palm_baro_7.stl" scale=".001 .001 .001" />
+    <mesh name="collision_palm_baro_8" file="assets/collision_palm_baro_8.stl" scale=".001 .001 .001" />
+    <mesh name="collision_palm_baro_9" file="assets/collision_palm_baro_9.stl" scale=".001 .001 .001" />
+    <mesh name="collision_palm_baro_10" file="assets/collision_palm_baro_10.stl" scale=".001 .001 .001" />
+    <mesh name="collision_palm_baro_11" file="assets/collision_palm_baro_11.stl" scale=".001 .001 .001" />
+    <mesh name="collision_index_baro_0" file="assets/collision_index_baro_0.stl" scale=".001 .001 .001" />
+    <mesh name="collision_index_baro_1" file="assets/collision_index_baro_1.stl" scale=".001 .001 .001" />
+    <mesh name="collision_middle_baro_0" file="assets/collision_middle_baro_0.stl" scale=".001 .001 .001" />
+    <mesh name="collision_middle_baro_1" file="assets/collision_middle_baro_1.stl" scale=".001 .001 .001" />
+    <mesh name="collision_ring_baro_0" file="assets/collision_ring_baro_0.stl" scale=".001 .001 .001" />
+    <mesh name="collision_ring_baro_1" file="assets/collision_ring_baro_1.stl" scale=".001 .001 .001" />
+    <mesh name="collision_pinky_baro_0" file="assets/collision_pinky_baro_0.stl" scale=".001 .001 .001" />
+    <mesh name="collision_pinky_baro_1" file="assets/collision_pinky_baro_1.stl" scale=".001 .001 .001" />
+  <mesh name="kit_pad_hull_thumb_tip" file="assets/kit_thumb_skin.stl" scale=".001 .001 .001" maxhullvert="32" /><mesh name="kit_pad_hull_index_tip" file="assets/kit_index_skin.stl" scale=".001 .001 .001" maxhullvert="32" /><mesh name="kit_pad_hull_middle_tip" file="assets/kit_middle_skin.stl" scale=".001 .001 .001" maxhullvert="32" /><mesh name="kit_pad_hull_ring_tip" file="assets/kit_ring_skin.stl" scale=".001 .001 .001" maxhullvert="32" /><mesh name="kit_pad_hull_pinky_tip" file="assets/kit_pinky_skin.stl" scale=".001 .001 .001" maxhullvert="32" /><mesh name="kit_pad_hull_palm" file="assets/kit_palm_skin.stl" scale=".001 .001 .001" maxhullvert="32" /><mesh name="kit_pad_hull_index_pad" file="assets/kit_index_pad_skin.stl" scale=".001 .001 .001" maxhullvert="32" /><mesh name="kit_pad_hull_middle_pad" file="assets/kit_middle_pad_skin.stl" scale=".001 .001 .001" maxhullvert="32" /><mesh name="kit_pad_hull_ring_pad" file="assets/kit_ring_pad_skin.stl" scale=".001 .001 .001" maxhullvert="32" /><mesh name="kit_pad_hull_pinky_pad" file="assets/kit_pinky_pad_skin.stl" scale=".001 .001 .001" maxhullvert="32" /><mesh name="kit_palm_conformal_0" vertex="-0.03729116953 -0.02445696834 0.037853288480000004 -0.03720131655 -0.0240179084 0.0535 -0.037176247600000004 -0.02336778773 0.0535 -0.03660700686 -0.023849114570000003 0.03704265024 -0.00122540042 -0.03169656541 0.03725632963 0.033224711159999996 -0.026503336290000002 0.03790194036 0.03320460462 -0.024784161290000002 0.0535 -0.00283270288 -0.02974698402 0.0535 -0.019739921290000004 -0.02996682021 0.03720831073 0.015497241790000001 -0.030243121810000002 0.04236139334 0.01548597816 -0.03068122828 0.03729299591 -0.0203857161 -0.02829330485 0.0535 0.015430214749999999 -0.02864400471 0.0535 0.0325173366 -0.02589235817 0.03705823113 0.033179613860000005 -0.024127097580000003 0.0535 -0.01123245015 -0.03077488156 0.04312544139 -0.0292071169 -0.02735320144 0.03715145508 0.032561535350000004 -0.026540801510000003 0.037066459440000005 0.00542138139 -0.030978978049999998 0.044037036280000004 -0.03725511997 -0.02380800232 0.037846690860000004 -0.0112485112 -0.03120032894 0.03723538952 0.03319688978 -0.02585405462 0.03788931917 -0.036663876410000004 -0.024496593940000002 0.03704867691 0.023063053610000002 -0.029264742240000002 0.03731338606 -0.01197308715 -0.029420793110000003 0.053058080779999996 0.00706717881 -0.029544989860000002 0.05313606739 0.02136434171 -0.02822940144 0.04974628396 -0.025563986880000004 -0.02757223772 0.05028279275 0.00866958889 -0.03138109982 0.037272286780000004 -0.0037217419700000002 -0.03110508204 0.04401368035 -0.01196788956 -0.02934549745 0.0535 0.02216912116 -0.02743533914 0.0535" maxhullvert="32" /><mesh name="kit_palm_conformal_1" vertex="-0.03720131655 -0.0240179084 0.0535 -0.037148998120000006 -0.02327977477 0.0685 -0.00199932443 -0.02974966816 0.0535 0.03313901634 -0.021732114400000002 0.0685 0.03320857826 -0.02448571202 0.05541528011 0.0020958280700000003 -0.02619376307 0.0685 0.033179613860000005 -0.024127097580000003 0.0535 0.017106034090000003 -0.02839136607 0.0535 -0.01951985373 -0.02843640989 0.0535 0.01940410139 -0.024928451429999998 0.0685 -0.0198798748 -0.0257381034 0.0685 -0.037130327469999995 -0.02262883563 0.0685 -0.037176247600000004 -0.02336778773 0.0535 0.03315921044 -0.022390385040000002 0.0685 0.03320460462 -0.024784161290000002 0.0535 0.00871247244 -0.02794710073 0.060527486600000006 0.00790199368 -0.02942291255 0.0535 -0.006879402200000001 -0.027900246630000004 0.06221530334 -0.01114785846 -0.02941081296 0.0535 -0.026351437180000003 -0.02702995623 0.0535 -0.00925617917 -0.02624622914 0.0685 0.011090496290000001 -0.02579025089 0.0685 -0.02658910868 -0.02501745187 0.0685 0.0012938007199999998 -0.028281494089999998 0.060551513370000004 0.02300233758 -0.0272508193 0.0535 0.01534568446 -0.02713506944 0.06129206095 -0.012683132940000001 -0.02803005173 0.06043341791 0.02041216832 -0.026367185760000002 0.061214400769999996 -0.01851428095 -0.02750468142 0.060307061030000005 0.01289069001 -0.028882384940000002 0.05395169997 0.01289146295 -0.02896466809 0.0535" maxhullvert="32" /><mesh name="kit_palm_conformal_2" vertex="-0.018000000000000002 -0.025863585520000003 0.0685 -0.00739727757 -0.021196474150000002 0.08521963014 -0.0067778935400000006 -0.02626834202 0.0685 0.0 -0.026231504200000002 0.0685 0.0 -0.02040364848 0.08518699682 -0.018000000000000002 -0.02139748214 0.0827752397 -0.018000000000000002 -0.02181309017 0.08517328092 -0.018000000000000002 -0.02519537535 0.0685 -0.018000000000000002 -0.02116171657 0.08515212977 0.0 -0.02555661092 0.0685 0.0 -0.02105311081 0.08521342053 0.0 -0.02083993193 0.08242197962 -0.00820022195 -0.02064804145 0.0839721795 -0.008965019670000001 -0.02060398892 0.08519036976 -0.00117691108 -0.02055295121 0.08348869411 0.0 -0.020550458280000003 0.08348314609" maxhullvert="32" /><mesh name="kit_palm_conformal_3" vertex="0.0 -0.026231504200000002 0.0685 0.0 -0.02105311081 0.08521342053 0.00038362823 -0.020403551279999998 0.0851867254 0.018000000000000002 -0.025120265 0.0685 0.018000000000000002 -0.02125556835 0.08514323655 0.018000000000000002 -0.020942928410000002 0.08198769477000001 0.018000000000000002 -0.020605799520000002 0.08512548025 0.018000000000000002 -0.02444611685 0.0685 0.0 -0.02555661092 0.0685 0.0 -0.020666437819999998 0.08299182843 0.0 -0.02040364848 0.08518699682 0.009996602850000001 -0.02586369692 0.0685" maxhullvert="32" /><mesh name="kit_palm_conformal_4" vertex="0.018000000000000002 -0.025120265 0.0685 0.018000000000000002 -0.02125556835 0.08514323655 0.033119970979999996 -0.019358507240000003 0.08431349812000001 0.03315921044 -0.022390385040000002 0.0685 0.018000000000000002 -0.020942928410000002 0.08198769477000001 0.03071580746 -0.02195770169 0.0685 0.03241700434 -0.02001486369 0.08508152346 0.018000000000000002 -0.020605799520000002 0.08512548025 0.03313901634 -0.021732114400000002 0.0685 0.018000000000000002 -0.02444611685 0.0685 0.03239069991 -0.01936547459 0.08507143008 0.033136923400000004 -0.02000808819 0.0843295359 0.0247025889 -0.0209843679 0.08510444624 0.03176955878 -0.01962784653 0.08164234119 0.03312674506 -0.019571625699999998 0.08164211856999999 0.02275054107 -0.02440828178 0.0685" maxhullvert="32" /><mesh name="kit_palm_conformal_5" vertex="-0.037148998120000006 -0.02327977477 0.0685 -0.037126283290000006 -0.0220269449 0.077 -0.03711137937 -0.02131377483 0.077 -0.018000000000000002 -0.025863585520000003 0.0685 -0.018000000000000002 -0.0237326351 0.077 -0.035213048090000004 -0.022747584400000003 0.0685 -0.018000000000000002 -0.023057294960000002 0.077 -0.018000000000000002 -0.02519537535 0.0685 -0.037130327469999995 -0.02262883563 0.0685 -0.0274062457 -0.0234461751 0.077 -0.03712039915 -0.02291107423 0.07362766386 -0.02573493481 -0.02513288832 0.0685 -0.03712044127 -0.02273233564 0.07482239676" maxhullvert="32" /><mesh name="kit_palm_conformal_6" vertex="-0.037203258089999997 -0.0186434014 0.0806590437 -0.03716822053 -0.01643126083 0.082 -0.03712846122 -0.01536245433 0.082 -0.037126283290000006 -0.0220269449 0.077 -0.018000000000000002 -0.0237326351 0.077 -0.018000000000000002 -0.02226842256 0.082 -0.02683238818 -0.02180077671 0.082 -0.018000000000000002 -0.02181294461 0.08122979355 -0.018000000000000002 -0.023057294960000002 0.077 -0.018000000000000002 -0.021593018380000002 0.082 -0.02707418104 -0.02339644733 0.07736118639999999 -0.03715399172 -0.02080153053 0.07905995776000001 -0.03484754676 -0.01560505259 0.082 -0.03637982908 -0.02133368133 0.077 -0.02343319705 -0.02237377313 0.082 -0.03711137937 -0.02131377483 0.077 -0.0274062457 -0.0234461751 0.077 -0.02969234534 -0.020608616309999998 0.082 -0.037129683909999996 -0.02149325418 0.07814286382 -0.02820796866 -0.022919053680000002 0.07865613020000001" maxhullvert="32" /><mesh name="kit_palm_conformal_7" vertex="-0.027645584759999998 -0.02151128817 0.082 -0.027645584759999998 -0.020108680660000003 0.08537553869 -0.027645584759999998 -0.01928097646 0.08536573229 -0.02185985204 -0.02241094718 0.082 -0.018000000000000002 -0.02226842256 0.082 -0.018000000000000002 -0.02181309017 0.08517328092 -0.023530052330000002 -0.0218370194 0.08520254319000001 -0.018000000000000002 -0.02129333809 0.08332004776 -0.027645584759999998 -0.02072915609 0.082 -0.018000000000000002 -0.02116171657 0.08515212977 -0.018000000000000002 -0.021593018380000002 0.082 -0.027645584759999998 -0.01946489095 0.08410372988 -0.02503903907 -0.022200466710000002 0.082 -0.02519299536 -0.02142757962 0.08524710159 -0.02100818027 -0.02198484937 0.0851641155" maxhullvert="32" /><mesh name="kit_palm_conformal_8" vertex="-0.032468377140000004 -0.018526153059999998 0.082 -0.032468377140000004 -0.01389524156 0.08484742181 -0.03108166158 -0.01584197072 0.08575229684999999 -0.027645584759999998 -0.02151128817 0.082 -0.027645584759999998 -0.020108680660000003 0.08537553869 -0.027645584759999998 -0.01946489095 0.08410372988 -0.032468377140000004 -0.017323475169999998 0.082 -0.032468377140000004 -0.01454386727 0.08559312553 -0.03073107491 -0.01530260661 0.08565915534 -0.032178702020000005 -0.01395786738 0.08551362392999999 -0.027645584759999998 -0.02072915609 0.082 -0.027645584759999998 -0.01928097646 0.08536573229 -0.02969234534 -0.020608616309999998 0.082 -0.03135817867 -0.014594444060000001 0.08517529688 -0.032468377140000004 -0.01509551977 0.08357263336 -0.02871007008 -0.01906395361 0.08553249046000001 -0.032468377140000004 -0.01403368631 0.08450975833" maxhullvert="32" /><mesh name="kit_palm_conformal_9" vertex="-0.03716822053 -0.01643126083 0.082 -0.03604522949 -0.01410105839 0.08437614843 -0.035620261130000004 -0.013953471410000001 0.08344168344000001 -0.03487977334 -0.01666161039 0.082 -0.03487977334 -0.014060607550000001 0.08437614843 -0.03700750745 -0.01401634732 0.08330750383 -0.03682687394 -0.01477789249 0.08425334995 -0.03487977334 -0.0148293629 0.08258035447999999 -0.03712846122 -0.01536245433 0.082 -0.03487977334 -0.01471091491 0.08437614843 -0.036848308590000003 -0.01412827959 0.08424674472 -0.03487977334 -0.01397359937 0.08352036893 -0.03487977334 -0.01559622402 0.082 -0.03617348774 -0.014126284610000001 0.08309099432" maxhullvert="32" /><mesh name="kit_palm_conformal_10" vertex="-0.03604522949 -0.01410105839 0.08437614843 -0.036022796520000004 -0.01475066514 0.08437614843 -0.03487977334 -0.01471091491 0.08437614843 -0.03487977334 -0.014705578450000001 0.08504479449999999 -0.03487977334 -0.01405524227 0.08503963068 -0.03603907728 -0.014097554929999999 0.08502400504 -0.03487977334 -0.014060607550000001 0.08437614843 -0.03601569591 -0.01474712541 0.08502739705000001" maxhullvert="32" /><mesh name="kit_palm_conformal_11" vertex="-0.03487977334 -0.01666161039 0.082 -0.03487977334 -0.01471091491 0.08437614843 -0.03348804835 -0.013853716430000001 0.08421094646999999 -0.032468377140000004 -0.018526153059999998 0.082 -0.03487977334 -0.01409398772 0.08329089034 -0.032468377140000004 -0.015274307220000002 0.08437614843 -0.032468377140000004 -0.015553769810000001 0.08320126842 -0.03258466061 -0.01405853765 0.08437614843 -0.03487977334 -0.014060607550000001 0.08437614843 -0.03438941924 -0.015805503710000002 0.082 -0.032468377140000004 -0.017323475169999998 0.082 -0.03487977334 -0.01559622402 0.082 -0.0336330866 -0.01464482905 0.08320126842 -0.03487977334 -0.01397359937 0.08352036893 -0.03312762967 -0.01388537681 0.08437614843 -0.03405437674 -0.01407534924 0.08351524362000001" maxhullvert="32" /><mesh name="kit_palm_conformal_12" vertex="-0.03487977334 -0.01471091491 0.08437614843 -0.03256141492 -0.013860254570000001 0.08480334141 -0.032468377140000004 -0.015274307220000002 0.08437614843 -0.032468377140000004 -0.01454386727 0.08559312553 -0.03487977334 -0.01405524227 0.08503963068 -0.03487977334 -0.014060607550000001 0.08437614843 -0.03487977334 -0.014705578450000001 0.08504479449999999 -0.0325989072 -0.01404282341 0.08437614843 -0.03312762967 -0.01388537681 0.08437614843 -0.032468377140000004 -0.01403123648 0.08518697625 -0.032468377140000004 -0.014059498980000001 0.08448723376" maxhullvert="32" /></asset>
+  <worldbody>
+    <geom name="floor" size="0 0 0.01" pos="0 0 -0.25" type="plane" contype="6" conaffinity="2" material="groundplane" />
+    <camera name="side" quat="-0.288531 -0.158885 0.455451 0.827085" pos="-0.183 0.396 0.296" />
+    <light name="spotlight" target="palm" pos="3 0 4" mode="targetbodycom" />
+    <body name="tetheria_mount" childclass="tetheria_rh" pos="0 0 -0.03">
+      <geom name="tetheria_mount_visual" class="visual" pos="0.04 0.01 -0.012" quat="0.410475 -0.57577 0.57577 -0.410475" mesh="tetheria_mount" />
+      <geom name="tetheria_mount_collision_0" size="0.002 0.025 0.005" pos="0.0405 0.02 0.009" quat="0.573462 0 0.819232 0" type="box" />
+      <geom name="tetheria_mount_collision_1" size="0.005 0.01 0.005" pos="0.045 0.053 0.002" quat="0.498717 0.64994 -0.349102 0.454958" type="box" />
+      <site name="grasp_site" pos="0.11 0 0.03" group="4" />
+      <body name="palm" pos="0.04 0.01 -0.015" quat="0.405606 -0.579209 0.579209 -0.405606">
+        <geom class="visual" mesh="right_frame_link" />
+        <geom name="palm_collision_1" size="0.006 0.006 0.006" pos="0.031 -0.0045 0.096" quat="-0.5 -0.5 -0.5 0.5" type="box" />
+        <geom name="palm_collision_2" size="0.006 0.006 0.006" pos="0.009 -0.0045 0.096" quat="-0.5 -0.5 -0.5 0.5" type="box" />
+        <geom name="palm_collision_3" size="0.006 0.006 0.006" pos="-0.014 -0.0045 0.096" quat="-0.5 -0.5 -0.5 0.5" type="box" />
+        <geom name="palm_collision_4" size="0.006 0.006 0.006" pos="-0.036 -0.0045 0.081" quat="-0.5 -0.5 -0.5 0.5" type="box" />
+        <geom name="palm_collision_5" size="0.029 0.01 0.023" pos="-0.028 -0.0015 0.034" quat="0.420605 -0.420605 -0.568411 -0.568411" type="box" />
+        <geom name="palm_collision_6" size="0.016 0.044 0.015" pos="0 0.007 0.07" quat="-0.5 -0.5 -0.5 0.5" type="box" />
+        <geom name="palm_collision_7" size="0.0071 0.042 0.013" pos="0.002 -0.014 0.0745" quat="0.701026 -0.0925349 -0.0925349 -0.701026" type="box" />
+        <geom name="palm_collision_8" size="0.012 0.042 0.023" pos="0.002 -0.0015 0.052" quat="-0.5 -0.5 -0.5 0.5" type="box" />
+        <geom name="palm_collision_9" size="0.022 0.02 0.023" pos="-0.003 -0.0015 0.022" quat="-0.5 -0.5 -0.5 0.5" type="box" />
+        <geom name="palm_collision_10" size="0.002 0.018 0.017" pos="0.041 0.004 0.002" quat="-0.5 -0.5 -0.5 0.5" type="box" />
+        <geom name="palm_collision_11" size="0.022 0.028 0.002" pos="0.047 0.02 0.022" quat="-0.5 -0.5 -0.5 0.5" type="box" />
+        <site name="palm_collision_1" size="0.0001" pos="0.031 -0.017 0.076" group="3" />
+        <site name="palm_collision_2" size="0.0001" pos="0.009 -0.017 0.076" group="3" />
+        <site name="palm_collision_3" size="0.0001" pos="-0.014 -0.017 0.076" group="3" />
+        <site name="palm_collision_4" size="0.0001" pos="-0.036 -0.017 0.061" group="3" />
+        <body name="right_index_f_link" pos="0.031448 -0.004172 0.10003" quat="0.999505 0.000456857 0.026173 -0.0174466">
+          <inertial pos="0 0 0.0017" mass="0.000169697" diaginertia="1.29009e-09 1.29009e-09 7.6801e-10" />
+          <geom class="visual" mesh="right_index_f_link" />
+          <geom name="if_f_spring1_g0" class="visual" size="0.003 0.005" pos="0 0 0.0029" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+          <site name="if_f_spring1_s1" size="0.0005" pos="0 0.005 0" group="4" />
+          <body name="right_index_proximal_link" pos="0 0 0.0034">
+            <inertial pos="-6.14568e-08 -0.00357858 0.0205176" quat="0.706858 0.0179374 -0.0179385 0.7069" mass="0.00600337" diaginertia="8.89988e-07 8.65278e-07 2.05352e-07" />
+            <joint name="right_index_mcp_flex" class="rot" axis="1 0 0" />
+            <geom class="visual" mesh="right_index_proximal_link" />
+            <geom size="0.006 0.006 0.013" pos="0 -0.003 0.019" type="box" />
+            <geom name="if_proximal_tendon0_g0" class="visual" size="0.0025 0.005" pos="0 -0.0075 0.0095" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+            <geom name="if_proximal_tendon2" class="visual" size="0.0025 0.005" pos="0 -0.0057 0.0173" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+            <geom name="if_proximal_tendon3" class="visual" size="0.0025 0.005" pos="0 -0.0057 0.0323" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+            <geom name="if_proximal_tendon1_g0" class="visual" size="0.003 0.005" pos="0 -0.0018 0.043" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+            <site name="if_proximal_tendon0_s0" size="0.0001" pos="0 -0.011 0.0095" group="4" />
+            <site name="if_proximal_tendon0_s1" size="0.0001" pos="0 -0.0063 0.0135" group="4" />
+            <site name="if_proximal_tendon0_s2" size="0.0001" pos="0 -0.0022 0.0173" group="4" />
+            <site name="if_proximal_tendon0_s3" size="0.0001" pos="0 -0.0025 0.03" group="4" />
+            <site name="if_proximal_tendon0_s4" size="0.0001" pos="0 -0.0025 0.0333" group="4" />
+            <site name="if_proximal_tendon1_s0" size="0.0001" pos="0 -0.0048 0.04" group="4" />
+            <site name="if_proximal_tendon1_s1" size="0.0001" pos="0 0.0012 0.035" group="4" />
+            <site name="if_proximal_spring0_s0" size="0.0005" pos="0 0.0012 0.011" group="4" />
+            <site name="if_proximal_spring0_s1" size="0.0005" pos="0 0.0012 0.04" group="4" />
+            <site name="if_proximal_spring1_s0" size="0.0005" pos="0 0.003 0.004" group="4" />
+            <body name="right_index_middle_link" pos="0 -0.0014554 0.043" quat="0.999962 0.00872639 0 0">
+              <inertial pos="2.38785e-08 -0.00110516 0.00939619" quat="0.706833 -0.0191908 0.0192032 0.70686" mass="0.0023759" diaginertia="1.62521e-07 1.35575e-07 7.42871e-08" />
+              <joint name="right_index_pip" class="pip" axis="1 0 0" />
+              <geom class="visual" mesh="right_index_middle_link" />
+              <geom size="0.006 0.005 0.01" pos="0 -0.001 0.006" type="box" />
+              <site name="if_middle_spring0_s0" size="0.0005" pos="0 0.004 0.003" group="4" />
+              <body name="right_index_distal_link" pos="0 0.00036966 0.021997" quat="1 0.00052935 0 0">
+                <inertial pos="-0.00184412 0.000358323 0.0107277" quat="0.696253 -0.184428 0.0500635 0.69189" mass="0.00309312" diaginertia="1.89064e-07 1.75544e-07 6.39413e-08" />
+                <joint name="right_index_dip" class="dip" axis="1 0 0" />
+                <geom class="visual" mesh="right_index_distal_link" />
+                <geom class="visual" pos="0 0.0033789 0.024944" quat="0.999999 -0.0015829 0 0" mesh="right_index_tip_link" />
+                <geom name="if_tip" size="0.005 0.005 0.01" pos="0 -0.003 0.014" type="box" />
+                <geom name="if_dip_tendon0_g0" class="visual" size="0.0025 0.005" pos="0 -0.006 0.002" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+                <geom name="if_dip_tendon1_g0" class="visual" size="0.0025 0.005" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+                <site name="if_tip" pos="0 -0.003 0.023" group="4" />
+                <site name="if_dip_tendon0_s0" size="0.0001" pos="0 -0.0086 0.003" group="4" />
+                <site name="if_dip_tendon0_s2" size="0.0001" pos="0 -0.0015 0.0075" group="4" />
+                <site name="if_dip_tendon1_s0" size="0.0001" pos="0 0.0025 0.015" group="4" />
+                <site name="if_dip_tendon1_s1" size="0.0001" pos="0 0.0025 -0.002" group="4" />
+                <body name="kit_index_tip">
+                  <inertial pos="-5.0111685457e-07 -0.00763936545708 0.0137670757682" mass="0.0024766186467246056" fullinertia="1.29313411913e-07 1.24046959112e-07 1.02112388587e-07 3.0514752295e-12 7.10486736478e-12 -1.6131174996e-08" />
+                  <geom name="kit_visual_index_cap" type="mesh" mesh="kit_index_cap" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_index_board" type="mesh" mesh="kit_index_board" group="2" contype="0" conaffinity="0" mass="0" rgba="0.48 0.2 0.035 1" />
+                  <geom name="kit_visual_index_pvdf" type="mesh" mesh="kit_index_pvdf" group="2" contype="0" conaffinity="0" mass="0" rgba="0.64 0.67 0.69 1" />
+                  <geom name="kit_visual_index_barrier" type="mesh" mesh="kit_index_barrier" group="2" contype="0" conaffinity="0" mass="0" rgba="0.009 0.012 0.015 1" />
+                  <geom name="kit_visual_index_dome" type="mesh" mesh="kit_index_dome" group="2" contype="0" conaffinity="0" mass="0" rgba="0.9 0.98 1 0.32" />
+                  <geom name="kit_visual_index_reflector" type="mesh" mesh="kit_index_reflector" group="2" contype="0" conaffinity="0" mass="0" rgba="0.9 0.92 0.9 1" />
+                  <geom name="kit_visual_index_skin" type="mesh" mesh="kit_index_skin" group="2" contype="0" conaffinity="0" mass="0" rgba="0.014 0.018 0.022 1" />
+                  <geom name="kit_visual_index_side_-1" type="mesh" mesh="kit_index_side_-1" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_index_side_+1" type="mesh" mesh="kit_index_side_+1" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_index_snap_0" type="mesh" mesh="kit_index_snap_0" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_index_snap_1" type="mesh" mesh="kit_index_snap_1" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <site name="kit_site_index_optical_0" pos="-0.00460278125838 -0.0138901307121 0.0118451838197" quat="0.744295402682 0.638915062762 -0.147546724584 -0.12665646524" size=".0006" group="4" rgba="0 .8 .6 1" />
+                  <site name="kit_site_index_optical_1" pos="0.0046010838002 -0.0138951909159 0.0118392329026" quat="0.743917758786 0.6394068781 0.147336660773 0.126637754217" size=".0006" group="4" rgba="0 .8 .6 1" />
+                  <site name="kit_site_index_optical_2" pos="-0.00485226266795 -0.0110525816914 0.0191429621725" quat="0.856729576073 0.466547001963 -0.193105873903 -0.105159164627" size=".0006" group="4" rgba="0 .8 .6 1" />
+                  <site name="kit_site_index_optical_3" pos="0.00485324914523 -0.0110529759367 0.0191434063477" quat="0.856750386361 0.466460947599 0.193204206825 0.105190751975" size=".0006" group="4" rgba="0 .8 .6 1" />
+                <geom name="kit_pad_contact_index_tip" type="sphere" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" pos="2.706090453790524e-07 -0.001397848391685096 0.01132384482527991" size="0.01324288688571909" /></body>
+              </body>
+            </body>
+            <body name="kit_index_pad">
+              <inertial pos="-1.65931163827e-07 -0.0135128755514 0.0215102192487" mass="0.0008939562188611239" fullinertia="3.90296025061e-08 4.5497109314e-08 8.37682384974e-09 3.13973422967e-12 -1.38304621296e-12 -3.22533896534e-10" />
+              <geom name="kit_visual_index_pad_shell" type="mesh" mesh="kit_index_pad_shell" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+              <geom name="kit_visual_index_pad_flex" type="mesh" mesh="kit_index_pad_flex" group="2" contype="0" conaffinity="0" mass="0" rgba="0.48 0.2 0.035 1" />
+              <geom name="kit_visual_index_pad_silicone" type="mesh" mesh="kit_index_pad_silicone" group="2" contype="0" conaffinity="0" mass="0" rgba="0.28 0.38 0.4 1" />
+              <geom name="kit_visual_index_pad_skin" type="mesh" mesh="kit_index_pad_skin" group="2" contype="0" conaffinity="0" mass="0" rgba="0.014 0.018 0.022 1" />
+              <site name="kit_site_index_baro_0" pos="-1.50467956866e-06 -0.0154753447362 0.0143541279743" quat="0.70950566167 0.704699702813 -0.000150363200128 -0.000149344689083" size=".0006" group="4" rgba="0 .8 .6 1" />
+              <site name="kit_site_index_baro_1" pos="-1.49704536328e-06 -0.0153751413991 0.028775173668" quat="0.717504823054 0.69655350436 -0.000151286945949 -0.000146869329625" size=".0006" group="4" rgba="0 .8 .6 1" />
+            <geom name="kit_pad_contact_index_pad" type="capsule" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" fromto="6.145874294525816e-07 -0.010475460671544139 0.014320144911885964 6.114692328879698e-07 -0.01037733663234441 0.02862704174124019" size="0.005" /></body>
+            <body name="kit_index_wiring">
+              <inertial pos="0 0 .015" mass="0.0005" diaginertia="1e-7 1e-7 1e-7" />
+            </body>
+          </body>
+        </body>
+        <body name="right_middle_f_link" pos="0.0085 -0.003 0.10061">
+          <inertial pos="0 0 0.0017" mass="0.000169697" diaginertia="1.29009e-09 1.29009e-09 7.6801e-10" />
+          <geom class="visual" mesh="right_middle_f_link" />
+          <geom name="mf_f_spring1_g0" class="visual" size="0.003 0.005" pos="0 0 0.0029" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+          <site name="mf_f_spring1_s1" size="0.0005" pos="0 0.005 0" group="4" />
+          <body name="right_middle_proximal_link" pos="0 0 0.0034">
+            <inertial pos="-5.79907e-08 -0.00357858 0.0205176" quat="0.706861 0.0179374 -0.0179384 0.706897" mass="0.00600338" diaginertia="8.89988e-07 8.65279e-07 2.05352e-07" />
+            <joint name="right_middle_mcp_flex" class="rot" axis="1 0 0" />
+            <geom class="visual" mesh="right_middle_proximal_link" />
+            <geom size="0.006 0.006 0.013" pos="0 -0.003 0.019" type="box" />
+            <geom name="mf_proximal_tendon0_g0" class="visual" size="0.0025 0.005" pos="0 -0.0075 0.0095" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+            <geom name="mf_proximal_tendon2" class="visual" size="0.0025 0.005" pos="0 -0.0057 0.0173" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+            <geom name="mf_proximal_tendon3" class="visual" size="0.0025 0.005" pos="0 -0.0057 0.0323" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+            <geom name="mf_proximal_tendon1_g0" class="visual" size="0.003 0.005" pos="0 -0.0018 0.043" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+            <site name="mf_proximal_tendon0_s0" size="0.0001" pos="0 -0.011 0.0125" group="4" />
+            <site name="mf_proximal_tendon0_s1" size="0.0001" pos="0 -0.0063 0.0135" group="4" />
+            <site name="mf_proximal_tendon0_s2" size="0.0001" pos="0 -0.0022 0.0173" group="4" />
+            <site name="mf_proximal_tendon0_s3" size="0.0001" pos="0 -0.0025 0.0333" group="4" />
+            <site name="mf_proximal_tendon0_s4" size="0.0001" pos="0 -0.0025 0.0333" group="4" />
+            <site name="mf_proximal_tendon1_s0" size="0.0001" pos="0 -0.0048 0.04" group="4" />
+            <site name="mf_proximal_tendon1_s1" size="0.0001" pos="0 0.0012 0.035" group="4" />
+            <site name="mf_proximal_spring0_s0" size="0.0005" pos="0 0.0012 0.011" group="4" />
+            <site name="mf_proximal_spring0_s1" size="0.0005" pos="0 0.0012 0.04" group="4" />
+            <site name="mf_proximal_spring1_s0" size="0.0005" pos="0 0.003 0.004" group="4" />
+            <body name="right_middle_middle_link" pos="0 -0.0014554 0.043" quat="0.999962 0.00872639 0 0">
+              <inertial pos="9.42153e-09 -0.00110516 0.00939618" quat="0.706832 -0.0191899 0.0192034 0.706861" mass="0.0023759" diaginertia="1.62521e-07 1.35575e-07 7.42872e-08" />
+              <joint name="right_middle_pip" class="pip" axis="1 0 0" />
+              <geom class="visual" mesh="right_middle_middle_link" />
+              <geom size="0.006 0.005 0.01" pos="0 -0.001 0.006" type="box" />
+              <site name="mf_middle_spring0_s0" size="0.0005" pos="0 0.004 0.003" group="4" />
+              <body name="right_middle_distal_link" pos="0 0.00036966 0.021997" quat="1 0.00052935 0 0">
+                <inertial pos="-0.00184407 0.000358307 0.0107282" quat="0.696243 -0.184422 0.0500631 0.691902" mass="0.00309312" diaginertia="1.89075e-07 1.75556e-07 6.39407e-08" />
+                <joint name="right_middle_dip" class="dip" axis="1 0 0" />
+                <geom class="visual" mesh="right_middle_distal_link" />
+                <geom class="visual" pos="0 0.0033789 0.024944" quat="0.999999 -0.0015829 0 0" mesh="right_middle_tip_link" />
+                <geom name="mf_tip" size="0.005 0.005 0.01" pos="0 -0.003 0.014" type="box" />
+                <geom name="mf_dip_tendon0_g0" class="visual" size="0.0025 0.005" pos="0 -0.006 0.002" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+                <geom name="mf_dip_tendon1_g0" class="visual" size="0.0025 0.005" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+                <site name="mf_tip" pos="0 -0.003 0.023" group="4" />
+                <site name="mf_dip_tendon0_s0" size="0.0001" pos="0 -0.0086 0.003" group="4" />
+                <site name="mf_dip_tendon0_s2" size="0.0001" pos="0 -0.0015 0.0075" group="4" />
+                <site name="mf_dip_tendon1_s0" size="0.0001" pos="0 0.0025 0.015" group="4" />
+                <site name="mf_dip_tendon1_s1" size="0.0001" pos="0 0.0025 -0.002" group="4" />
+                <body name="kit_middle_tip">
+                  <inertial pos="-5.83339977443e-07 -0.00763921945851 0.0137686746262" mass="0.0024768755755991624" fullinertia="1.2934289381e-07 1.24079131709e-07 1.0211324443e-07 3.04135977631e-12 6.92302230138e-12 -1.61336067753e-08" />
+                  <geom name="kit_visual_middle_cap" type="mesh" mesh="kit_middle_cap" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_middle_board" type="mesh" mesh="kit_middle_board" group="2" contype="0" conaffinity="0" mass="0" rgba="0.48 0.2 0.035 1" />
+                  <geom name="kit_visual_middle_pvdf" type="mesh" mesh="kit_middle_pvdf" group="2" contype="0" conaffinity="0" mass="0" rgba="0.64 0.67 0.69 1" />
+                  <geom name="kit_visual_middle_barrier" type="mesh" mesh="kit_middle_barrier" group="2" contype="0" conaffinity="0" mass="0" rgba="0.009 0.012 0.015 1" />
+                  <geom name="kit_visual_middle_dome" type="mesh" mesh="kit_middle_dome" group="2" contype="0" conaffinity="0" mass="0" rgba="0.9 0.98 1 0.32" />
+                  <geom name="kit_visual_middle_reflector" type="mesh" mesh="kit_middle_reflector" group="2" contype="0" conaffinity="0" mass="0" rgba="0.9 0.92 0.9 1" />
+                  <geom name="kit_visual_middle_skin" type="mesh" mesh="kit_middle_skin" group="2" contype="0" conaffinity="0" mass="0" rgba="0.014 0.018 0.022 1" />
+                  <geom name="kit_visual_middle_side_-1" type="mesh" mesh="kit_middle_side_-1" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_middle_side_+1" type="mesh" mesh="kit_middle_side_+1" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_middle_snap_0" type="mesh" mesh="kit_middle_snap_0" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_middle_snap_1" type="mesh" mesh="kit_middle_snap_1" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <site name="kit_site_middle_optical_0" pos="-0.00460294243299 -0.0138901039847 0.011844923659" quat="0.744276297561 0.638932360794 -0.147555782337 -0.126670921359" size=".0006" group="4" rgba="0 .8 .6 1" />
+                  <site name="kit_site_middle_optical_1" pos="0.00460124137044 -0.0138959182409 0.0118396450218" quat="0.743943474425 0.639372119493 0.14735430342 0.126641655627" size=".0006" group="4" rgba="0 .8 .6 1" />
+                  <site name="kit_site_middle_optical_2" pos="-0.00484671788081 -0.0110521944409 0.0191522588222" quat="0.857302820765 0.465761702549 -0.192708652628 -0.104696156329" size=".0006" group="4" rgba="0 .8 .6 1" />
+                  <site name="kit_site_middle_optical_3" pos="0.00485325568936 -0.011052975176 0.0191434037708" quat="0.856750200967 0.46646097066 0.193204786271 0.105191095419" size=".0006" group="4" rgba="0 .8 .6 1" />
+                <geom name="kit_pad_contact_middle_tip" type="sphere" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" pos="-1.8420410455423196e-06 -0.0013958179827365889 0.01131873100763028" size="0.013247703803568168" /></body>
+              </body>
+            </body>
+            <body name="kit_middle_pad">
+              <inertial pos="-1.10996689182e-07 -0.013511558219 0.0215115122355" mass="0.000894004286121685" fullinertia="3.9029288691e-08 4.54982960545e-08 8.37846824625e-09 1.63047045278e-12 2.28245403236e-13 -3.24956018965e-10" />
+              <geom name="kit_visual_middle_pad_shell" type="mesh" mesh="kit_middle_pad_shell" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+              <geom name="kit_visual_middle_pad_flex" type="mesh" mesh="kit_middle_pad_flex" group="2" contype="0" conaffinity="0" mass="0" rgba="0.48 0.2 0.035 1" />
+              <geom name="kit_visual_middle_pad_silicone" type="mesh" mesh="kit_middle_pad_silicone" group="2" contype="0" conaffinity="0" mass="0" rgba="0.28 0.38 0.4 1" />
+              <geom name="kit_visual_middle_pad_skin" type="mesh" mesh="kit_middle_pad_skin" group="2" contype="0" conaffinity="0" mass="0" rgba="0.014 0.018 0.022 1" />
+              <site name="kit_site_middle_baro_0" pos="-1.68206534569e-06 -0.0154739197809 0.0143531763046" quat="0.709411192729 0.704794795316 -0.000168067049311 -0.000166973375713" size=".0006" group="4" rgba="0 .8 .6 1" />
+              <site name="kit_site_middle_baro_1" pos="-3.40293742387e-06 -0.0153741059981 0.0287739660883" quat="0.717386227588 0.696675513242 -0.000343833943946 -0.000333907566325" size=".0006" group="4" rgba="0 .8 .6 1" />
+            <geom name="kit_pad_contact_middle_pad" type="capsule" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" fromto="6.87040774999849e-07 -0.010474026897767493 0.014320533622077122 1.3899321872155606e-06 -0.010376252963169286 0.02862753497802149" size="0.005" /></body>
+            <body name="kit_middle_wiring">
+              <inertial pos="0 0 .015" mass="0.0005" diaginertia="1e-7 1e-7 1e-7" />
+            </body>
+          </body>
+        </body>
+        <body name="right_ring_f_link" pos="-0.014448 -0.004172 0.10003" quat="0.999505 0.000456857 -0.026173 0.0174466">
+          <inertial pos="0 0 0.0017" mass="0.000169697" diaginertia="1.29009e-09 1.29009e-09 7.6801e-10" />
+          <geom class="visual" mesh="right_ring_f_link" />
+          <geom name="rf_f_spring1_g0" class="visual" size="0.003 0.005" pos="0 0 0.0029" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+          <site name="rf_f_spring1_s1" size="0.0005" pos="0 0.005 0" group="4" />
+          <body name="right_ring_proximal_link" pos="0 0 0.0034">
+            <inertial pos="-4.27735e-08 -0.00357857 0.0205176" quat="0.706879 0.0179383 -0.0179383 0.706879" mass="0.00600337" diaginertia="8.89987e-07 8.65277e-07 2.05351e-07" />
+            <joint name="right_ring_mcp_flex" class="rot" axis="1 0 0" />
+            <geom class="visual" mesh="right_ring_proximal_link" />
+            <geom size="0.006 0.006 0.013" pos="0 -0.003 0.019" type="box" />
+            <geom name="rf_proximal_tendon0_g0" class="visual" size="0.0025 0.005" pos="0 -0.0075 0.0095" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+            <geom name="rf_proximal_tendon2" class="visual" size="0.0025 0.005" pos="0 -0.0057 0.0173" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+            <geom name="rf_proximal_tendon3" class="visual" size="0.0025 0.005" pos="0 -0.0057 0.0323" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+            <geom name="rf_proximal_tendon1_g0" class="visual" size="0.003 0.005" pos="0 -0.0018 0.043" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+            <site name="rf_proximal_tendon0_s0" size="0.0001" pos="0 -0.011 0.0095" group="4" />
+            <site name="rf_proximal_tendon0_s1" size="0.0001" pos="0 -0.0063 0.0135" group="4" />
+            <site name="rf_proximal_tendon0_s2" size="0.0001" pos="0 -0.0022 0.0173" group="4" />
+            <site name="rf_proximal_tendon0_s3" size="0.0001" pos="0 -0.0025 0.0333" group="4" />
+            <site name="rf_proximal_tendon0_s4" size="0.0001" pos="0 -0.0025 0.0333" group="4" />
+            <site name="rf_proximal_tendon1_s0" size="0.0001" pos="0 -0.0048 0.04" group="4" />
+            <site name="rf_proximal_tendon1_s1" size="0.0001" pos="0 0.0012 0.035" group="4" />
+            <site name="rf_proximal_spring0_s0" size="0.0005" pos="0 0.0012 0.011" group="4" />
+            <site name="rf_proximal_spring0_s1" size="0.0005" pos="0 0.0012 0.04" group="4" />
+            <site name="rf_proximal_spring1_s0" size="0.0005" pos="0 0.003 0.004" group="4" />
+            <body name="right_ring_middle_link" pos="0 -0.0014554 0.043" quat="0.999962 0.00872639 0 0">
+              <inertial pos="5.2917e-09 -0.00110519 0.0093962" quat="0.706846 -0.0191893 0.019202 0.706846" mass="0.00237591" diaginertia="1.62521e-07 1.35575e-07 7.42877e-08" />
+              <joint name="right_ring_pip" class="pip" axis="1 0 0" />
+              <geom class="visual" mesh="right_ring_middle_link" />
+              <geom size="0.006 0.005 0.01" pos="0 -0.001 0.006" type="box" />
+              <site name="rf_middle_spring0_s0" size="0.0005" pos="0 0.004 0.003" group="4" />
+              <body name="right_ring_distal_link" pos="0 0.00036966 0.021997" quat="1 0.00052935 0 0">
+                <inertial pos="-0.00184407 0.000358289 0.0107282" quat="0.696244 -0.184422 0.050064 0.691901" mass="0.00309314" diaginertia="1.89076e-07 1.75558e-07 6.39409e-08" />
+                <joint name="right_ring_dip" class="dip" axis="1 0 0" />
+                <geom class="visual" mesh="right_ring_distal_link" />
+                <geom class="visual" pos="0 0.0033789 0.024944" quat="0.999999 -0.0015829 0 0" mesh="right_ring_tip_link" />
+                <geom name="rf_tip" size="0.005 0.005 0.01" pos="0 -0.003 0.014" type="box" />
+                <geom name="rf_dip_tendon0_g0" class="visual" size="0.0025 0.005" pos="0 -0.006 0.002" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+                <geom name="rf_dip_tendon1_g0" class="visual" size="0.0025 0.005" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+                <site name="rf_tip" pos="0 -0.003 0.023" group="4" />
+                <site name="rf_dip_tendon0_s0" size="0.0001" pos="0 -0.0086 0.003" group="4" />
+                <site name="rf_dip_tendon0_s2" size="0.0001" pos="0 -0.0015 0.0075" group="4" />
+                <site name="rf_dip_tendon1_s0" size="0.0001" pos="0 0.0025 0.015" group="4" />
+                <site name="rf_dip_tendon1_s1" size="0.0001" pos="0 0.0025 -0.002" group="4" />
+                <body name="kit_ring_tip">
+                  <inertial pos="-5.01255704544e-07 -0.00763936523837 0.0137670763023" mass="0.002476618614700875" fullinertia="1.29313411806e-07 1.24046958133e-07 1.02112388633e-07 3.05107956789e-12 7.10489405184e-12 -1.61311752996e-08" />
+                  <geom name="kit_visual_ring_cap" type="mesh" mesh="kit_ring_cap" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_ring_board" type="mesh" mesh="kit_ring_board" group="2" contype="0" conaffinity="0" mass="0" rgba="0.48 0.2 0.035 1" />
+                  <geom name="kit_visual_ring_pvdf" type="mesh" mesh="kit_ring_pvdf" group="2" contype="0" conaffinity="0" mass="0" rgba="0.64 0.67 0.69 1" />
+                  <geom name="kit_visual_ring_barrier" type="mesh" mesh="kit_ring_barrier" group="2" contype="0" conaffinity="0" mass="0" rgba="0.009 0.012 0.015 1" />
+                  <geom name="kit_visual_ring_dome" type="mesh" mesh="kit_ring_dome" group="2" contype="0" conaffinity="0" mass="0" rgba="0.9 0.98 1 0.32" />
+                  <geom name="kit_visual_ring_reflector" type="mesh" mesh="kit_ring_reflector" group="2" contype="0" conaffinity="0" mass="0" rgba="0.9 0.92 0.9 1" />
+                  <geom name="kit_visual_ring_skin" type="mesh" mesh="kit_ring_skin" group="2" contype="0" conaffinity="0" mass="0" rgba="0.014 0.018 0.022 1" />
+                  <geom name="kit_visual_ring_side_-1" type="mesh" mesh="kit_ring_side_-1" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_ring_side_+1" type="mesh" mesh="kit_ring_side_+1" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_ring_snap_0" type="mesh" mesh="kit_ring_snap_0" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_ring_snap_1" type="mesh" mesh="kit_ring_snap_1" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <site name="kit_site_ring_optical_0" pos="-0.00460310193685 -0.0138907875849 0.0118455995298" quat="0.744319547195 0.63887706989 -0.147577069685 -0.126670871696" size=".0006" group="4" rgba="0 .8 .6 1" />
+                  <site name="kit_site_ring_optical_1" pos="0.00460124259765 -0.0138959043223 0.0118393146893" quat="0.743921452881 0.639397704153 0.147350039309 0.126646807235" size=".0006" group="4" rgba="0 .8 .6 1" />
+                  <site name="kit_site_ring_optical_2" pos="-0.00485226121233 -0.011052582224 0.0191429631803" quat="0.856729642765 0.466546950055 -0.193105750772 -0.105159077688" size=".0006" group="4" rgba="0 .8 .6 1" />
+                  <site name="kit_site_ring_optical_3" pos="0.00485325034903 -0.011052975692 0.0191434053533" quat="0.856750321783 0.466461007814 0.193204306542 0.105190827774" size=".0006" group="4" rgba="0 .8 .6 1" />
+                <geom name="kit_pad_contact_ring_tip" type="sphere" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" pos="3.312020556068067e-07 -0.0013985448898244275 0.011323723119995893" size="0.013242671990697247" /></body>
+              </body>
+            </body>
+            <body name="kit_ring_pad">
+              <inertial pos="-2.98575158815e-07 -0.0135123453755 0.0215102884743" mass="0.0008939259588832565" fullinertia="3.90291796842e-08 4.54962489408e-08 8.37614093234e-09 2.55986426688e-12 -1.53770778398e-12 -3.22077865424e-10" />
+              <geom name="kit_visual_ring_pad_shell" type="mesh" mesh="kit_ring_pad_shell" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+              <geom name="kit_visual_ring_pad_flex" type="mesh" mesh="kit_ring_pad_flex" group="2" contype="0" conaffinity="0" mass="0" rgba="0.48 0.2 0.035 1" />
+              <geom name="kit_visual_ring_pad_silicone" type="mesh" mesh="kit_ring_pad_silicone" group="2" contype="0" conaffinity="0" mass="0" rgba="0.28 0.38 0.4 1" />
+              <geom name="kit_visual_ring_pad_skin" type="mesh" mesh="kit_ring_pad_skin" group="2" contype="0" conaffinity="0" mass="0" rgba="0.014 0.018 0.022 1" />
+              <site name="kit_site_ring_baro_0" pos="-9.09776236217e-07 -0.0154750407629 0.0143552214634" quat="0.709614198452 0.704590429212 -9.09281894695e-05 -9.02844562377e-05" size=".0006" group="4" rgba="0 .8 .6 1" />
+              <site name="kit_site_ring_baro_1" pos="-1.58763298535e-06 -0.0153751389538 0.0287751175946" quat="0.717499317597 0.696559171389 -0.000160440231063 -0.000155757798879" size=".0006" group="4" rgba="0 .8 .6 1" />
+            <geom name="kit_pad_contact_ring_pad" type="capsule" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" fromto="3.715987443701723e-07 -0.010475167118380455 0.01431969827549319 6.484698109193818e-07 -0.01037733190237123 0.028627064644463997" size="0.005" /></body>
+            <body name="kit_ring_wiring">
+              <inertial pos="0 0 .015" mass="0.0005" diaginertia="1e-7 1e-7 1e-7" />
+            </body>
+          </body>
+        </body>
+        <body name="right_pinky_f_link" pos="-0.036912 -0.0066167 0.087021" quat="0.998019 0.00182998 -0.0523041 0.034918">
+          <inertial pos="0 0 0.0017" mass="0.000169697" diaginertia="1.29009e-09 1.29009e-09 7.6801e-10" />
+          <geom class="visual" mesh="right_pinky_f_link" />
+          <geom name="pf_f_spring1_g0" class="visual" size="0.003 0.005" pos="0 0 0.0029" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+          <site name="pf_f_spring1_s1" size="0.0001" pos="0 0.005 0" group="4" />
+          <body name="right_pinky_proximal_link" pos="0 0 0.0034">
+            <inertial pos="-4.24866e-08 -0.00357857 0.0205176" quat="0.706879 0.0179383 -0.0179383 0.706879" mass="0.00600337" diaginertia="8.89987e-07 8.65277e-07 2.05351e-07" />
+            <joint name="right_pinky_mcp_flex" class="rot" axis="1 0 0" />
+            <geom class="visual" mesh="right_pinky_proximal_link" />
+            <geom size="0.006 0.006 0.013" pos="0 -0.003 0.019" type="box" />
+            <geom name="pf_proximal_tendon0_g0" class="visual" size="0.0025 0.005" pos="0 -0.0075 0.0095" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+            <geom name="pf_proximal_tendon2" class="visual" size="0.0025 0.005" pos="0 -0.0057 0.0173" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+            <geom name="pf_proximal_tendon3" class="visual" size="0.0025 0.005" pos="0 -0.0057 0.0323" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+            <geom name="pf_proximal_tendon1_g0" class="visual" size="0.003 0.005" pos="0 -0.0018 0.043" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+            <site name="pf_proximal_tendon0_s0" size="0.0001" pos="0 -0.011 0.0095" group="4" />
+            <site name="pf_proximal_tendon0_s1" size="0.0001" pos="0 -0.0063 0.0135" group="4" />
+            <site name="pf_proximal_tendon0_s2" size="0.0001" pos="0 -0.0022 0.0173" group="4" />
+            <site name="pf_proximal_tendon0_s3" size="0.0001" pos="0 -0.0025 0.0333" group="4" />
+            <site name="pf_proximal_tendon0_s4" size="0.0001" pos="0 -0.0025 0.0333" group="4" />
+            <site name="pf_proximal_tendon1_s0" size="0.0001" pos="0 -0.0048 0.04" group="4" />
+            <site name="pf_proximal_tendon1_s1" size="0.0001" pos="0 0.0012 0.035" group="4" />
+            <site name="pf_proximal_spring0_s0" size="0.0005" pos="0 0.0012 0.011" group="4" />
+            <site name="pf_proximal_spring0_s1" size="0.0005" pos="0 0.0012 0.04" group="4" />
+            <site name="pf_proximal_spring1_s0" size="0.0005" pos="0 0.003 0.004" group="4" />
+            <body name="right_pinky_middle_link" pos="0 -0.0014554 0.043" quat="0.999962 0.00872639 0 0">
+              <inertial pos="1.1729e-08 -0.00110519 0.0093962" quat="0.706846 -0.0191898 0.019202 0.706846" mass="0.00237591" diaginertia="1.6252e-07 1.35575e-07 7.42876e-08" />
+              <joint name="right_pinky_pip" class="pip" axis="1 0 0" />
+              <geom class="visual" mesh="right_pinky_middle_link" />
+              <geom size="0.006 0.005 0.01" pos="0 -0.001 0.006" type="box" />
+              <site name="pf_middle_spring0_s0" size="0.0005" pos="0 0.004 0.003" group="4" />
+              <body name="right_pinky_distal_link" pos="0 0.00036966 0.021997" quat="1 0.00052935 0 0">
+                <inertial pos="-0.00184407 0.000358264 0.0107282" quat="0.696242 -0.184421 0.0500633 0.691903" mass="0.00309314" diaginertia="1.89076e-07 1.75557e-07 6.3941e-08" />
+                <joint name="right_pinky_dip" class="dip" axis="1 0 0" />
+                <geom class="visual" mesh="right_pinky_distal_link" />
+                <geom class="visual" pos="0 0.0033789 0.024944" quat="0.999999 -0.0015829 0 0" mesh="right_pinky_tip_link" />
+                <geom name="pf_tip" size="0.005 0.005 0.01" pos="0 -0.003 0.014" type="box" />
+                <geom name="pf_dip_tendon0_g0" class="visual" size="0.0025 0.005" pos="0 -0.006 0.002" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+                <geom name="pf_dip_tendon1_g0" class="visual" size="0.0025 0.005" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+                <site name="pf_tip" pos="0 -0.003 0.023" group="4" />
+                <site name="pf_dip_tendon0_s0" size="0.002" pos="0 -0.0086 0.003" group="4" />
+                <site name="pf_dip_tendon0_s2" size="0.0001" pos="0 -0.0015 0.0075" group="4" />
+                <site name="pf_dip_tendon1_s0" size="0.0001" pos="0 0.0025 0.015" group="4" />
+                <site name="pf_dip_tendon1_s1" size="0.0001" pos="0 0.0025 -0.002" group="4" />
+                <body name="kit_pinky_tip">
+                  <inertial pos="-4.06886208793e-07 -0.00763932151747 0.0137669070407" mass="0.002476611555703408" fullinertia="1.29311535778e-07 1.24044573072e-07 1.02110210259e-07 4.00297940015e-12 8.10659141015e-12 -1.61299685027e-08" />
+                  <geom name="kit_visual_pinky_cap" type="mesh" mesh="kit_pinky_cap" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_pinky_board" type="mesh" mesh="kit_pinky_board" group="2" contype="0" conaffinity="0" mass="0" rgba="0.48 0.2 0.035 1" />
+                  <geom name="kit_visual_pinky_pvdf" type="mesh" mesh="kit_pinky_pvdf" group="2" contype="0" conaffinity="0" mass="0" rgba="0.64 0.67 0.69 1" />
+                  <geom name="kit_visual_pinky_barrier" type="mesh" mesh="kit_pinky_barrier" group="2" contype="0" conaffinity="0" mass="0" rgba="0.009 0.012 0.015 1" />
+                  <geom name="kit_visual_pinky_dome" type="mesh" mesh="kit_pinky_dome" group="2" contype="0" conaffinity="0" mass="0" rgba="0.9 0.98 1 0.32" />
+                  <geom name="kit_visual_pinky_reflector" type="mesh" mesh="kit_pinky_reflector" group="2" contype="0" conaffinity="0" mass="0" rgba="0.9 0.92 0.9 1" />
+                  <geom name="kit_visual_pinky_skin" type="mesh" mesh="kit_pinky_skin" group="2" contype="0" conaffinity="0" mass="0" rgba="0.014 0.018 0.022 1" />
+                  <geom name="kit_visual_pinky_side_-1" type="mesh" mesh="kit_pinky_side_-1" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_pinky_side_+1" type="mesh" mesh="kit_pinky_side_+1" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_pinky_snap_0" type="mesh" mesh="kit_pinky_snap_0" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_pinky_snap_1" type="mesh" mesh="kit_pinky_snap_1" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <site name="kit_site_pinky_optical_0" pos="-0.00460337457611 -0.013890669287 0.0118450403515" quat="0.744279297669 0.638915571236 -0.147590818943 -0.126697158835" size=".0006" group="4" rgba="0 .8 .6 1" />
+                  <site name="kit_site_pinky_optical_1" pos="0.00460097812877 -0.0138952238878 0.0118385949797" quat="0.743876424229 0.63945820984 0.147320059051 0.126640686767" size=".0006" group="4" rgba="0 .8 .6 1" />
+                  <site name="kit_site_pinky_optical_2" pos="-0.00485202265016 -0.0110526385818 0.0191430584771" quat="0.85673648046 0.466545957178 -0.193084648657 -0.105146523206" size=".0006" group="4" rgba="0 .8 .6 1" />
+                  <site name="kit_site_pinky_optical_3" pos="0.00485323180706 -0.0110529823004 0.0191434102857" quat="0.856750708352 0.466461197254 0.193202633476 0.105189912124" size=".0006" group="4" rgba="0 .8 .6 1" />
+                <geom name="kit_pad_contact_pinky_tip" type="sphere" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" pos="4.5189402498362325e-07 -0.0013980826254765058 0.011324131547455155" size="0.013242799621986436" /></body>
+              </body>
+            </body>
+            <body name="kit_pinky_pad">
+              <inertial pos="-2.70228180087e-07 -0.0135123554682 0.0215102142412" mass="0.0008939292394289765" fullinertia="3.90286949317e-08 4.54957512281e-08 8.3762784502e-09 9.79675289799e-13 -1.48163025221e-12 -3.16348077858e-10" />
+              <geom name="kit_visual_pinky_pad_shell" type="mesh" mesh="kit_pinky_pad_shell" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+              <geom name="kit_visual_pinky_pad_flex" type="mesh" mesh="kit_pinky_pad_flex" group="2" contype="0" conaffinity="0" mass="0" rgba="0.48 0.2 0.035 1" />
+              <geom name="kit_visual_pinky_pad_silicone" type="mesh" mesh="kit_pinky_pad_silicone" group="2" contype="0" conaffinity="0" mass="0" rgba="0.28 0.38 0.4 1" />
+              <geom name="kit_visual_pinky_pad_skin" type="mesh" mesh="kit_pinky_pad_skin" group="2" contype="0" conaffinity="0" mass="0" rgba="0.014 0.018 0.022 1" />
+              <site name="kit_site_pinky_baro_0" pos="2.45400457901e-06 -0.0154744682052 0.0143537577074" quat="0.709468883491 0.70473667699 0.000245216915035 0.000243581301258" size=".0006" group="4" rgba="0 .8 .6 1" />
+              <site name="kit_site_pinky_baro_1" pos="-1.05403491531e-06 -0.0153752545902 0.0287753842196" quat="0.717525495812 0.696532225256 -0.00010652069604 -0.000103404126936" size=".0006" group="4" rgba="0 .8 .6 1" />
+            <geom name="kit_pad_contact_pinky_pad" type="capsule" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" fromto="-1.002339898470618e-06 -0.010474581368737166 0.01432029614767446 4.3052130343818225e-07 -0.010377458397592175 0.028626955741285046" size="0.005" /></body>
+            <body name="kit_pinky_wiring">
+              <inertial pos="0 0 .015" mass="0.0005" diaginertia="1e-7 1e-7 1e-7" />
+            </body>
+          </body>
+        </body>
+        <body name="right_t_link" pos="0.026317 -0.0175 0.02956" quat="0.579233 -0.40557 0.405572 -0.579235">
+          <inertial pos="-0.000792597 0.00920489 0.00837042" quat="0.968785 -0.231969 -0.0564922 0.066746" mass="0.00893482" diaginertia="1.11708e-06 8.42419e-07 4.36164e-07" />
+          <joint name="right_thumb_cmc_abd" class="thumb_cmc" axis="0 1 0" />
+          <geom class="visual" mesh="right_t_link" />
+          <geom name="th_mp_collision" size="0.015 0.008 0.008" pos="-0.01 0.015 0.005" type="box" />
+          <geom name="th_t_tendon0_g0" class="visual" size="0.0025 0.0012" pos="0 0.0018 0" quat="0.707107 -0.707107 0 0" type="cylinder" group="4" rgba="0 1 0 1" />
+          <geom name="th_t_tendon0_g1" class="visual" size="0.0025 0.0012" pos="0.0037 0.0018 0.0055" quat="0.707107 -0.707107 0 0" type="cylinder" group="4" rgba="0 1 0 1" />
+          <geom name="th_t_tendon0_g2" class="visual" size="0.0017 0.0015" pos="0.001 0.0004 0.0108" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+          <geom name="th_t_tendon1_g0" class="visual" size="0.0025 0.0012" pos="0 0.0145 0" quat="0.707107 -0.707107 0 0" type="cylinder" group="4" rgba="0 1 0 1" />
+          <geom name="th_t_tendon1_g1" class="visual" size="0.0025 0.0012" pos="0.0017 0.0145 0.0069" quat="0.707107 -0.707107 0 0" type="cylinder" group="4" rgba="0 1 0 1" />
+          <geom name="th_t_tendon1_g2" class="visual" size="0.0025 0.0025" pos="0.0017 0.0135 0.0203" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+          <site name="th_t_tendon0_s0" size="0.0001" pos="0 0.0018 -0.003" group="4" />
+          <site name="th_t_tendon0_s1" size="0.0001" pos="0.00185 0.0018 0.00275" group="4" />
+          <site name="th_t_tendon0_s2" size="0.0001" pos="0.00185 0.0018 0.0083" group="4" />
+          <site name="th_t_tendon0_s3" size="0.0001" pos="0.00185 0.0018 0.0125" group="4" />
+          <site name="th_t_tendon1_s0" size="0.0001" pos="0 0.0145 -0.003" group="4" />
+          <site name="th_t_tendon1_s1" size="0.0001" pos="0.00085 0.0145 0.00345" group="4" />
+          <site name="th_t_tendon1_s2" size="0.0001" pos="0.00035 0.0145 0.011" group="4" />
+          <site name="th_t_tendon1_s3" size="0.001" pos="0.0017 0.0165 0.0203" group="4" />
+          <site name="th_t_spring0_s0" size="0.001" pos="-0.0038 0.021 0.0125" group="4" />
+          <body name="right_thumb_mcp_link" pos="-0.0024625 0.011988 0.019805" quat="0.988119 0.0527639 -0.058289 0.132056">
+            <inertial pos="-3.98621e-09 -0.0014303 0.0147562" quat="0.706814 0.0205256 -0.020536 0.706804" mass="0.0102694" diaginertia="1.58158e-06 1.39018e-06 6.7267e-07" />
+            <joint name="right_thumb_cmc_flex" class="thumb_axl" range="0 0.9559" axis="1 0 0" />
+            <geom class="visual" mesh="right_thumb_mcp_link" />
+            <geom name="th_bs_collision_1" size="0.008 0.01 0.016" pos="0 0 0.014" type="box" />
+            <geom name="th_mcp_tendon1_g0" class="visual" size="0.0025 0.0025" pos="0 -0.005 0.024" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+            <site name="th_mcp_tendon0_s0" size="0.0001" pos="0 -0.012 0.015" group="4" />
+            <site name="th_mcp_tendon1_s0" size="0.002" pos="0 -0.002 0.028" group="4" />
+            <site name="th_mcp_spring0_s0" size="0.001" pos="0 0.011 0.0045" group="4" />
+            <site name="th_mcp_spring1_s0" size="0.001" pos="0 0.004 0.009" group="4" />
+            <body name="right_thumb_proximal_link" pos="0 0.0013652 0.035982">
+              <inertial pos="-9.60413e-08 -0.00147723 0.0133935" quat="0.707028 -0.010773 0.0107885 0.707021" mass="0.00574573" diaginertia="6.77924e-07 5.00351e-07 3.51862e-07" />
+              <joint name="right_thumb_mcp" class="thumb_mcp" range="0 1.5708" axis="1 0 0" />
+              <geom class="visual" mesh="right_thumb_proximal_link" />
+              <geom name="th_px_collision_1" size="0.008 0.006 0.012" pos="0 -0.002 0.012" type="box" />
+              <geom name="th_proximal_spring1_g0" class="visual" size="0.0045 0.005" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+              <site name="th_proximal_spring1_s0" size="0.0005" pos="0 0.005 -0.0015" group="4" />
+              <site name="th_proximal_spring1_s1" size="0.0005" pos="0 0.005 0.006" group="4" />
+              <body name="right_thumb_distal_link" pos="0 0.00052357 0.029995">
+                <inertial pos="-0.00113926 -0.00130909 0.0133464" quat="0.698666 -0.140008 0.0513212 0.699736" mass="0.00692863" diaginertia="6.65186e-07 5.66522e-07 2.78338e-07" />
+                <joint name="right_thumb_ip" class="thumb_ipl" range="0 1.5708" axis="1 0 0" />
+                <geom class="visual" mesh="right_thumb_distal_link" />
+                <geom class="visual" pos="0 0.0024685 0.029987" quat="0.999982 0.00592597 0 0" mesh="right_thumb_tip_link" />
+                <geom name="th_tip" size="0.008 0.006 0.012" pos="0 -0.002 0.015" type="box" />
+                <geom name="th_tendon1_ip_g0" class="visual" size="0.0025 0.005" pos="0 -0.008 0.002" quat="0.707107 0 -0.707107 0" type="cylinder" group="4" rgba="0 1 0 1" />
+                <site name="th_tip" pos="0 -0.005 0.027" group="4" />
+                <site name="th_tendon1_ip_s0" size="0.001" pos="0 -0.0106 0.002" group="4" />
+                <site name="th_tendon1_ip_s1" size="0.0001" pos="0 -0.0003 0.0115" group="4" />
+                <body name="kit_thumb_tip">
+                  <inertial pos="-7.36489055559e-07 -0.0119450048178 0.0165580634736" mass="0.00471537620371935" fullinertia="4.30587107187e-07 4.51378467618e-07 3.55763506446e-07 4.78098694491e-11 4.36455575177e-11 -5.5882883431e-08" />
+                  <geom name="kit_visual_thumb_cap" type="mesh" mesh="kit_thumb_cap" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_thumb_board" type="mesh" mesh="kit_thumb_board" group="2" contype="0" conaffinity="0" mass="0" rgba="0.48 0.2 0.035 1" />
+                  <geom name="kit_visual_thumb_pvdf" type="mesh" mesh="kit_thumb_pvdf" group="2" contype="0" conaffinity="0" mass="0" rgba="0.64 0.67 0.69 1" />
+                  <geom name="kit_visual_thumb_barrier" type="mesh" mesh="kit_thumb_barrier" group="2" contype="0" conaffinity="0" mass="0" rgba="0.009 0.012 0.015 1" />
+                  <geom name="kit_visual_thumb_dome" type="mesh" mesh="kit_thumb_dome" group="2" contype="0" conaffinity="0" mass="0" rgba="0.9 0.98 1 0.32" />
+                  <geom name="kit_visual_thumb_reflector" type="mesh" mesh="kit_thumb_reflector" group="2" contype="0" conaffinity="0" mass="0" rgba="0.9 0.92 0.9 1" />
+                  <geom name="kit_visual_thumb_skin" type="mesh" mesh="kit_thumb_skin" group="2" contype="0" conaffinity="0" mass="0" rgba="0.014 0.018 0.022 1" />
+                  <geom name="kit_visual_thumb_side_-1" type="mesh" mesh="kit_thumb_side_-1" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_thumb_side_+1" type="mesh" mesh="kit_thumb_side_+1" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_thumb_snap_0" type="mesh" mesh="kit_thumb_snap_0" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <geom name="kit_visual_thumb_snap_1" type="mesh" mesh="kit_thumb_snap_1" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+                  <site name="kit_site_thumb_optical_0" pos="-0.00283151944888 -0.0200541917447 0.0130025841772" quat="0.718101886363 0.695931512151 -0.00215565520551 -0.00208910241755" size=".0006" group="4" rgba="0 .8 .6 1" />
+                  <site name="kit_site_thumb_optical_1" pos="0.00284766199224 -0.0200561347897 0.0130014331457" quat="0.718021642902 0.696005973554 0.003259337823 0.00315940141507" size=".0006" group="4" rgba="0 .8 .6 1" />
+                  <site name="kit_site_thumb_optical_2" pos="-0.00439916796801 -0.0179746849908 0.0218803905163" quat="0.827497615898 0.53989566532 -0.129096687525 -0.0842283296809" size=".0006" group="4" rgba="0 .8 .6 1" />
+                  <site name="kit_site_thumb_optical_3" pos="0.00439841711236 -0.0179761481674 0.0218823279302" quat="0.827615862061 0.539735566417 0.129051489321 0.0841618459465" size=".0006" group="4" rgba="0 .8 .6 1" />
+                <geom name="kit_pad_contact_thumb_tip" type="sphere" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" pos="4.53693987738558e-07 -0.011859437291453393 0.016716990832548885" size="0.009061765698446234" /></body>
+              </body>
+              <body name="kit_thumb_wiring">
+                <inertial pos="0 0 .015" mass="0.0005" diaginertia="1e-7 1e-7 1e-7" />
+              </body>
+            </body>
+          </body>
+        </body>
+        <body name="kit_palm">
+          <inertial pos="-0.00245926510749 -0.0231854708985 0.0613041884239" mass="0.01319026839304852" fullinertia="3.07246315344e-06 9.08877060338e-06 6.39612319877e-06 8.60612484683e-08 1.06102456521e-07 -5.6027322359e-07" />
+          <geom name="kit_visual_palm_plate" type="mesh" mesh="kit_palm_plate" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+          <geom name="kit_visual_palm_flex_row_0" type="mesh" mesh="kit_palm_flex_row_0" group="2" contype="0" conaffinity="0" mass="0" rgba="0.48 0.2 0.035 1" />
+          <geom name="kit_visual_palm_flex_row_1" type="mesh" mesh="kit_palm_flex_row_1" group="2" contype="0" conaffinity="0" mass="0" rgba="0.48 0.2 0.035 1" />
+          <geom name="kit_visual_palm_flex_row_2" type="mesh" mesh="kit_palm_flex_row_2" group="2" contype="0" conaffinity="0" mass="0" rgba="0.48 0.2 0.035 1" />
+          <geom name="kit_visual_palm_silicone" type="mesh" mesh="kit_palm_silicone" group="2" contype="0" conaffinity="0" mass="0" rgba="0.28 0.38 0.4 1" />
+          <geom name="kit_visual_palm_skin" type="mesh" mesh="kit_palm_skin" group="2" contype="0" conaffinity="0" mass="0" rgba="0.014 0.018 0.022 1" />
+          <site name="kit_site_palm_baro_0" pos="-0.0307261302179 -0.0263147819165 0.0463317942095" quat="0.720160126559 0.673477166734 -0.121774617072 -0.113880817697" size=".0006" group="4" rgba="0 .8 .6 1" />
+          <site name="kit_site_palm_baro_1" pos="-0.0114684040501 -0.0303377802853 0.0466528990794" quat="0.749205139456 0.660831021417 -0.0334887507395 -0.0295385124736" size=".0006" group="4" rgba="0 .8 .6 1" />
+          <site name="kit_site_palm_baro_2" pos="0.00733062344096 -0.0305079485386 0.0467323761225" quat="0.754535109838 0.655503083305 0.0237823647871 0.0206609516813" size=".0006" group="4" rgba="0 .8 .6 1" />
+          <site name="kit_site_palm_baro_3" pos="0.0264446777541 -0.0273737786521 0.0466705472879" quat="0.745313555987 0.652077092699 0.104564901928 0.0914841501268" size=".0006" group="4" rgba="0 .8 .6 1" />
+          <site name="kit_site_palm_baro_4" pos="-0.0302865074026 -0.0251940626803 0.0614958578383" quat="0.735081485458 0.666641247998 -0.0914597749723 -0.0829443534293" size=".0006" group="4" rgba="0 .8 .6 1" />
+          <site name="kit_site_palm_baro_5" pos="-0.0112855428727 -0.0277392848219 0.0621741997948" quat="0.782011120171 0.622670471547 -0.021282198568 -0.0169457905087" size=".0006" group="4" rgba="0 .8 .6 1" />
+          <site name="kit_site_palm_baro_6" pos="0.0072964630699 -0.0276431269982 0.062238139037" quat="0.785883781605 0.61772878667 0.0222068142144 0.0174552379392" size=".0006" group="4" rgba="0 .8 .6 1" />
+          <site name="kit_site_palm_baro_7" pos="0.026271044121 -0.0249696823369 0.0619245104471" quat="0.762863733673 0.634952061733 0.0937404143816 0.0780226752852" size=".0006" group="4" rgba="0 .8 .6 1" />
+          <site name="kit_site_palm_baro_8" pos="-0.0298004938056 -0.023005246392 0.0775879688576" quat="0.805733574462 0.587321947585 -0.0617883531796 -0.0450392748642" size=".0006" group="4" rgba="0 .8 .6 1" />
+          <site name="kit_site_palm_baro_9" pos="-0.0109105613869 -0.0234589355745 0.077669975152" quat="0.811800784824 0.583872353171 0.00691539096167 0.00497376409259" size=".0006" group="4" rgba="0 .8 .6 1" />
+          <site name="kit_site_palm_baro_10" pos="0.00708040366366 -0.0231806647161 0.0776598174199" quat="0.811207618354 0.58470809752 0.00621217995309 0.00447766002148" size=".0006" group="4" rgba="0 .8 .6 1" />
+          <site name="kit_site_palm_baro_11" pos="0.0257303378698 -0.0220764104092 0.0770425303735" quat="0.772881116059 0.630708418511 0.0540211423584 0.0440838682109" size=".0006" group="4" rgba="0 .8 .6 1" />
+        <geom name="kit_pad_contact_palm" type="mesh" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" mesh="kit_palm_conformal_0" /><geom name="kit_pad_contact_palm_part_1" type="mesh" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" mesh="kit_palm_conformal_1" /><geom name="kit_pad_contact_palm_part_2" type="mesh" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" mesh="kit_palm_conformal_2" /><geom name="kit_pad_contact_palm_part_3" type="mesh" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" mesh="kit_palm_conformal_3" /><geom name="kit_pad_contact_palm_part_4" type="mesh" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" mesh="kit_palm_conformal_4" /><geom name="kit_pad_contact_palm_part_5" type="mesh" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" mesh="kit_palm_conformal_5" /><geom name="kit_pad_contact_palm_part_6" type="mesh" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" mesh="kit_palm_conformal_6" /><geom name="kit_pad_contact_palm_part_7" type="mesh" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" mesh="kit_palm_conformal_7" /><geom name="kit_pad_contact_palm_part_8" type="mesh" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" mesh="kit_palm_conformal_8" /><geom name="kit_pad_contact_palm_part_9" type="mesh" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" mesh="kit_palm_conformal_9" /><geom name="kit_pad_contact_palm_part_10" type="mesh" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" mesh="kit_palm_conformal_10" /><geom name="kit_pad_contact_palm_part_11" type="mesh" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" mesh="kit_palm_conformal_11" /><geom name="kit_pad_contact_palm_part_12" type="mesh" group="3" contype="2" conaffinity="4" condim="3" mass="0" rgba=".05 .09 .09 .25" friction="0.20000000000000001 0.0050000000000000001 0.0001" solref="-2000 -90" solimp="0.9 0.95 0.001" mesh="kit_palm_conformal_12" /></body>
+        <body name="kit_hub">
+          <inertial pos="-2.67823046076e-17 0.0292563080984 0.062" mass="0.006002352640000017" fullinertia="1.76562517667e-07 4.29337770257e-07 3.15829707427e-07 -3.35731421502e-22 -7.3182421628e-22 -4.07965478111e-21" />
+          <geom name="kit_visual_hub_board" type="mesh" mesh="kit_hub_board" group="2" contype="0" conaffinity="0" mass="0" rgba="0.012 0.12 0.065 1" />
+          <geom name="kit_visual_hub_cover_top" type="mesh" mesh="kit_hub_cover_top" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+          <geom name="kit_visual_hub_cover_left" type="mesh" mesh="kit_hub_cover_left" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+          <geom name="kit_visual_hub_cover_right" type="mesh" mesh="kit_hub_cover_right" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+          <geom name="kit_visual_hub_cover_base" type="mesh" mesh="kit_hub_cover_base" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+          <geom name="kit_visual_hub_cover_tip" type="mesh" mesh="kit_hub_cover_tip" group="2" contype="0" conaffinity="0" mass="0" rgba="0.075 0.088 0.1 1" />
+          </body>
+        <body name="kit_palm_wiring">
+          <inertial pos="0 0 .015" mass="0.0025" diaginertia="1e-7 1e-7 1e-7" />
+        </body>
+      </body>
+    </body>
+    <body name="cube" childclass="cube" pos="0.11 0 0.1">
+      <joint name="cube_freejoint" type="free" />
+      <geom type="mesh" contype="0" conaffinity="0" group="2" density="0" material="dexcube" mesh="cube_mesh" />
+      <geom name="cube" size="0.025 0.025 0.025" type="box" group="3" mass="0.0692" contype="5" />
+      <site name="cube_center" group="4" />
+    </body>
+    <body name="goal" pos="0.325 0.17 0.0475" mocap="true">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" density="0" material="dexcube" mesh="cube_mesh" />
+      <geom size="0.035 0.035 0.035" type="box" group="3" mass="0.108" />
+    </body>
+  </worldbody>
+  <contact>
+    <exclude body1="tetheria_mount" body2="palm" />
+    <exclude body1="tetheria_mount" body2="right_index_f_link" />
+    <exclude body1="tetheria_mount" body2="right_index_proximal_link" />
+    <exclude body1="tetheria_mount" body2="right_index_middle_link" />
+    <exclude body1="tetheria_mount" body2="right_index_distal_link" />
+    <exclude body1="tetheria_mount" body2="right_middle_f_link" />
+    <exclude body1="tetheria_mount" body2="right_middle_proximal_link" />
+    <exclude body1="tetheria_mount" body2="right_middle_middle_link" />
+    <exclude body1="tetheria_mount" body2="right_middle_distal_link" />
+    <exclude body1="tetheria_mount" body2="right_ring_f_link" />
+    <exclude body1="tetheria_mount" body2="right_ring_proximal_link" />
+    <exclude body1="tetheria_mount" body2="right_ring_middle_link" />
+    <exclude body1="tetheria_mount" body2="right_ring_distal_link" />
+    <exclude body1="tetheria_mount" body2="right_pinky_f_link" />
+    <exclude body1="tetheria_mount" body2="right_pinky_proximal_link" />
+    <exclude body1="tetheria_mount" body2="right_pinky_middle_link" />
+    <exclude body1="tetheria_mount" body2="right_pinky_distal_link" />
+    <exclude body1="tetheria_mount" body2="right_t_link" />
+    <exclude body1="tetheria_mount" body2="right_thumb_mcp_link" />
+    <exclude body1="tetheria_mount" body2="right_thumb_proximal_link" />
+    <exclude body1="tetheria_mount" body2="right_thumb_distal_link" />
+    <exclude body1="palm" body2="right_index_f_link" />
+    <exclude body1="palm" body2="right_index_proximal_link" />
+    <exclude body1="palm" body2="right_index_middle_link" />
+    <exclude body1="palm" body2="right_middle_f_link" />
+    <exclude body1="palm" body2="right_middle_proximal_link" />
+    <exclude body1="palm" body2="right_middle_middle_link" />
+    <exclude body1="palm" body2="right_ring_f_link" />
+    <exclude body1="palm" body2="right_ring_proximal_link" />
+    <exclude body1="palm" body2="right_ring_middle_link" />
+    <exclude body1="palm" body2="right_pinky_f_link" />
+    <exclude body1="palm" body2="right_pinky_proximal_link" />
+    <exclude body1="palm" body2="right_pinky_middle_link" />
+    <exclude body1="palm" body2="right_t_link" />
+    <exclude body1="palm" body2="right_thumb_mcp_link" />
+    <exclude body1="palm" body2="right_thumb_proximal_link" />
+    <exclude body1="right_index_f_link" body2="right_middle_f_link" />
+    <exclude body1="right_index_f_link" body2="right_ring_f_link" />
+    <exclude body1="right_index_f_link" body2="right_pinky_f_link" />
+    <exclude body1="right_index_f_link" body2="right_t_link" />
+    <exclude body1="right_middle_f_link" body2="right_ring_f_link" />
+    <exclude body1="right_middle_f_link" body2="right_pinky_f_link" />
+    <exclude body1="right_middle_f_link" body2="right_t_link" />
+    <exclude body1="right_ring_f_link" body2="right_pinky_f_link" />
+    <exclude body1="right_ring_f_link" body2="right_t_link" />
+    <exclude body1="right_pinky_f_link" body2="right_t_link" />
+  </contact>
+  <tendon>
+    <spatial name="if_tendon0" class="mcp_tendon">
+      <site site="palm_collision_1" />
+      <geom geom="if_proximal_tendon0_g0" sidesite="if_proximal_tendon0_s0" />
+      <site site="if_proximal_tendon0_s1" />
+      <geom geom="if_proximal_tendon2" sidesite="if_proximal_tendon0_s2" />
+      <site site="if_proximal_tendon0_s3" />
+      <geom geom="if_proximal_tendon3" sidesite="if_proximal_tendon0_s4" />
+      <site site="if_proximal_tendon0_s4" />
+      <geom geom="if_dip_tendon0_g0" sidesite="if_dip_tendon0_s0" />
+      <site site="if_dip_tendon0_s2" />
+    </spatial>
+    <spatial name="if_tendon1" class="flex_tendon">
+      <site site="if_dip_tendon1_s0" />
+      <geom geom="if_dip_tendon1_g0" sidesite="if_dip_tendon1_s1" />
+      <site site="if_dip_tendon1_s1" />
+      <geom geom="if_proximal_tendon1_g0" sidesite="if_proximal_tendon1_s0" />
+      <site site="if_proximal_tendon1_s1" />
+    </spatial>
+    <spatial name="if_spring0" class="distal_spring">
+      <site site="if_proximal_spring0_s0" />
+      <site site="if_proximal_spring0_s1" />
+      <geom geom="if_proximal_tendon1_g0" />
+      <site site="if_middle_spring0_s0" />
+    </spatial>
+    <spatial name="if_spring1" class="mcp_spring">
+      <site site="if_f_spring1_s1" />
+      <geom geom="if_f_spring1_g0" />
+      <site site="if_proximal_spring1_s0" />
+    </spatial>
+    <spatial name="mf_tendon0" class="mcp_tendon">
+      <site site="palm_collision_2" />
+      <geom geom="mf_proximal_tendon0_g0" sidesite="mf_proximal_tendon0_s0" />
+      <site site="mf_proximal_tendon0_s1" />
+      <geom geom="mf_proximal_tendon2" sidesite="mf_proximal_tendon0_s2" />
+      <site site="mf_proximal_tendon0_s3" />
+      <geom geom="mf_proximal_tendon3" sidesite="mf_proximal_tendon0_s4" />
+      <site site="mf_proximal_tendon0_s4" />
+      <geom geom="mf_dip_tendon0_g0" sidesite="mf_dip_tendon0_s0" />
+      <site site="mf_dip_tendon0_s2" />
+    </spatial>
+    <spatial name="mf_tendon1" class="flex_tendon">
+      <site site="mf_dip_tendon1_s0" />
+      <geom geom="mf_dip_tendon1_g0" sidesite="mf_dip_tendon1_s1" />
+      <site site="mf_dip_tendon1_s1" />
+      <geom geom="mf_proximal_tendon1_g0" sidesite="mf_proximal_tendon1_s0" />
+      <site site="mf_proximal_tendon1_s1" />
+    </spatial>
+    <spatial name="mf_spring0" class="distal_spring">
+      <site site="mf_proximal_spring0_s0" />
+      <site site="mf_proximal_spring0_s1" />
+      <geom geom="mf_proximal_tendon1_g0" />
+      <site site="mf_middle_spring0_s0" />
+    </spatial>
+    <spatial name="mf_spring1" class="mcp_spring">
+      <site site="mf_f_spring1_s1" />
+      <geom geom="mf_f_spring1_g0" />
+      <site site="mf_proximal_spring1_s0" />
+    </spatial>
+    <spatial name="rf_tendon0" class="mcp_tendon">
+      <site site="palm_collision_3" />
+      <geom geom="rf_proximal_tendon0_g0" sidesite="rf_proximal_tendon0_s0" />
+      <site site="rf_proximal_tendon0_s1" />
+      <geom geom="rf_proximal_tendon2" sidesite="rf_proximal_tendon0_s2" />
+      <site site="rf_proximal_tendon0_s3" />
+      <geom geom="rf_proximal_tendon3" sidesite="rf_proximal_tendon0_s4" />
+      <site site="rf_proximal_tendon0_s4" />
+      <geom geom="rf_dip_tendon0_g0" sidesite="rf_dip_tendon0_s0" />
+      <site site="rf_dip_tendon0_s2" />
+    </spatial>
+    <spatial name="rf_tendon1" class="flex_tendon">
+      <site site="rf_dip_tendon1_s0" />
+      <geom geom="rf_dip_tendon1_g0" sidesite="rf_dip_tendon1_s1" />
+      <site site="rf_dip_tendon1_s1" />
+      <geom geom="rf_proximal_tendon1_g0" sidesite="rf_proximal_tendon1_s0" />
+      <site site="rf_proximal_tendon1_s1" />
+    </spatial>
+    <spatial name="rf_spring0" class="distal_spring">
+      <site site="rf_proximal_spring0_s0" />
+      <site site="rf_proximal_spring0_s1" />
+      <geom geom="rf_proximal_tendon1_g0" />
+      <site site="rf_middle_spring0_s0" />
+    </spatial>
+    <spatial name="rf_spring1" class="mcp_spring">
+      <site site="rf_f_spring1_s1" />
+      <geom geom="rf_f_spring1_g0" />
+      <site site="rf_proximal_spring1_s0" />
+    </spatial>
+    <spatial name="pf_tendon0" class="mcp_tendon">
+      <site site="palm_collision_4" />
+      <geom geom="pf_proximal_tendon0_g0" sidesite="pf_proximal_tendon0_s0" />
+      <site site="pf_proximal_tendon0_s1" />
+      <geom geom="pf_proximal_tendon2" sidesite="pf_proximal_tendon0_s2" />
+      <site site="pf_proximal_tendon0_s3" />
+      <geom geom="pf_proximal_tendon3" sidesite="pf_proximal_tendon0_s4" />
+      <site site="pf_proximal_tendon0_s4" />
+      <geom geom="pf_dip_tendon0_g0" sidesite="pf_dip_tendon0_s0" />
+      <site site="pf_dip_tendon0_s2" />
+    </spatial>
+    <spatial name="pf_tendon1" class="flex_tendon">
+      <site site="pf_dip_tendon1_s0" />
+      <geom geom="pf_dip_tendon1_g0" sidesite="pf_dip_tendon1_s1" />
+      <site site="pf_dip_tendon1_s1" />
+      <geom geom="pf_proximal_tendon1_g0" sidesite="pf_proximal_tendon1_s0" />
+      <site site="pf_proximal_tendon1_s1" />
+    </spatial>
+    <spatial name="pf_spring0" class="distal_spring">
+      <site site="pf_proximal_spring0_s0" />
+      <site site="pf_proximal_spring0_s1" />
+      <geom geom="pf_proximal_tendon1_g0" />
+      <site site="pf_middle_spring0_s0" />
+    </spatial>
+    <spatial name="pf_spring1" class="mcp_spring">
+      <site site="pf_f_spring1_s1" />
+      <geom geom="pf_f_spring1_g0" />
+      <site site="pf_proximal_spring1_s0" />
+    </spatial>
+    <spatial name="th_tendon1" class="mcp_tendon">
+      <site site="th_t_tendon0_s0" />
+      <geom geom="th_t_tendon0_g0" />
+      <site site="th_t_tendon0_s1" />
+      <geom geom="th_t_tendon0_g1" />
+      <site site="th_t_tendon0_s2" />
+      <geom geom="th_t_tendon0_g2" />
+      <site site="th_t_tendon0_s3" />
+      <site site="th_mcp_tendon0_s0" />
+    </spatial>
+    <spatial name="th_tendon2" class="flex_tendon">
+      <site site="th_t_tendon1_s0" />
+      <geom geom="th_t_tendon1_g0" />
+      <site site="th_t_tendon1_s1" />
+      <geom geom="th_t_tendon1_g1" />
+      <site site="th_t_tendon1_s2" />
+      <geom geom="th_t_tendon1_g2" />
+      <site site="th_t_tendon1_s3" />
+      <geom geom="th_t_tendon1_g2" sidesite="th_t_tendon1_s3" />
+      <site site="th_mcp_tendon1_s0" />
+      <geom geom="th_tendon1_ip_g0" sidesite="th_tendon1_ip_s0" />
+      <site site="th_tendon1_ip_s1" />
+    </spatial>
+    <spatial name="th_spring0" class="cmc_spring">
+      <site site="th_t_spring0_s0" />
+      <site site="th_mcp_spring0_s0" />
+    </spatial>
+    <spatial name="th_spring1" class="distal_spring">
+      <site site="th_mcp_spring1_s0" />
+      <geom geom="th_proximal_spring1_g0" />
+      <site site="th_proximal_spring1_s0" />
+      <geom geom="th_proximal_spring1_g0" />
+      <site site="th_proximal_spring1_s1" />
+    </spatial>
+  </tendon>
+  <equality>
+    <joint joint1="right_index_pip" joint2="right_index_dip" />
+    <joint joint1="right_middle_pip" joint2="right_middle_dip" />
+    <joint joint1="right_ring_pip" joint2="right_ring_dip" />
+    <joint joint1="right_pinky_pip" joint2="right_pinky_dip" />
+    <joint joint1="right_thumb_mcp" joint2="right_thumb_ip" />
+  </equality>
+  <actuator>
+    <general name="right_index_A_tendon" tendon="if_tendon0" ctrlrange="0.05852 0.110387" biastype="affine" gainprm="10000" biasprm="0 -10000" />
+    <general name="right_middle_A_tendon" tendon="mf_tendon0" ctrlrange="0.05852 0.110387" biastype="affine" gainprm="10000" biasprm="0 -10000" />
+    <general name="right_ring_A_tendon" tendon="rf_tendon0" ctrlrange="0.05852 0.110387" biastype="affine" gainprm="10000" biasprm="0 -10000" />
+    <general name="right_pinky_A_tendon" tendon="pf_tendon0" ctrlrange="0.05852 0.110387" biastype="affine" gainprm="10000" biasprm="0 -10000" />
+    <general name="right_thumb_A_cmc_abd" class="thumb_cmc" joint="right_thumb_cmc_abd" gainprm="1" biasprm="0 -1" />
+    <general name="right_th1_A_tendon" tendon="th_tendon1" ctrlrange="0.026152 0.038389" biastype="affine" gainprm="10000" biasprm="0 -10000" />
+    <general name="right_th2_A_tendon" tendon="th_tendon2" ctrlrange="0.081568 0.112138" biastype="affine" gainprm="10000" biasprm="0 -10000" />
+  </actuator>
+  <sensor>
+    <tendonpos tendon="if_tendon0" name="len_if" />
+    <tendonpos tendon="mf_tendon0" name="len_mf" />
+    <tendonpos tendon="rf_tendon0" name="len_rf" />
+    <tendonpos tendon="pf_tendon0" name="len_pf" />
+    <tendonpos tendon="th_tendon1" name="len_th1" />
+    <tendonpos tendon="th_tendon2" name="len_th2" />
+    <jointpos joint="right_thumb_cmc_abd" name="len_th_abd" />
+    <framepos objtype="body" objname="cube" name="cube_position" />
+    <framequat objtype="body" objname="cube" name="cube_orientation" />
+    <framelinvel objtype="body" objname="cube" name="cube_linvel" />
+    <frameangvel objtype="body" objname="cube" name="cube_angvel" />
+    <frameangacc objtype="body" objname="cube" name="cube_angacc" />
+    <framezaxis objtype="body" objname="cube" name="cube_upvector" />
+    <framepos objtype="site" objname="grasp_site" name="palm_position" />
+    <framepos objtype="site" objname="th_tip" reftype="site" refname="grasp_site" name="th_tip_position" />
+    <framepos objtype="site" objname="if_tip" reftype="site" refname="grasp_site" name="if_tip_position" />
+    <framepos objtype="site" objname="mf_tip" reftype="site" refname="grasp_site" name="mf_tip_position" />
+    <framepos objtype="site" objname="rf_tip" reftype="site" refname="grasp_site" name="rf_tip_position" />
+    <framepos objtype="site" objname="pf_tip" reftype="site" refname="grasp_site" name="pf_tip_position" />
+    <framequat objtype="body" objname="goal" name="cube_goal_orientation" />
+    <framezaxis objtype="body" objname="goal" name="cube_goal_upvector" />
+  </sensor>
+  <custom>
+    <numeric name="max_contact_points" size="1" data="30" />
+    <numeric name="max_geom_pairs" size="1" data="12" />
+  </custom>
+  <keyframe>
+    <key name="home" qpos="1.57335 0.347305 0.352258 1.57303 0.400789 0.406 1.57335 0.365219 0.370336 1.57336 0.515229 0.520112 0.746438 0.260182 -0.00155382 1.0748 0.12 0 0.05 0.810967 -0.00262895 -0.585086 -0.000254303" mpos="0.25 0.16 0" ctrl="0.09 0.09 0.09 0.09 0.75 0.035 0.1" />
+  </keyframe>
+</mujoco>

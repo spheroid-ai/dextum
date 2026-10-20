@@ -1,6 +1,6 @@
 {
-  "title": "DEXTUM research preview v1",
-  "as_of": "2026-10-18 accepted results; freeze pending",
+  "title": "DEXTUM research results",
+  "as_of": "Accepted evidence through 2026-10-18; page updated 2026-10-20",
   "scope": "Reported simulation results; presentation only, no new experiments or statistical recomputation",
   "accepted_model_v2_sha256": "a2e0c670506cb69267bac11e80fa24c467a782cca3bedb901290adc64444c924",
   "results": [
@@ -28,7 +28,7 @@
       "n": 200,
       "drops": 13,
       "paired_p": null,
-      "run_id": "section19 Ideal scratch (review \u00a719)",
+      "run_id": "section19 Ideal scratch (review §19)",
       "binding_status": "frozen_report"
     },
     {
@@ -448,7 +448,7 @@
       ],
       "model": "v2",
       "protocol": "Own registered Ideal teachers;20316160-step warm starts,shared200bank,three seeds,faithful evaluator",
-      "safe_wording": "Mean touch advantage+6.17points;95% Student-t interval across three training seeds\u22126.09 to+18.42. Two seeds significant; seed2 p=1.0.",
+      "safe_wording": "Mean touch advantage+6.17points;95% Student-t interval across three training seeds−6.09 to+18.42. Two seeds significant; seed2 p=1.0.",
       "values": {
         "touch_percent": [
           83.5,
@@ -490,7 +490,7 @@
       ],
       "model": "v2",
       "protocol": "One seed,E3cube rotation,20316160-step continuations from same88%Realistic scratch teacher,shared200bank",
-      "safe_wording": "Unmasked87.5%,normal-only85.0%,palm-map removed87.5%. Normal-only differs by\u22122.5points(p=.424); palm removal has0-point difference(p=1).",
+      "safe_wording": "Unmasked87.5%,normal-only85.0%,palm-map removed87.5%. Normal-only differs by−2.5points(p=.424); palm removal has0-point difference(p=1).",
       "values": {
         "successes": [
           175,
@@ -643,7 +643,7 @@
     "dextum_plan/progress/2026-10-17-oracle-repair/host06/terminal_readback_20261018/dextum_cursor_agent/runs/oracle_o1_section25_01/oracle_structured_full_seed3/training/monitor/108134400.json": "8ff4f81add10d0c5ad59a7691fe26367b1f3582530ce35f9587a9a56c62bf44c"
   },
   "additional_provenance": {
-    "rigid_diagnostic": "User-provided accepted review \u00a722: 87.5%, p=.29 against Ideal v2; exact run ID not resolved in this page snapshot",
+    "rigid_diagnostic": "User-provided accepted review §22: 87.5%, p=.29 against Ideal v2; exact run ID not resolved in this page snapshot",
     "bare_hand": "dextum_plan/progress/2026-10-10-pass1/SCORECARD.md; historical bare-hand protocol",
     "design_reference": "https://uni-vta.github.io/; layout reference only"
   },

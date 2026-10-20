@@ -1,6 +1,9 @@
 qa/
+.venv/
 __pycache__/
 .DS_Store
 *.zip
 SHA256SUMS
 PREPARATION_MANIFEST.json
+!site/dist/dextum-v1.zip
+!site/dist/assets/dextum-figures.zip

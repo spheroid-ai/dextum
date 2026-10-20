@@ -1,0 +1,163 @@
+"""Review §18: fresh C-touch Ideal/Realistic on the accepted sensorised hand.
+
+This entry point requires a separate frozen registration and qualifications.
+It does not rent compute, launch itself, or reuse the old-physics teachers.
+"""
+import argparse
+import functools
+import hashlib
+import importlib.metadata
+import json
+import os
+from pathlib import Path
+import sys
+import time
+
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def main():
+    # The kit observation layout is fixed when environment modules import.
+    os.environ['DEXTUM_LEGACY_PREFIX'] = '1'
+    import jax
+    import numpy as np
+    import vendor.aero_official.vision_env
+    from brax.io import model
+    from brax.training.agents.ppo import networks
+    from pass1 import faithful
+    from pass1.qualification import require_training_pass
+    from pass1c import resumable_ppo
+    from pass1c.followup import network_factory
+    from pass1c.compare import MonitorGuard
+
+    p = argparse.ArgumentParser()
+    p.add_argument('--registration', type=Path, required=True)
+    p.add_argument('--case', required=True)
+    p.add_argument('--mode', choices=('audit', 'qualify', 'train'), required=True)
+    p.add_argument('--output', type=Path, required=True)
+    p.add_argument('--resume', type=Path)
+    a = p.parse_args()
+    reg = json.loads(a.registration.read_text())
+    assert reg['authority'] == 'review_section18_from_scratch'
+    for package, version in reg['package_versions'].items():
+        assert importlib.metadata.version(package) == version, package
+    assert not os.environ.get('XLA_FLAGS', '')
+    root = Path(__file__).resolve().parents[1]
+    for name, digest in reg['source_sha256'].items():
+        assert sha(root / name) == digest, name
+    for name, digest in reg['evidence_sha256'].items():
+        assert sha(name) == digest, name
+    job = reg['cases'][a.case]
+    assert job['seed'] == 1 and job['arm'] == 'c_touch'
+    config = dict(job['configuration'])
+    assert config['seed'] == 1 and config['num_envs'] == 8192
+    assert config['num_timesteps'] == 108134400 and config['num_evals'] == 31
+    assert job['initialization'] == 'fresh_random_parameters_optimizer_normalizer'
+    assert not any(key in job for key in ('checkpoint', 'teacher_run', 'warm_start'))
+    os.environ.update(DEXTUM_KIT_XML=job['model'], DEXTUM_LEGACY_PREFIX='1',
+                      DEXTUM_SENSOR_LEVEL=job['sensor_level'])
+    assert sha(job['model']) == job['model_sha256']
+    from pass1c.environment import BlindRotation, CRITIC_SIZE
+    env = BlindRotation(job['arm'])
+    jax.config.update('jax_default_matmul_precision', 'highest')
+    assert any(device.platform == 'gpu' for device in jax.devices())
+    width = 3 * env.frame
+    factory = network_factory(width)
+    net = factory(observation_size={'state': width, 'privileged_state': CRITIC_SIZE},
+                  action_size=env.action_size)
+    if a.mode == 'audit':
+        from pass1 import audit_training
+        from pass1c import environment, train
+        environment.BlindRotation = lambda arm: env
+        train.network_factory = lambda arm: factory
+        options = ['--kit']
+        sys.argv = ['audit_training', '--section13', '--variant', 'barrier', '--probe',
+                    '--output', str(a.output), *options]
+        audit_training.main()
+        path = a.output / 'result.json'
+        result = json.loads(path.read_text())
+        result.update(scratch_case=a.case, registration_sha256=sha(a.registration))
+        path.write_text(json.dumps(result, indent=2) + '\n')
+        require_training_pass(result)
+        return
+    detector = json.loads(Path(job['detector']).read_text())
+    require_training_pass(detector)
+    assert detector['registration_sha256'] == sha(a.registration)
+    assert detector['scratch_case'] == job.get('qualification_case', a.case)
+    assert detector['model_sha256'] == job['model_sha256']
+    if a.mode == 'train':
+        q = Path(job['qualification'])
+        rate = json.loads((q / 'throughput.json').read_text())
+        resume = json.loads((q / 'resume_test.json').read_text())
+        assert resume['state'] == 'PASS'
+        assert rate['updates'] == 10 and rate['includes_checkpoints']
+        assert rate['optimizer_updates_are_discarded']
+        assert resume['metadata'] == rate['metadata']
+        assert rate['metadata']['registration_sha256'] == sha(a.registration)
+        assert rate['metadata']['case'] == job.get('qualification_case', a.case)
+        assert resume['optimizer_state_nonzero']
+        # Full-budget sensorised runs may span two capped children.
+        # These bounds must also appear in the registration before measurement.
+        limit = 9600
+        assert job['maximum_projected_budget_s'] == limit
+        assert rate['projected_rounded_budget_s'] <= limit
+    a.output.mkdir(parents=True, exist_ok=bool(a.resume))
+    if a.mode == 'train':
+        (a.output/'runtime_gate.json').write_text(json.dumps(dict(
+            state='PASS', projected_budget_s=rate['projected_rounded_budget_s'],
+            registered_limit_s=limit, maximum_children=2,
+            child_cap_s=7200, measured_updates=rate['updates'],
+            underlying_one_child_label=rate['state'],
+            interpretation='The frozen generic throughput report labels a 4800s one-child limit; '
+                           'the registered full-budget sensorised run may use two capped children.'
+                           ), indent=2)+'\n')
+    metadata = dict(registration_sha256=sha(a.registration), case=a.case,
+                    configuration=config, source_sha256=reg['source_sha256'])
+    started = time.monotonic()
+    record = dict(state='RUNNING', job=job, registration_sha256=sha(a.registration),
+                  actor_inputs=width, started_at=time.time())
+    if not a.resume:
+        (a.output / 'config.json').write_text(json.dumps(record, indent=2) + '\n')
+    else:
+        (a.output / ('continuation_'+str(int(time.time()))+'.json')).write_text(json.dumps(record, indent=2)+'\n')
+
+    def progress(steps, metrics):
+        values = {key: float(np.asarray(value)) for key, value in metrics.items()
+                  if np.asarray(value).size == 1}
+        assert all(np.isfinite(value) for value in values.values())
+        row = dict(steps=int(steps), elapsed_s=time.monotonic()-started, metrics=values)
+        with (a.output / 'metrics.jsonl').open('a') as f:
+            f.write(json.dumps(row) + '\n')
+        print(json.dumps(dict(steps=int(steps), elapsed_s=row['elapsed_s'])), flush=True)
+
+    def save(steps, make_policy, params):
+        del make_policy
+        assert all(np.isfinite(np.asarray(value)).all() for value in jax.tree.leaves(params))
+        path = a.output / f'policy_{int(steps)}.pkl'
+        if not path.exists():
+            model.save_params(path, params)
+
+    monitor = MonitorGuard(env, networks.make_inference_fn(net), a.output / 'monitor') if a.mode == 'train' else None
+    try:
+        resumable_ppo.train(environment=env, network_factory=factory,
+            wrap_env_fn=functools.partial(faithful.wrap_for_training, full_reset=True),
+            randomization_fn=env.randomize, progress_fn=progress, policy_params_fn=save,
+            restore_params=None, run_evals=False,
+            full_state_options=dict(directory=str(a.output / 'full_state'), metadata=metadata,
+                resume=str(a.resume) if a.resume else None, qualify=a.mode == 'qualify', monitor=monitor), **config)
+        record.update(state='COMPLETE', training_attempts=0 if a.mode == 'qualify' else 1,
+                      continuation_of_same_attempt=bool(a.resume))
+    except BaseException as exc:
+        record.update(state='EXECUTION_FAILURE', error=f'{type(exc).__name__}: {exc}')
+        raise
+    finally:
+        record['wall_s'] = time.monotonic()-started
+        (a.output / 'report.json').write_text(json.dumps(record, indent=2) + '\n')
+
+
+if __name__ == '__main__':
+    if not os.environ.get('CONTAINER_ID'):
+        raise RuntimeError('Vast only')
+    main()

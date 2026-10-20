@@ -1,0 +1,87 @@
+{
+  "work/aero_official/__init__.py": {
+    "source_sha256": "9bec5833df754ef4ce7fab9929a6a2995a86cfb952d1c27838bba5c2e6a604b8",
+    "copy_sha256": "9bec5833df754ef4ce7fab9929a6a2995a86cfb952d1c27838bba5c2e6a604b8",
+    "patched": false
+  },
+  "work/aero_official/vision_env.py": {
+    "source_sha256": "106c3bc37cd15d61659a6f4828b31b2f71756ec2fa58bee9c0194946d6002dd1",
+    "copy_sha256": "106c3bc37cd15d61659a6f4828b31b2f71756ec2fa58bee9c0194946d6002dd1",
+    "patched": false
+  },
+  "work/aero_official/vision_math.py": {
+    "source_sha256": "5b4920b76e010870476c5dbf181577d1f5932265a32f53bdcfcb0cb5ddf5db3a",
+    "copy_sha256": "5b4920b76e010870476c5dbf181577d1f5932265a32f53bdcfcb0cb5ddf5db3a",
+    "patched": false
+  },
+  "work/aero_official/vision_oracle.py": {
+    "source_sha256": "110c9dbeea93448cba3290f5ad71d5fbdb1d8497cba3cc35da6f01611695626e",
+    "copy_sha256": "110c9dbeea93448cba3290f5ad71d5fbdb1d8497cba3cc35da6f01611695626e",
+    "patched": false
+  },
+  "work/aero_official/goal_yaw.py": {
+    "source_sha256": "75b0e555ffbda3fdcb108952cdfeb91dddcf52d0a7fe0898d2fd9a999731efc0",
+    "copy_sha256": "75b0e555ffbda3fdcb108952cdfeb91dddcf52d0a7fe0898d2fd9a999731efc0",
+    "patched": false
+  },
+  "work/aero_official/orientation_curriculum.py": {
+    "source_sha256": "8d61d0b1ad429d6154ca4160724f87022ceb9f0e76caa8e3cc361b8473dcbb7e",
+    "copy_sha256": "8d61d0b1ad429d6154ca4160724f87022ceb9f0e76caa8e3cc361b8473dcbb7e",
+    "patched": false
+  },
+  "work/aero_official/orientation_policy.py": {
+    "source_sha256": "57a2889d6aac89e9aed538bd5a55906ef4835e342c7a4d16648c8e1500c6cd20",
+    "copy_sha256": "57a2889d6aac89e9aed538bd5a55906ef4835e342c7a4d16648c8e1500c6cd20",
+    "patched": false
+  },
+  "work/aero_official/policy.py": {
+    "source_sha256": "d930b842d7773b1f2701777440add7e64c20344a87a999bbde0aed073830fbda",
+    "copy_sha256": "ad0c92bfd42a15d326a6cbcb779827a764fcb0176efde0d22f8cefd0e6633f59",
+    "patched": true
+  },
+  "work/aero_official/protocol.py": {
+    "source_sha256": "b319f2d93fec37555c1e7fc0c532937e3482d4d1cd1fbab007d69a9ef6c39eec",
+    "copy_sha256": "b319f2d93fec37555c1e7fc0c532937e3482d4d1cd1fbab007d69a9ef6c39eec",
+    "patched": false
+  },
+  "work/aero_official/train.py": {
+    "source_sha256": "d8ff0b3b3cf69c563b9b1c366dd16644055b4156abf20843cd87df88033f8614",
+    "copy_sha256": "d8ff0b3b3cf69c563b9b1c366dd16644055b4156abf20843cd87df88033f8614",
+    "patched": false
+  },
+  "work/aero_official/orientation_train.py": {
+    "source_sha256": "cb643888b8d8cc07bac84b7a63b0ca0435296978067c3413bd7aba8c0ab1a605",
+    "copy_sha256": "cb643888b8d8cc07bac84b7a63b0ca0435296978067c3413bd7aba8c0ab1a605",
+    "patched": false
+  },
+  "work/aero_official/orientation_evaluate.py": {
+    "source_sha256": "5c0e0c8036c620fe8a27149cb8ed7edc38b61422689c0f4184346172e826428d",
+    "copy_sha256": "5c0e0c8036c620fe8a27149cb8ed7edc38b61422689c0f4184346172e826428d",
+    "patched": false
+  },
+  "work/aero_official/cpu_eval.py": {
+    "source_sha256": "02e0eba5f0c291f7551c44094cb9a7cc9a8b311142f7bf9ba1cceeb12586e026",
+    "copy_sha256": "02e0eba5f0c291f7551c44094cb9a7cc9a8b311142f7bf9ba1cceeb12586e026",
+    "patched": false
+  },
+  "work/aero_official/evaluate_r0.py": {
+    "source_sha256": "f5c4a234a354a5e35e98df9dedc83d3b00c0f7cf5e945a021daa7fe6925635bb",
+    "copy_sha256": "f5c4a234a354a5e35e98df9dedc83d3b00c0f7cf5e945a021daa7fe6925635bb",
+    "patched": false
+  },
+  "work/aero_official/gpu_preflight.py": {
+    "source_sha256": "ebf77b5da455d5171e44f7f5e44bc123a9b1a55f0a6c689aebf970c63b41663e",
+    "copy_sha256": "ebf77b5da455d5171e44f7f5e44bc123a9b1a55f0a6c689aebf970c63b41663e",
+    "patched": false
+  },
+  "work/aero_official/requirements-gpu.lock.txt": {
+    "source_sha256": "76b6fcec503f76e9a8f9a077238072c25de8394df087209a7e72b274bf7029b1",
+    "copy_sha256": "76b6fcec503f76e9a8f9a077238072c25de8394df087209a7e72b274bf7029b1",
+    "patched": false
+  },
+  "work/spheroid_kit/sensors.py": {
+    "source_sha256": "f21e53339f0e27eebd3b8aad760c08fb8a0551a8a9ca5e0a8f73fa2d35017578",
+    "copy_sha256": "f21e53339f0e27eebd3b8aad760c08fb8a0551a8a9ca5e0a8f73fa2d35017578",
+    "patched": false
+  }
+}

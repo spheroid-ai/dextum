@@ -1,16 +1,16 @@
 # DEXTUM research page — v1
 
-Buildless HTML research page, based on accepted records as of 18 October 2026.
+Buildless HTML research page, updated 20 October 2026 from accepted records through 18 October 2026.
 `dist/index.html` works offline with its adjacent files or on any static host.
-The Sites deployment is owner-private. This preview is not the promised final
-public research release or a published paper.
+The public GitHub Pages edition is https://spheroid-ai.github.io/dextum/.
+This research snapshot is not a completed paper or turnkey training release.
 
 ## Contents
 
 - Actual Aero bench photograph, Kit B assembly render and the two supplied Spheroid concept renders.
 - Historical 63-second Aero simulation MP4 and saved Kit B PNG, with explicit run context and media hashes.
 - Five downloadable result figures (SVG/PDF), made from reported point estimates.
-- Model-v2 rotation, channel ablations, O1 and D2 results; v1 is explicitly historical.
+- Model-v2 rotation, channel ablations, O1, D2 and D3 results; v1 is explicitly historical.
 - Protocol, sensor assumptions, limitations, programme status and evidence index.
 - Reported values and provenance in `dist/data/`.
 
@@ -30,4 +30,8 @@ Metriplector implementation result and makes no new latent-mechanics design.
 Visual structure is inspired by https://uni-vta.github.io/; all page code is new.
 Project media are reused without image alteration and carry source hashes.
 
-The section25 package and GPU-only work order are in `dist/docs/`. Freeze is19October18:00CEST. Full publication preparation is in the sibling `dextum_release_20oct/` repository. Public launch remains20October; this Site stays owner-private.
+The research page leads with DEXTUM’s contact-state, quantum and task-flow
+concepts, followed by the measured tactile study. Internal review drafts and
+work orders are preserved in `reference-docs/`, outside the served `dist/`.
+The downloadable offline edition includes only served site files.
+The page does not claim the planned freeze or public research release is complete.

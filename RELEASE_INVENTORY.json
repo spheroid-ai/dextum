@@ -58,9 +58,10 @@
     },
     {
       "item": "Public repository/tag/Pages",
-      "status": "publication prepared; verify against GitHub deployment",
+      "status": "public repository and GitHub Pages live; research release v0.1.0",
       "repository": "https://github.com/spheroid-ai/dextum",
-      "page": "https://spheroid-ai.github.io/dextum/"
+      "page": "https://spheroid-ai.github.io/dextum/",
+      "release": "https://github.com/spheroid-ai/dextum/releases/tag/v0.1.0"
     }
   ],
   "cuts": [
@@ -72,11 +73,15 @@
   ],
   "preparation_repository": {
     "url": "https://github.com/spheroid-ai/dextum",
-    "visibility": "PUBLICATION_PREPARED",
+    "visibility": "PUBLIC",
     "initial_commit": "ffd78b6"
   },
   "as_of": "2026-10-20",
   "number_audit": "29 accepted result rows bound to immutable reports; all recovered flat2/D3 records included",
   "page_copy": "18 October reviewer copy preserved in docs; PAGE_COPY_AUDIT_20261018.json records evidence corrections",
-  "evidence_through": "2026-10-18"
+  "evidence_through": "2026-10-18",
+  "public_page": "https://spheroid-ai.github.io/dextum/",
+  "public_page_verified": "2026-10-20 HTTP 200 without authentication; exact HTML match",
+  "pages_branch": "gh-pages",
+  "pages_commit": "3e9cc6b7544136f8778513a7a0c8a5768ebf5fe2"
 }

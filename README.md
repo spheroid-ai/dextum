@@ -4,7 +4,7 @@
 
 **Spheroid · Peter Toth, Dan Oprisa, Sam Padilla**
 
-[Project page](https://spheroid-ai.github.io/dextum/) · [Research code](research/README.md) · [Model and sensors](research/models/v2/README.md) · [Scorecards](site/data/evidence/) · [Simulation video](https://spheroid-ai.github.io/dextum/#simulation) · [Company](https://spheroid.ai)
+[Project page](https://spheroid-ai.github.io/dextum/) · [Research code](research/README.md) · [Model and sensors](research/models/v2/README.md) · [Scorecards](site/data/evidence/) · [Simulation video](https://spheroid-ai.github.io/dextum/#simulation) · [Release download](https://github.com/spheroid-ai/dextum/releases/tag/v0.1.0) · [Company](https://spheroid.ai)
 
 <img src="site/dist/assets/kit-assembly.png" width="620" alt="DEXTUM tactile-kit design render on the Aero hand">
 

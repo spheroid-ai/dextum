@@ -6,8 +6,6 @@
 
 [Project page](https://spheroid-ai.github.io/dextum/) · [Research code](research/README.md) · [Model and sensors](research/models/v2/README.md) · [Scorecards](site/data/evidence/) · [Simulation video](https://spheroid-ai.github.io/dextum/#simulation) · [Release download](https://github.com/spheroid-ai/dextum/releases/tag/v0.1.1) · [Company](https://spheroid.ai)
 
-<img src="site/dist/assets/kit-assembly.png" width="620" alt="DEXTUM tactile-kit design render on the Aero hand">
-
 *Design render; hardware validation is pending. All reported performance below is from simulation.*
 
 DEXTUM studies manipulation as contact states between hand elements and object patches, transitions between those states, and flows through feasible transitions. The programme combines a contact representation, a physical reference for contact dynamics, and a tactile kit with a common data format.

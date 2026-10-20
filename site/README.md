@@ -35,3 +35,5 @@ concepts, followed by the measured tactile study. Internal review drafts and
 work orders are preserved in `reference-docs/`, outside the served `dist/`.
 The downloadable offline edition includes only served site files.
 The page does not claim the planned freeze or public research release is complete.
+
+The v2 seed and channel tables remain visible without JavaScript. Run `python3 build_result_tables.py` from this directory to refresh only those tables from the hash-bound reports; `build_assets.py` also updates them. The page and project citation use release version 0.1.1. The legacy `dextum-v1.zip` URL is retained for existing download links; its contents are the current offline edition.

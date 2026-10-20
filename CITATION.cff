@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Please cite this research snapshot and distinguish it from a published paper."
 title: "DEXTUM: Manipulation, Described Through Contact"
 type: software
-version: 0.1.0
+version: 0.1.1
 date-released: 2026-10-20
 url: "https://spheroid-ai.github.io/dextum/"
 repository-code: "https://github.com/spheroid-ai/dextum"

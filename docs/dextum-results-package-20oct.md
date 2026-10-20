@@ -1,5 +1,7 @@
 # DEXTUM results package — 20 October 2026
 
+**Publication update — 20 October 2026 (v0.1.1).** The [public project page](https://spheroid-ai.github.io/dextum/) and [research repository](https://github.com/spheroid-ai/dextum) are live; the paper PDF remains pending. Use “project page (paper to follow)” in the application. The original schedule below is historical. The [publication audit](https://github.com/spheroid-ai/dextum/blob/main/docs/PUBLICATION_CORRECTIONS_20261020.md) confirms the bare-hand labels: C-touch **91.5%**, C-no-touch **74.5%**, plain PPO **80.5%**; held-out physics **77.85%, 61.15%, 64.40%** in that same order. C2 in this execution edition was already correct; the 18 October prose draft reversed the controls. D2 **70.5% / 2.5% drops** and D3 **41.5% / 10% drops** are accepted negatives at their tested budgets; sensorless deployment remains a design goal. The v2 touch and channel results now appear directly in the page, with no tab required.
+
 Execution edition, 15 October 2026. Authority: the user's revised package and
 [review §25 ruling](progress/2026-10-15-section25/USER_RULING.md). This edition
 supersedes older schedules; historical registrations and results remain intact.

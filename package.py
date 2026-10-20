@@ -37,9 +37,10 @@ records = [{'path': p.relative_to(ROOT).as_posix(), 'bytes': p.stat().st_size,
             'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(files)]
 manifest = ROOT / 'PREPARATION_MANIFEST.json'
 manifest.write_text(json.dumps({'status': 'PUBLIC_RESEARCH_SNAPSHOT_NOT_TURNKEY_TRAINING',
+                               'version': '0.1.1',
                                'release_date': '2026-10-20',
                                'files': records}, indent=2) + '\n')
-bundle = ROOT / 'dextum-v0.1-research.zip'
+bundle = ROOT / 'dextum-v0.1.1-research.zip'
 # The page's small figure download is included; the large offline ZIP is excluded.
 archive(bundle, ROOT, files + [manifest, DIST / 'assets' / 'dextum-figures.zip'])
 (ROOT / 'SHA256SUMS').write_text(''.join(

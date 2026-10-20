@@ -12,6 +12,7 @@ HERE = Path(__file__).resolve().parent
 DIST = HERE / 'dist'
 ASSETS = DIST / 'assets'
 from read_scorecards import load_results
+from build_result_tables import update_page
 snapshot = load_results()
 rows = snapshot['results']
 def result(group, arm, seed=1):
@@ -90,4 +91,5 @@ with (DIST/'data/results.csv').open('w',newline='') as f:
 with zipfile.ZipFile(ASSETS/'dextum-figures.zip','w',zipfile.ZIP_DEFLATED) as z:
     for stem in ['model-comparison','touch-seeds','channel-ablation','oracle-o1','student']:
         for suffix in ['.svg','.pdf']:z.write(ASSETS/(stem+suffix),stem+suffix)
-print(f'Built five figures from {len(rows)} explicitly admitted rows and verified frozen reports.')
+update_page()
+print(f'Built five figures and two visible tables from {len(rows)} explicitly admitted rows and verified frozen reports.')

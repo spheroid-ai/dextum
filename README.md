@@ -4,7 +4,7 @@
 
 **Spheroid · Peter Toth, Dan Oprisa, Sam Padilla**
 
-[Project page](https://spheroid-ai.github.io/dextum/) · [Research code](research/README.md) · [Model and sensors](research/models/v2/README.md) · [Scorecards](site/data/evidence/) · [Simulation video](https://spheroid-ai.github.io/dextum/#simulation) · [Release download](https://github.com/spheroid-ai/dextum/releases/tag/v0.1.0) · [Company](https://spheroid.ai)
+[Project page](https://spheroid-ai.github.io/dextum/) · [Research code](research/README.md) · [Model and sensors](research/models/v2/README.md) · [Scorecards](site/data/evidence/) · [Simulation video](https://spheroid-ai.github.io/dextum/#simulation) · [Release download](https://github.com/spheroid-ai/dextum/releases/tag/v0.1.1) · [Company](https://spheroid.ai)
 
 <img src="site/dist/assets/kit-assembly.png" width="620" alt="DEXTUM tactile-kit design render on the Aero hand">
 
@@ -14,7 +14,7 @@ DEXTUM studies manipulation as contact states between hand elements and object p
 
 The first study, **“Which Touch Does a Hand Need?”**, puts a physically specified kit on the TetherIA Aero Hand Open in MuJoCo/MJX. Matched experiments measure sensor cost, channel contributions and the effect of correcting the contact model. Oracle O1 supplies exact simulator-derived inputs to test the representation separately from learning perception.
 
-**Public research snapshot v0.1 · 20 October 2026.** Accepted evidence through 18 October; scientific source, the v2 model/assets, registered configurations, evidence-bound figures and the page. The paper PDF, policy checkpoints and complete portable training release are **not yet published**. No real-robot success rate is claimed.
+**Public research snapshot v0.1.1 · 20 October 2026.** Accepted evidence through 18 October; scientific source, the v2 model/assets, registered configurations, evidence-bound figures and the page. The paper PDF, policy checkpoints and complete portable training release are **not yet published**. No real-robot success rate is claimed.
 
 ## Results
 
@@ -131,6 +131,8 @@ Original software and model modifications: [Apache-2.0](LICENSE). Original relea
 
 Design: named physical state and joules belong to the explicit contact-mode physical reference and interfaces. Metriplector processor coordinates have no assigned anatomical or mechanical identity. Implementation: this snapshot contains conventional PPO, simulation and representation experiments; it establishes no Metriplector implementation result or compliance claim.
 
+See the [20 October publication audit](docs/PUBLICATION_CORRECTIONS_20261020.md) for the verified bare-hand arm labels and [application wording](docs/APPLICATION_ARTIFACTS.md) for the current paper and sensorless-transfer status.
+
 ## Citation
 
 ```bibtex
@@ -139,6 +141,6 @@ Design: named physical state and joules belong to the explicit contact-mode phys
   author = {Toth, Peter and Oprisa, Dan and Padilla, Sam},
   year = {2026},
   howpublished = {\url{https://spheroid-ai.github.io/dextum/}},
-  note = {Research snapshot v0.1; simulation results; paper pending}
+  note = {Research snapshot v0.1.1; simulation results; paper pending}
 }
 ```

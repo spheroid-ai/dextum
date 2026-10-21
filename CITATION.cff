@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "Please cite this research snapshot and distinguish it from a published paper."
-title: "DEXTUM: Manipulation, Described Through Contact"
+title: "Which Touch Does a Hand Need?"
 type: software
-version: 0.1.1
-date-released: 2026-10-20
+version: 0.2.0
+date-released: 2026-10-21
 url: "https://spheroid-ai.github.io/dextum/"
 repository-code: "https://github.com/spheroid-ai/dextum"
 authors:

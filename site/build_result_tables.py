@@ -50,14 +50,17 @@ def render_tables():
 
 
 def update_page():
-    path = Path(__file__).parent / "dist/index.html"
-    page = path.read_text()
-    for name, content in render_tables().items():
-        start, end = f"<!-- {name}-table:start -->", f"<!-- {name}-table:end -->"
-        before, rest = page.split(start, 1)
-        _, after = rest.split(end, 1)
-        page = before + start + "\n" + content + "\n" + end + after
-    path.write_text(page)
+    for filename in ("index.html", "full-record.html"):
+        path = Path(__file__).parent / "dist" / filename
+        page = path.read_text()
+        for name, content in render_tables().items():
+            start, end = f"<!-- {name}-table:start -->", f"<!-- {name}-table:end -->"
+            if start not in page:
+                continue
+            before, rest = page.split(start, 1)
+            _, after = rest.split(end, 1)
+            page = before + start + "\n" + content + "\n" + end + after
+        path.write_text(page)
 
 
 if __name__ == "__main__":

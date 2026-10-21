@@ -1,18 +1,20 @@
 # DEXTUM
 
-### Manipulation, described through contact
+### Which Touch Does a Hand Need?
 
 **Spheroid · Peter Toth, Dan Oprisa, Sam Padilla**
 
-[Project page](https://spheroid-ai.github.io/dextum/) · [Research code](research/README.md) · [Model and sensors](research/models/v2/README.md) · [Scorecards](site/data/evidence/) · [Simulation video](https://spheroid-ai.github.io/dextum/#simulation) · [Release download](https://github.com/spheroid-ai/dextum/releases/tag/v0.1.1) · [Company](https://spheroid.ai)
+[Project page](https://spheroid-ai.github.io/dextum/) · [Full record](https://spheroid-ai.github.io/dextum/full-record.html) · [Research code](research/README.md) · [Model and sensors](research/models/v2/README.md) · [Scorecards](site/data/evidence/) · [Simulation video](https://spheroid-ai.github.io/dextum/full-record.html#simulation) · [Release download](https://github.com/spheroid-ai/dextum/releases/tag/v0.2.0) · [Company](https://spheroid.ai)
 
-*Design render; hardware validation is pending. All reported performance below is from simulation.*
+*All reported performance below is from simulation.*
 
 DEXTUM studies manipulation as contact states between hand elements and object patches, transitions between those states, and flows through feasible transitions. The programme combines a contact representation, a physical reference for contact dynamics, and a tactile kit with a common data format.
 
 The first study, **“Which Touch Does a Hand Need?”**, puts a physically specified kit on the TetherIA Aero Hand Open in MuJoCo/MJX. Matched experiments measure sensor cost, channel contributions and the effect of correcting the contact model. Oracle O1 supplies exact simulator-derived inputs to test the representation separately from learning perception.
 
-**Public research snapshot v0.1.1 · 20 October 2026.** Accepted evidence through 18 October; scientific source, the v2 model/assets, registered configurations, evidence-bound figures and the page. The paper PDF, policy checkpoints and complete portable training release are **not yet published**. No real-robot success rate is claimed.
+**Public research snapshot v0.2.0 · 21 October 2026.** Accepted evidence through 18 October; scientific source, the v2 model/assets, registered configurations, evidence-bound figures and the page. The paper PDF, policy checkpoints and complete portable training release are **not yet published**. No real-robot success rate is claimed.
+
+The project page presents four measured questions. [Full record](https://spheroid-ai.github.io/dextum/full-record.html) retains the complete results, historical simulations, protocol details, negative outcomes, pending claims and provenance. The opening uses the real Aero photograph and an illustrative contact diagram; it is not a v2 touch-map rollout.
 
 ## Results
 
@@ -87,7 +89,7 @@ git branch -D pages-update
 
 - [Project page](https://spheroid-ai.github.io/dextum/) · [Repository](https://github.com/spheroid-ai/dextum).
 - [Oracle O1 evidence](https://spheroid-ai.github.io/dextum/#oracle) · [Tactile results](https://spheroid-ai.github.io/dextum/#results).
-- [Simulation video and stills](https://spheroid-ai.github.io/dextum/#simulation), with captions and provenance.
+- [Simulation video and stills](https://spheroid-ai.github.io/dextum/full-record.html#simulation), with captions and provenance.
 - [Historical Aero MP4](https://spheroid-ai.github.io/dextum/assets/aero-simulation-20261004.mp4): predates model v2; not footage of the 88% policy.
 - [Figures: SVG and PDF](https://spheroid-ai.github.io/dextum/assets/dextum-figures.zip) · [Offline HTML](https://spheroid-ai.github.io/dextum/dextum-v1.zip).
 - [Code guide](research/README.md) · [Model](research/models/v2/README.md) · [Scorecards](site/data/evidence/).
@@ -134,11 +136,11 @@ See the [20 October publication audit](docs/PUBLICATION_CORRECTIONS_20261020.md)
 ## Citation
 
 ```bibtex
-@misc{spheroid2026dextum,
-  title = {DEXTUM: Manipulation, Described Through Contact},
+@misc{spheroid2026whichtouch,
+  title = {Which Touch Does a Hand Need?},
   author = {Toth, Peter and Oprisa, Dan and Padilla, Sam},
   year = {2026},
   howpublished = {\url{https://spheroid-ai.github.io/dextum/}},
-  note = {Research snapshot v0.1.1; simulation results; paper pending}
+  note = {Research snapshot v0.2.0; simulation results; paper pending}
 }
 ```

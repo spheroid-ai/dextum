@@ -1,39 +1,46 @@
-# DEXTUM research page — v1
+# DEXTUM project page — v0.2.0
 
-Buildless HTML research page, updated 20 October 2026 from accepted records through 18 October 2026.
-`dist/index.html` works offline with its adjacent files or on any static host.
-The public GitHub Pages edition is https://spheroid-ai.github.io/dextum/.
-This research snapshot is not a completed paper or turnkey training release.
+Public page: https://spheroid-ai.github.io/dextum/
+Full record: https://spheroid-ai.github.io/dextum/full-record.html
 
-## Contents
+`dist/index.html` is the four-question landing page. `dist/full-record.html`
+retains the detailed methods, v2 comparisons, v1 history, historical simulation
+video, concept renders, negative results, unfinished claims and provenance.
+Both work offline with their adjacent files.
 
-- Actual Aero bench photograph, Kit B assembly render and the two supplied Spheroid concept renders.
-- Historical 63-second Aero simulation MP4 and saved Kit B PNG, with explicit run context and media hashes.
-- Five downloadable result figures (SVG/PDF), made from reported point estimates.
-- Model-v2 rotation, channel ablations, O1, D2 and D3 results; v1 is explicitly historical.
-- Protocol, sensor assumptions, limitations, programme status and evidence index.
-- Reported values and provenance in `dist/data/`.
+The page title and citation are **Which Touch Does a Hand Need?** The paper
+PDF remains unpublished. Accepted evidence remains the frozen reports through
+18 October; the 21 October change is presentation only.
 
-The numerical “no CPU run” amendment remains intact: no simulator, learner,
-evaluation or statistical reanalysis ran for this page. Matplotlib draws already
-reported values solely for presentation. No generated imagery is evidence.
+The hero combines the actual Aero photograph with an inline conceptual
+contact graph. It is not a measured touch map or an accepted-policy rollout.
+The previously rejected kit assembly render is not restored to the opening.
+Original image files, media provenance and historical evidence are preserved.
 
-Run `python3 build_assets.py` to redraw figures from the explicitly admitted frozen scorecards in `data/`; their hashes and field pointers are validated before drawing.
-Run `python3 build_media.py` to copy the original media without altering it.
-Serve `dist` using a local static server, or open `dist/index.html` directly.
-`qa/` holds local-only source audit and visual QA, excluded from Site source.
+## Build
 
-Mapping audit: the page separates the contact-mode physical reference and
-physical interfaces from Metriplector latent coordinates. It reports no measured
-Metriplector implementation result and makes no new latent-mechanics design.
+- `python3 site/build_assets.py` rebuilds the detailed plots, landing charts
+  and visible tables from hash-verified admitted reports.
+- `python3 site/build_landing_assets.py` redraws only the four landing SVGs.
+- `python3 site/build_result_tables.py` refreshes the tables on both pages.
+- `python3 tools/verify_release.py` checks the frozen source/model hashes,
+  admitted results, both HTML pages and their cross-page links.
+- `python3 package.py` creates the offline two-page edition and research ZIP.
 
-Visual structure is inspired by https://uni-vta.github.io/; all page code is new.
-Project media are reused without image alteration and carry source hashes.
+No simulator, learner, evaluation or statistical refit is executed by these
+presentation builds. The numerical “no CPU run” amendment remains intact.
+The legacy `dextum-v1.zip` download filename is retained for link compatibility;
+its served contents are the current offline edition. Tagged older releases
+remain unchanged. QA screenshots and reports under `qa/` are local-only.
 
-The research page leads with DEXTUM’s contact-state, quantum and task-flow
-concepts, followed by the measured tactile study. Internal review drafts and
-work orders are preserved in `reference-docs/`, outside the served `dist/`.
-The downloadable offline edition includes only served site files.
-The page does not claim the planned freeze or public research release is complete.
+## Scope
 
-The v2 seed and channel tables remain visible without JavaScript. Run `python3 build_result_tables.py` from this directory to refresh only those tables from the hash-bound reports; `build_assets.py` also updates them. The page and project citation use release version 0.1.1. The legacy `dextum-v1.zip` URL is retained for existing download links; its contents are the current offline edition.
+Full O1 inputs include pose and velocity. The 89.2% structured mean is not a
+contact-only result; the separate contact-only ablation scored 85.0%. Holding
+has not established a need for shear or slip. The current page reports the
+rotation channel measurement without turning it into a hardware tolerance or
+an unmeasured hold claim.
+
+Mapping audit: named physical signals and the contact-mode physical reference
+remain separate from Metriplector latent coordinates. No new Metriplector
+implementation result or latent-mechanics design is claimed.

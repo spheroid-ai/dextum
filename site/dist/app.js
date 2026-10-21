@@ -1,3 +1,8 @@
+// Keep published links to the earlier single-page record working.
+const legacySections = new Set(['simulation', 'setup', 'protocol', 'student', 'release', 'representation', 'question', 'outlook', 'panel-model', 'panel-seeds', 'panel-channels']);
+if (!location.pathname.endsWith('/full-record.html') && legacySections.has(location.hash.slice(1))) {
+  location.replace('full-record.html' + location.hash);
+}
 const menu = document.querySelector('.menu-toggle');
 const nav = document.querySelector('#navigation');
 menu.addEventListener('click', () => {

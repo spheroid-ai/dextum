@@ -40,5 +40,11 @@
     "source": "dextum_plan/progress/2026-10-13-gpu-cleanup/55183680/project/artifacts/spheroid_touch_b/quality_rotation_01/rotation_joint_01/replay/replay_final.png",
     "caption_scope": "Historical Kit B native replay, seed 810401, +30 degree target, timeout; not accepted v2 success evidence",
     "sha256": "d53583777ebf89442e32b01cd5617472a8833fcb9f05e899a4b1ff118ac35898"
+  },
+  {
+    "asset": "index.html#hero-caption",
+    "source": "Inline SVG contact graph in index.html beside the unmodified aero-bench.jpg",
+    "caption_scope": "Conceptual relationship graph, not a measured touch map, force distribution or recorded policy output",
+    "svg_sha256": "3ecac4c198b7b3afc14a3372f4f4cdbd968c1b4c374ad415eef9eb293f09890e"
   }
 ]

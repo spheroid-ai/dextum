@@ -13,6 +13,7 @@ DIST = HERE / 'dist'
 ASSETS = DIST / 'assets'
 from read_scorecards import load_results
 from build_result_tables import update_page
+from build_landing_assets import build as build_landing_assets
 snapshot = load_results()
 rows = snapshot['results']
 def result(group, arm, seed=1):
@@ -92,4 +93,5 @@ with zipfile.ZipFile(ASSETS/'dextum-figures.zip','w',zipfile.ZIP_DEFLATED) as z:
     for stem in ['model-comparison','touch-seeds','channel-ablation','oracle-o1','student']:
         for suffix in ['.svg','.pdf']:z.write(ASSETS/(stem+suffix),stem+suffix)
 update_page()
-print(f'Built five figures and two visible tables from {len(rows)} explicitly admitted rows and verified frozen reports.')
+build_landing_assets()
+print(f'Built five detailed figures, four landing charts and visible tables from {len(rows)} explicitly admitted rows and verified frozen reports.')

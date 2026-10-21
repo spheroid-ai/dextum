@@ -19,7 +19,7 @@ def allowed(path):
 def archive(destination, base, files):
     with zipfile.ZipFile(destination, 'w', zipfile.ZIP_DEFLATED) as z:
         for path in sorted(files):
-            info = zipfile.ZipInfo(path.relative_to(base).as_posix(), (2026, 10, 20, 12, 0, 0))
+            info = zipfile.ZipInfo(path.relative_to(base).as_posix(), (2026, 10, 21, 12, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o644 << 16
             z.writestr(info, path.read_bytes())
@@ -37,10 +37,10 @@ records = [{'path': p.relative_to(ROOT).as_posix(), 'bytes': p.stat().st_size,
             'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(files)]
 manifest = ROOT / 'PREPARATION_MANIFEST.json'
 manifest.write_text(json.dumps({'status': 'PUBLIC_RESEARCH_SNAPSHOT_NOT_TURNKEY_TRAINING',
-                               'version': '0.1.1',
-                               'release_date': '2026-10-20',
+                               'version': '0.2.0',
+                               'release_date': '2026-10-21',
                                'files': records}, indent=2) + '\n')
-bundle = ROOT / 'dextum-v0.1.1-research.zip'
+bundle = ROOT / 'dextum-v0.2.0-research.zip'
 # The page's small figure download is included; the large offline ZIP is excluded.
 archive(bundle, ROOT, files + [manifest, DIST / 'assets' / 'dextum-figures.zip'])
 (ROOT / 'SHA256SUMS').write_text(''.join(

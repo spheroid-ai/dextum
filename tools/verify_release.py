@@ -6,6 +6,7 @@ import hashlib
 import json
 import sys
 import xml.etree.ElementTree as ET
+from urllib.parse import urlsplit, unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -53,6 +54,7 @@ def verify():
         def handle_starttag(self, tag, attrs):
             values = dict(attrs)
             if "id" in values:
+                assert values["id"] not in self.ids, "Duplicate page ID: " + values["id"]
                 self.ids.add(values["id"])
             for field in ("href", "src", "poster"):
                 value = values.get(field, "")
@@ -61,18 +63,28 @@ def verify():
                 elif value and not value.startswith(("http:", "https:", "data:", "mailto:")):
                     self.paths.append(value)
 
-    page = Page()
-    page.feed((ROOT / "site/dist/index.html").read_text())
-    for path in page.paths:
-        assert (ROOT / "site/dist" / path).is_file(), path
-    assert not set(page.anchors) - page.ids, "Unresolved page anchor"
+    pages = {}
+    dist = ROOT / "site/dist"
+    for filename in ("index.html", "full-record.html"):
+        page = Page()
+        page.feed((dist / filename).read_text())
+        pages[filename] = page
+    for filename, page in pages.items():
+        for target in page.paths:
+            url = urlsplit(target)
+            path = unquote(url.path)
+            assert (dist / path).is_file(), (filename, target)
+            if url.fragment and path in pages:
+                assert url.fragment in pages[path].ids, (filename, target)
+        assert not set(page.anchors) - page.ids, (filename, "Unresolved page anchor")
     print(json.dumps({
         "state": "PASS",
         "hash_bound_files": len(manifest["files"]),
         "python_sources_parsed": len(sources),
         "model_asset_references": assets,
         "admitted_result_rows": len(admitted["results"]),
-        "local_page_links": len(page.paths),
+        "html_pages_checked": len(pages),
+        "local_page_links": sum(len(p.paths) for p in pages.values()),
         "scientific_runtime_executed": False,
     }, indent=2))
 

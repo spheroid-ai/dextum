@@ -60,19 +60,22 @@
   <div class="section-intro"><div><p class="eyebrow">The experiment</p><h2>Four questions. Measured answers.</h2></div><p>Cube reorientation in simulation.<br>Accepted model v2; shared 200-start evaluations.</p></div>
   <div class="question-grid">
     <article class="result-card" id="hand">
-      <p class="card-index">01 / The hand</p><h3>What does adding the kit cost?</h3>
+      <p class="card-index">01 / The hand</p><p class="card-question">What does adding the kit cost?</p><h3>The hand performed similarly with the kit.</h3>
+      <p class="card-takeaway">Correcting the model’s friction setting removed most of the apparent hardware penalty and supported keeping the kit’s current geometry.</p>
       <figure><img src="assets/landing-hand.svg" width="600" height="270" loading="lazy" alt="Ideal success: bare Aero 91.5%, sensorised v2 90.5%, rigid pads on v2 87.5%"><figcaption>Full-budget, from-scratch training; one seed per arm.</figcaption></figure>
       <p class="answer">With corrected pad friction, the sensorised hand scored <strong>90.5%</strong> against <strong>91.5%</strong> for the bare Aero in single-seed runs. A registered check traced the earlier 17.5-point loss to a model parameter, giving no evidence-based reason to change the kit’s geometry.</p>
       <a class="record-link" href="full-record.html#panel-model">Model correction and attribution ↗</a>
     </article>
     <article class="result-card" id="sensing">
-      <p class="card-index">02 / The sensing</p><h3>What does realistic sensing cost?</h3>
+      <p class="card-index">02 / The sensing</p><p class="card-question">What does realistic sensing cost?</p><h3>Realistic sensing kept performance close to ideal.</h3>
+      <p class="card-takeaway">Adding the expected sensor noise and delay left cube-turning success close to the ideal-sensor result.</p>
       <figure><img src="assets/landing-sensing.svg" width="600" height="270" loading="lazy" alt="Sensorised v2: Ideal sensing 90.5%, Realistic sensing 88.0%"><figcaption>Model v2; 108.1M steps from scratch; one seed.</figcaption></figure>
       <p class="answer">Realistic sensing reached <strong>88.0%</strong>, compared with <strong>90.5%</strong> under Ideal sensing on the same hand. The 2.5-point difference was not significant in this paired comparison (<strong>p = .383</strong>).</p>
       <a class="record-link" href="full-record.html#setup">Sensor assumptions and protocol ↗</a>
     </article>
     <article class="result-card" id="channels">
-      <p class="card-index">03 / The channels</p><h3>Which signals carry reorientation?</h3>
+      <p class="card-index">03 / The channels</p><p class="card-question">Which signals carry reorientation?</p><h3>Contact and pressure carried most of the result.</h3>
+      <p class="card-takeaway">Knowing whether contact exists and how hard the hand presses retained most of the full sensor suite’s performance.</p>
       <figure><img src="assets/landing-channels.svg" width="600" height="270" loading="lazy" alt="v2: unmasked 87.5%, normal-only 85.0%, palm map removed 87.5%"><figcaption>Matched 20.3M continuations; one seed; p = .424 / 1.0 against unmasked.</figcaption></figure>
       <p class="answer">Normal force with contact detection scored <strong>85.0%</strong> against <strong>87.5%</strong> unmasked, while removing the palm map preserved <strong>87.5%</strong>; neither difference was significant. This informs the sensor brief before fabrication, while shear and slip requirements for holding still need measurement.</p>
       <div class="seed-summary" id="touch-gain"><h4>Touch versus no touch · three seeds</h4>
@@ -83,7 +86,8 @@
       <a class="record-link" href="full-record.html#panel-channels">Channel table and complete comparisons ↗</a>
     </article>
     <article class="result-card" id="oracle">
-      <p class="card-index">04 / The representation</p><h3>Is a contact-state description enough?</h3>
+      <p class="card-index">04 / The representation</p><p class="card-question">Is a contact-state description enough?</p><h3>DEXTUM’s description was enough for this task.</h3>
+      <p class="card-takeaway">A policy using DEXTUM’s structured description reached the full-state benchmark across three training runs.</p>
       <figure><img src="assets/landing-oracle.svg" width="600" height="270" loading="lazy" alt="Oracle O1: full-state reference 84%, structured DEXTUM seeds 89%, 90%, 88.5%"><figcaption>O1’s separate 2,048-world protocol; 108.1M steps per arm.</figcaption></figure>
       <p class="answer">Structured DEXTUM inputs reached <strong>89.0 / 90.0 / 88.5%</strong> against <strong>84.0%</strong> for one full-state seed, meeting the registered sufficiency threshold on cube rotation. The full DEXTUM inputs include pose and velocity; the separate <strong>contact-only ablation scored 85.0%</strong>.</p>
       <div class="oracle-note">This meets the registered within-five-points criterion; superiority over the reference is not established (seed-1 p = .0755). Structure added 6 points over the information-equivalent flat control at seed 1 (p = .023), below the registered 10-point bar.</div>
@@ -92,12 +96,6 @@
   </div>
 </div></section>
 
-<section class="next wrap" id="next">
-  <p class="eyebrow">The boundary of this study</p><h2>What we did not show</h2>
-  <p>These results cover one hand, one object and one short reorientation task in simulation; composition, new geometry, other hands and real-robot performance are the next tests, not conclusions of this study.</p>
-  <div class="axes"><span>Composition</span><span>Geometry transfer</span><span>Other hands</span><span>Real robot</span></div>
-  <a class="record-link" href="full-record.html#outlook">Registered next tests and the complete status record ↗</a>
-</section>
 <section class="programme wrap" id="programme">
   <p class="eyebrow">Beyond this experiment</p><h2>The DEXTUM programme</h2>
   <p>Describe manipulation through contacts between hand elements and object patches, express actions as bounded transitions, and compose those transitions into skills. DEXTUM brings that representation together with a physical reference for contact dynamics and a tactile kit with a common data format—toward skills that can be learned, checked and transferred across objects and hands.</p>
